@@ -21,26 +21,26 @@ namespace CORC.Demo
         public float markerSize = 0.05f;      // optional: used if your prefab reads this size
         private readonly List<GameObject> spawnedMarkers = new List<GameObject>(); // track spawned Xs so we can clear
         [Header("Participant ID")]
-         public TMP_InputField participantIdIF;   // 输入受试者ID（数字）
-        public Button applySIDBtn;               // 发送到下位机（S_SID）
+         public TMP_InputField participantIdIF;   
+        public Button applySIDBtn;               
         public CORC.CORCM2 m2;
         [Header("Auto Session (10 trials per group)")]
-        public bool enableAutoSession = false;    // 勾选后启用自动化
-        public int trialsPerGroup = 10;           // 每组 trial 数
-        public int numGroups = 10;                // 组数（共计 trialsPerGroup * numGroups 次）
-        public float preTrialCountdown = 3f;      // 每次 trial 前 UI 倒计时秒数
-        public float restBetweenTrials = 5f;      // 每个 trial 结束后的停顿秒数
-        public float settleAfterRsta = 2f;        // 发送 RSTA 后等待回到 A 的时间（秒）
-        public Button autoStartBtn;               // 自动化开始按钮（可选）
-        public Button autoStopBtn;                // 自动化停止按钮（可选）
+        public bool enableAutoSession = false;    
+        public int trialsPerGroup = 10;           
+        public int numGroups = 10;                
+        public float preTrialCountdown = 3f;      
+        public float restBetweenTrials = 5f;      
+        public float settleAfterRsta = 2f;        
+        public Button autoStartBtn;               
+        public Button autoStopBtn;                
         private IM2Proxy proxy;
-        // 运行模式与累计分数
+        
         [Header("Audio (Beep After Delay)")]
         public AudioSource audioSource;     // Assign in Inspector (e.g., on the same GameObject)
         public AudioClip beepClip;          // Optional: specific clip. If null, will call audioSource.Play()
         [Tooltip("Delay seconds for the beep module.")]
         public float beepDelaySeconds = 1f; // default 1s
-        // 在 [Header("Probability Control")] 下面添加
+        
         [Tooltip("Probability label on the monitor (Display 2). Optional.")]
         public TMP_Text probLeftLabelMonitor;
         [Header("Beep Controls")]
@@ -49,19 +49,19 @@ namespace CORC.Demo
         [Tooltip("Seconds to rest after each session ends.")]
         public int restSeconds = 60;
         private bool isResting = false;
-        // 按下 Finish 后，屏蔽下一次 SESS 引发的休息倒计时
+        
         private bool suppressRestOnce = false;
-        // 如果需要可以记录协程句柄，方便中途取消
+        
         private Coroutine restCountdownCo = null;
 
         [Header("Visual Effects")]
         public ParticleSystem windEffectLeft;
         public ParticleSystem windEffectUp;
         [Header("Per-Trial Metrics (TMP)")]
-        public TMP_Text trialEffortTxt;   // 本次试次的 effort
-        public TMP_Text trialDistTxt;     // 本次试次的 distance
+        public TMP_Text trialEffortTxt;   
+        public TMP_Text trialDistTxt;     
 
-        public TMP_Text trialDurTxt;      // 本次试次到达用时（仅 reached==1 时显示）
+        public TMP_Text trialDurTxt;      
         [Header("Texts (TMP)")]
         public TMP_Text timeTxt;
         public TMP_Text posTxt;
@@ -93,9 +93,9 @@ namespace CORC.Demo
         private static double ParseFieldD(string msg, string key, double def = 0.0) { int i = msg.IndexOf(key + "="); if (i < 0) return def; i += key.Length + 1; int j = msg.IndexOf(' ', i); string sub = (j >= 0) ? msg.Substring(i, j - i) : msg.Substring(i); if (double.TryParse(sub, out var v)) return v; return def; }
         private static string ParseFieldS(string msg, string key, string def = "") { int i = msg.IndexOf(key + "="); if (i < 0) return def; i += key.Length + 1; int j = msg.IndexOf(' ', i); string sub = (j >= 0) ? msg.Substring(i, j - i) : msg.Substring(i); return sub; }
         private bool isCountingDown = false;
-        private bool autoRunning = false;         // 是否正在自动化
-        private bool stopAutoRequested = false;   // 请求停止标记
-        private bool lastTrialEnded = false;      // 上一次 trial 是否刚刚结束（接收到 TREN）
+        private bool autoRunning = false;         
+        private bool stopAutoRequested = false;   
+        private bool lastTrialEnded = false;      
         // Tracks most recent max-trials setting (from S_MT or auto session)
         // Tracks most recent max-trials setting (from S_MT or auto session)
         private int lastMaxTrials = 0;
@@ -109,21 +109,14 @@ namespace CORC.Demo
                 if (scoreTxt) scoreTxt.text = "Waiting for first trial...";
             }
         }
-        /*public void OnStartTrialClick()
-        {
-            if (proxy != null && proxy.IsReady)
-            {
-                proxy.SendCmd("STRT");
-                Debug.Log("[UI] Sent: STRT");
-            }
-        }*/
+
         public void OnStartTrialClick()
         {
             if (isResting||isCountingDown || proxy == null || !proxy.IsReady) return;
             StartCoroutine(CountdownAndStartTrial(3));
         }
 
-        // 新增协程函数
+
         private IEnumerator SessionRestCountdown(int seconds)
         {
             isResting = true;
@@ -160,7 +153,7 @@ namespace CORC.Demo
                 if (beepClip)
                     audioSource.PlayOneShot(beepClip);
                 else
-                    audioSource.Play(); // 使用 AudioSource 上的默认 clip
+                    audioSource.Play(); 
             }
             else
             {
@@ -273,10 +266,10 @@ namespace CORC.Demo
         }
         public void OnFinishClick()
         {
-            // 屏蔽下一次休息倒计时
+            
             suppressRestOnce = true;
 
-            // 如有正在进行的休息倒计时，立刻停止并收起 UI
+            
             if (restCountdownCo != null)
             {
                 StopCoroutine(restCountdownCo);
@@ -302,7 +295,7 @@ namespace CORC.Demo
             var txt = participantIdIF.text?.Trim();
             if (string.IsNullOrEmpty(txt)) { if (statusTxt) statusTxt.text = "SID empty"; return; }
 
-            // 仅允许数字（long），其他字符直接报错
+            
             if (!long.TryParse(txt, out var sid))
             {
                 if (statusTxt) statusTxt.text = $"Invalid SID: '{txt}' (must be integer)";
@@ -310,7 +303,7 @@ namespace CORC.Demo
                 return;
             }
 
-            // 发送 S_SID 命令
+            
             proxy.SendCmd("S_SID", new double[] { (double)sid });
             Debug.Log($"[UI] Sent S_SID -> {sid}");
             if (statusTxt) statusTxt.text = $"SID set to {sid}";

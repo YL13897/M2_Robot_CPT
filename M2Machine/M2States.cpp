@@ -1,19 +1,23 @@
+// Core state implementations for M2 machine
+// - Calibration, Standby, Probabilistic Move (TO_A / WAIT_START / TRIAL)
+// - UI command handling and CSV logging
 #include <chrono>
 #include <spdlog/spdlog.h>
 #include "M2States.h"
 #include "M2Machine.h"
 #include <cmath>
 #include <algorithm>
+#include <limits>
 #include <sstream>
 #include <random>
 
-// Provide system_time_sec() locally
+// Local wall-clock helper for CSV timestamps
 static inline double system_time_sec() {
     using namespace std::chrono;
     return duration_cast<duration<double>>(system_clock::now().time_since_epoch()).count();
 }
 
-// --- M2ProbMoveState::sendUI_ implementation (after class declaration) ---
+// Send a plain-text/structured line back to UI
 void M2ProbMoveState::sendUI_(const std::string& msg) {
     const int seq = ++this->txSeq_;
     const size_t L = msg.size();
@@ -22,6 +26,7 @@ void M2ProbMoveState::sendUI_(const std::string& msg) {
         machine->UIserver->sendCmd(msg);
     } 
 }
+// Minimum-jerk trajectory helper (position/velocity/optional acceleration)
 static inline double MinJerk(const VM2& X0, const VM2& Xf, double T, double t,
                              VM2& Xd, VM2& dXd, VM2* ddXd=nullptr){
     if (T <= 0) { 
@@ -60,6 +65,7 @@ static inline T clamp_compat(T v, T lo, T hi) {
     return (v < lo) ? lo : (v > hi) ? hi : v;
 }
 
+// Begin calibration: enter torque mode and start stop-seek routine
 void M2CalibState::entryCode(void) {
     calibDone=false;
     for(unsigned int i=0; i<2; i++) {
@@ -71,6 +77,7 @@ void M2CalibState::entryCode(void) {
     robot->printJointStatus();
     std::cout << "Calibrating (keep clear)..." << std::flush;
 }
+// Drive joints toward stops; apply calibration once conditions met
 void M2CalibState::duringCode(void) {
     VM2 tau(0, 0);
     VM2 vel=robot->getVelocity();
@@ -101,14 +108,17 @@ void M2CalibState::duringCode(void) {
         }
     }
 }
+// Leave with zero force command and compensation active
 void M2CalibState::exitCode(void) {
     robot->setEndEffForceWithCompensation(VM2::Zero());
 }
+// Enter standby: torque control + open CSV
 void M2StandbyState::entryCode() {
     robot->initTorqueControl();
     openStandbyCSV_();
     standbyIter_ = 0;
 }
+// Idle loop: apply zero force (with compensation), snapshot data, and log sparsely
 void M2StandbyState::duringCode() {
     // Commanded force in Standby is zero (pure transparent/compensated mode)
     VM2 F_cmd = VM2::Zero();
@@ -132,11 +142,13 @@ void M2StandbyState::duringCode() {
         writeStandbyCSV_(running(), sys_t, sid, X, dX, F_cmd, Fs);
     }
 }
+// Exit standby: zero force and close CSV
 void M2StandbyState::exitCode() {
     robot->setEndEffForceWithCompensation(VM2::Zero());
     closeStandbyCSV_();
 }
 
+// Open logs/Standby_<session>.csv (append, create header on first open)
 void M2StandbyState::openStandbyCSV_() {
     // Append mode to keep a continuous session log
     // standbyCsv_.open("logs/StandbyLog.csv", std::ios::out | std::ios::app);
@@ -154,10 +166,12 @@ void M2StandbyState::openStandbyCSV_() {
     }
 }
 
+// Close standby CSV if open
 void M2StandbyState::closeStandbyCSV_() {
     if (standbyCsv_.is_open()) standbyCsv_.close();
 }
 
+// Append one row to standby CSV
 void M2StandbyState::writeStandbyCSV_(double t, double sys_t, const std::string& sid,
                                       const VM2& pos, const VM2& vel, const VM2& fcmd, const VM2& fsense) {
     if (!standbyCsv_.is_open()) return;
@@ -173,9 +187,11 @@ void M2StandbyState::writeStandbyCSV_(double t, double sys_t, const std::string&
 
 
 
+// Construct probabilistic move state; machine is used for UI/session utilities
 M2ProbMoveState::M2ProbMoveState(RobotM2* M2, M2Machine* mach, const char* name)
     : M2TimedState(M2, name), machine(mach) {}
 
+// Initialize ProbMove: torque mode, reset flags, open CSVs, load perturbations
 void M2ProbMoveState::entryCode() {
     robot->initTorqueControl();
     robot->setEndEffForceWithCompensation(VM2::Zero(), false);
@@ -183,6 +199,10 @@ void M2ProbMoveState::entryCode() {
     finishedFlag = false;
     rng.seed(std::random_device{}());
     openCSV();
+    // Preload logs
+    openPreloadCSVs_();
+    waitBuf_.clear();
+    preloadSatisfied_ = false;
 
     if (meta_scoreMode == 2) {
         currentMode = V2_EFFORT_DISTANCE;
@@ -211,9 +231,10 @@ void M2ProbMoveState::entryCode() {
     buildDeterministicSchedule();
 }
 
+// Main loop: drain UI, then run phase switch (TO_A / WAIT_START / TRIAL)
 void M2ProbMoveState::duringCode() {
 
-    // === GLOBAL COMMAND DRAIN ===
+    // === GLOBAL COMMAND DRAIN === (RSTA/HALT/STRT/param set/etc.)
     
     {
         int guard = 256;
@@ -317,16 +338,32 @@ void M2ProbMoveState::duringCode() {
                 continue;
             }
 
+            // Allow adjusting preload threshold/window from UI
+            if (cu.rfind("S_PLT",0)==0 && !a.empty()) {
+                preloadThresholdN_ = a[0];
+                if (machine && machine->UIserver) machine->UIserver->sendCmd("OK");
+                machine->UIserver->clearCmd();
+                spdlog::info("GLOBAL: S_PLT -> preloadThresholdN_={}", preloadThresholdN_);
+                continue;
+            }
+            if (cu.rfind("S_PLW",0)==0 && !a.empty()) {
+                preloadWindowSec_ = std::max(0.0, a[0]);
+                if (machine && machine->UIserver) machine->UIserver->sendCmd("OK");
+                machine->UIserver->clearCmd();
+                spdlog::info("GLOBAL: S_PLW -> preloadWindowSec_={}", preloadWindowSec_);
+                continue;
+            }
+
             
             spdlog::warn("GLOBAL: unknown cmd='{}' (trim='{}') @phase={}", c, cu, (int)currentPhase);
             machine->UIserver->clearCmd();
         }
     }
     // === END GLOBAL COMMAND DRAIN ===
-    // The main switch statement to manage internal phases
+    // Phase controller: TO_A -> WAIT_START -> TRIAL
     switch (currentPhase) {
         case TO_A: {
-            // This block simulates M2ToAState
+            // This block simulates M2ToAState (move/hold near A)
             if (initToA) {
                 // Simulate entryCode() for TO_A
                 resetToAPlan(robot->getEndEffPosition());
@@ -381,7 +418,21 @@ void M2ProbMoveState::duringCode() {
         // In M2States.cpp, inside M2ProbMoveState::duringCode()
 
         case WAIT_START: {
-            
+            // Keep recent samples for preload window analysis until STRT is consumed
+            // Sample and maintain rolling buffer
+            {
+                WaitSample s;
+                s.t     = running();
+                s.pos   = robot->getEndEffPosition();
+                s.vel   = robot->getEndEffVelocity();
+                s.force = robot->getEndEffForce();
+                waitBuf_.push_back(s);
+                const double tCut = s.t - preloadWindowSec_;
+                while (!waitBuf_.empty() && waitBuf_.front().t < tCut) {
+                    waitBuf_.pop_front();
+                }
+            }
+
             VM2 X = robot->getEndEffPosition();
             double distToA = (A - X).norm();
             bool atA_hold = false;
@@ -392,6 +443,23 @@ void M2ProbMoveState::duringCode() {
                 inBandSince = 0.0;
             }
             if (pendingStart && atA_hold) {
+                // On STRT: evaluate last preload window and log
+                // Compute preloadSatisfied_ over the last preloadWindowSec_
+                const double tNow = running();
+                const double tMin = tNow - preloadWindowSec_;
+                bool windowCovered = (!waitBuf_.empty() && waitBuf_.front().t <= tMin);
+                bool allAbove = true;
+                for (const auto& s : waitBuf_) {
+                    if (s.t < tMin) continue;
+                    if (s.force(0) < preloadThresholdN_) { allAbove = false; break; }
+                }
+                preloadSatisfied_ = (windowCovered && allAbove);
+
+                // Determine upcoming trial index for current mode
+                int nextTrialIdx = (currentMode == V1_COUNT_SUCCESS) ? totalTrialsV1 : totalTrialsV2;
+                writePreloadWindow_(nextTrialIdx, tNow);
+                writeTrialTag_(nextTrialIdx, (currentMode == V1_COUNT_SUCCESS ? 1 : 2), preloadSatisfied_, tNow);
+
                 pendingStart  = false;
                 betweenTrials = false;  
                 currentPhase  = TRIAL;
@@ -438,7 +506,7 @@ void M2ProbMoveState::duringCode() {
         }
 
         case TRIAL: {
-            // This block simulates M2TrialState
+            // This block simulates M2TrialState (apply internal force, score, log)
             if (initTrial) {
                 // Simulate entryCode() for TRIAL
                 trialStartTime = running();
@@ -461,6 +529,8 @@ void M2ProbMoveState::duringCode() {
                         << " mode=" << (currentMode == V1_COUNT_SUCCESS ? 1 : 2)
                         << " cur_trial=" << curTrialForMode
                         << " max_trial=" << meta_maxTrials;
+                    // Tag preload (0/1) evaluated in WAIT_START
+                    oss << " preload=" << (preloadSatisfied_ ? 1 : 0);
                     std::string outBegin = oss.str();
                     sendUI_(outBegin);
                     {
@@ -691,6 +761,9 @@ void M2ProbMoveState::duringCode() {
                     initTrial       = true;     // prepare for a fresh TRIAL init when STRT arrives
                     inBandSince     = 0.0;      // reset hold timer
                     effortIntegral  = 0.0;      // reset effort accumulator for next trial
+                    // reset preload state/buffer for next trial
+                    waitBuf_.clear();
+                    preloadSatisfied_ = false;
                     spdlog::info("TRIAL: finished (reachedC={}, timeout={}) -> WAIT_START. Awaiting STRT.", reachedC, timeout);
                     return;                      // important: exit now to avoid any further TRIAL computations this frame
                 }
@@ -701,10 +774,12 @@ void M2ProbMoveState::duringCode() {
     }
 }
 
+// Cleanup on ProbMove exit: zero forces, close CSVs, send session summary
 void M2ProbMoveState::exitCode() {
     robot->setEndEffForceWithCompensation(VM2::Zero());
     waitHoldLatched_ = false;
     if (csv.is_open()) csv.close();
+    closePreloadCSVs_();
 
     if (machine && machine->UIserver) {
         std::ostringstream oss;
@@ -848,6 +923,7 @@ void M2ProbMoveState::buildDeterministicSchedule() {
     spdlog::info("[SCHEDULE] Built deterministic 10-trial schedule (leftCount={})", leftCount);
 }*/
 
+// Open logs/M2ProbMove_<session>.csv and write header if new
 void M2ProbMoveState::openCSV() {
     // csv.open("logs/M2ProbMoveState.csv", std::ios::out | std::ios::app);
     const std::string sid = (machine && !machine->sessionId.empty()) ? machine->sessionId : std::string("UNSET");
@@ -866,6 +942,7 @@ void M2ProbMoveState::openCSV() {
 }
 
 // MODIFIED: Added effort to CSV logging
+// Append one row to ProbMove CSV (incl. effort)
 void M2ProbMoveState::writeCSV(double t, const VM2& pos, const VM2& vel,
     const VM2& fInternal, const VM2& fUser, double effort) {
     if (!csv.is_open()) return;
@@ -884,6 +961,7 @@ void M2ProbMoveState::writeCSV(double t, const VM2& pos, const VM2& vel,
         << effort << "\n";
 }
 
+// Clamp and send Cartesian force to robot with compensation
 void M2ProbMoveState::applyForce(const VM2& F) {
     VM2 F_clamped = F;
     for (int i=0; i<2; ++i) {
@@ -895,6 +973,7 @@ void M2ProbMoveState::applyForce(const VM2& F) {
 
 // --- CSV perturbation force loading helpers ---
 
+// Load hard-coded perturbation force sequences (UP and LEFT)
 void M2ProbMoveState::loadPerturbationForces() {
 
     upPerturbForce = {
@@ -1008,3 +1087,75 @@ void M2ProbMoveState::loadPerturbationForces() {
 
     spdlog::info("[STATIC] Loaded {} up and {} left perturbation samples (hard-coded).", upPerturbForce.size(), leftPerturbForce.size());
 }
+
+// --- Preload CSV helpers ---
+void M2ProbMoveState::openPreloadCSVs_() {
+    const std::string sid = (machine && !machine->sessionId.empty()) ? machine->sessionId : std::string("UNSET");
+    const std::string fwin = std::string("logs/PreloadWindow_") + sid + ".csv";
+    const std::string ftag = std::string("logs/TrialTags_") + sid + ".csv";
+
+    preloadWinCsv_.open(fwin, std::ios::out | std::ios::app);
+    if (preloadWinCsv_.is_open() && preloadWinCsv_.tellp() == 0) {
+        preloadWinCsv_ << "time,sys_time,session_id,mode,trial,fx,fy,pos_x,pos_y,vel_x,vel_y,threshold,window_s\n";
+    }
+    trialTagsCsv_.open(ftag, std::ios::out | std::ios::app);
+    if (trialTagsCsv_.is_open() && trialTagsCsv_.tellp() == 0) {
+        trialTagsCsv_ << "time,sys_time,session_id,mode,trial,preload,threshold,window_s,fx_min_window\n";
+    }
+}
+
+void M2ProbMoveState::closePreloadCSVs_() {
+    if (preloadWinCsv_.is_open()) preloadWinCsv_.close();
+    if (trialTagsCsv_.is_open())  trialTagsCsv_.close();
+}
+
+void M2ProbMoveState::writePreloadWindow_(int trialIdxForMode, double tNow) {
+    if (!preloadWinCsv_.is_open()) return;
+    const double sys_t = system_time_sec();
+    const std::string sid = (machine ? machine->sessionId : std::string("UNSET"));
+    const int mode = (currentMode == V1_COUNT_SUCCESS ? 1 : 2);
+    const double tMin = tNow - preloadWindowSec_;
+    for (const auto& s : waitBuf_) {
+        if (s.t < tMin) continue;
+        preloadWinCsv_ << std::fixed << std::setprecision(6)
+            << s.t << "," << sys_t << "," << sid << ","
+            << mode << "," << trialIdxForMode << ","
+            << s.force(0) << "," << s.force(1) << ","
+            << s.pos(0) << "," << s.pos(1) << ","
+            << s.vel(0) << "," << s.vel(1) << ","
+            << preloadThresholdN_ << "," << preloadWindowSec_ << "\n";
+    }
+}
+
+void M2ProbMoveState::writeTrialTag_(int trialIdxForMode, int mode, bool flag, double tNow) {
+    if (!trialTagsCsv_.is_open()) return;
+    const double sys_t = system_time_sec();
+    const std::string sid = (machine ? machine->sessionId : std::string("UNSET"));
+    const double tMin = tNow - preloadWindowSec_;
+    double fx_min = std::numeric_limits<double>::infinity();
+    for (const auto& s : waitBuf_) {
+        if (s.t < tMin) continue;
+        fx_min = std::min(fx_min, s.force(0));
+    }
+    if (!std::isfinite(fx_min)) fx_min = 0.0;
+    trialTagsCsv_ << std::fixed << std::setprecision(6)
+        << tNow << "," << sys_t << "," << sid << ","
+        << mode << "," << trialIdxForMode << ","
+        << (flag ? 1 : 0) << "," << preloadThresholdN_ << "," << preloadWindowSec_ << ","
+        << fx_min << "\n";
+}
+/*
+ * SPDX-License-Identifier: MIT
+ *
+ * M2 Probabilistic Move Controller – State Implementations
+ *
+ * Copyright (c) 2025  Tiancheng Yang
+ * Affiliation: University of Melbourne
+ *
+ * License: This file is licensed under the MIT License (see LICENSE at repo root).
+ *
+ * Data and Usage Notes:
+ * - Writes state-specific CSV logs under `logs/`.
+ * - WAIT_START evaluates last 200ms preload window before consuming STRT.
+ * - UI params: `S_PLT` (threshold, N), `S_PLW` (window, s).
+ */

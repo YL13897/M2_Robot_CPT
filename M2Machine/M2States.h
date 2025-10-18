@@ -8,6 +8,7 @@
 #include <fstream>
 #include <sstream>
 #include <iomanip>
+#include <deque>
 using namespace std;
 
 
@@ -16,6 +17,7 @@ double timeval_to_sec(struct timespec *ts);
 class M2Machine;
 
 
+// Base state with standardized entry/during/exit and console banners
 class M2TimedState : public State {
    protected:
 
@@ -53,6 +55,7 @@ class M2TimedState : public State {
     
 };
 
+// Joint stop seeking + encoder calibration; exits when calibrated
 class M2CalibState : public M2TimedState {
 
    public:
@@ -70,6 +73,7 @@ class M2CalibState : public M2TimedState {
      bool calibDone=false;
 };
 
+// Transparent idle (zero commanded force) with light CSV logging
 class M2StandbyState : public M2TimedState {
 public:
     M2StandbyState(RobotM2* M2, M2Machine* mach, const char* name = "M2 Standby")
@@ -97,6 +101,8 @@ private:
 };
 
 
+// Probabilistic move block: TO_A -> WAIT_START (preload check) -> TRIAL
+// Handles UI commands, scoring, deterministic LEFT/UP schedule, and CSV logs
 class M2ProbMoveState : public M2TimedState {
 public:
     M2ProbMoveState(RobotM2* M2, M2Machine* mach, const char* name="M2 Probabilistic Move");
@@ -239,6 +245,24 @@ private:
     // --- Add to M2ProbMoveState (private) ---
     int txSeq_ = 0;
 
+    // --- Preload detection (WAIT_START) ---
+    struct WaitSample {
+        double t;      // state running() time
+        VM2    pos;    // end-eff position
+        VM2    vel;    // end-eff velocity
+        VM2    force;  // sensed end-eff force
+    };
+    std::deque<WaitSample> waitBuf_;           // rolling buffer of recent WAIT_START samples
+    double preloadThresholdN_ = 3.0;           // adjustable threshold (N), default 3N
+    double preloadWindowSec_  = 0.200;         // window (s), default 200ms
+    bool   preloadSatisfied_  = false;         // result for the upcoming trial
+    std::ofstream preloadWinCsv_;              // raw 200ms window dump
+    std::ofstream trialTagsCsv_;               // per-trial tags (preload yes/no)
+    void openPreloadCSVs_();
+    void closePreloadCSVs_();
+    void writePreloadWindow_(int trialIdxForMode, double tNow);
+    void writeTrialTag_(int trialIdxForMode, int mode, bool flag, double tNow);
+
     static bool isPrintableAscii(const std::string& s) {
         for (unsigned char ch : s) {
             if (ch < 0x20 || ch > 0x7E) { 
@@ -262,3 +286,18 @@ private:
 };
 
 #endif
+/*
+ * SPDX-License-Identifier: MIT
+ *
+ * M2 Probabilistic Move Controller – State Interfaces
+ *
+ * Copyright (c) 2025  Tiancheng Yang
+ * Affiliation: University of Melbourne
+ *
+ * License: This file is licensed under the MIT License (see LICENSE at repo root).
+ *
+ * Data and Usage Notes:
+ * - WAIT_START logs raw 200ms preload windows to `logs/PreloadWindow_<session>.csv`.
+ * - Per-trial preload tags are written to `logs/TrialTags_<session>.csv`.
+ * - Configure preload via `S_PLT` (N) and `S_PLW` (s) UI commands.
+ */
