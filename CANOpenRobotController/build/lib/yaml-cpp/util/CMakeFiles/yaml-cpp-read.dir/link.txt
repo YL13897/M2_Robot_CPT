@@ -1,0 +1,1 @@
+/usr/bin/arm-linux-gnueabihf-g++  -Wall -Wno-int-in-bool-context -static -g -O0 "CMakeFiles/yaml-cpp-read.dir/read.cpp.o" -o read  ../libyaml-cppd.a 

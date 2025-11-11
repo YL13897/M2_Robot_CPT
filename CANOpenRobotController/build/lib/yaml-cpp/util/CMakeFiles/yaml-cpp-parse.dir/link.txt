@@ -1,0 +1,1 @@
+/usr/bin/arm-linux-gnueabihf-g++  -Wall -Wno-int-in-bool-context -static -g -O0 "CMakeFiles/yaml-cpp-parse.dir/parse.cpp.o" -o parse  ../libyaml-cppd.a 
