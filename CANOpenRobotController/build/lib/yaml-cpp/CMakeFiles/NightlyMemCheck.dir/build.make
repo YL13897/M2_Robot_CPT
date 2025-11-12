@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController
+CMAKE_SOURCE_DIR = /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/build
+CMAKE_BINARY_DIR = /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/build
 
 # Utility rule file for NightlyMemCheck.
 
@@ -67,7 +67,7 @@ include lib/yaml-cpp/CMakeFiles/NightlyMemCheck.dir/compiler_depend.make
 include lib/yaml-cpp/CMakeFiles/NightlyMemCheck.dir/progress.make
 
 lib/yaml-cpp/CMakeFiles/NightlyMemCheck:
-	cd /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/build/lib/yaml-cpp && /usr/bin/ctest -D NightlyMemCheck
+	cd /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/build/lib/yaml-cpp && /usr/bin/ctest -D NightlyMemCheck
 
 NightlyMemCheck: lib/yaml-cpp/CMakeFiles/NightlyMemCheck
 NightlyMemCheck: lib/yaml-cpp/CMakeFiles/NightlyMemCheck.dir/build.make
@@ -78,10 +78,10 @@ lib/yaml-cpp/CMakeFiles/NightlyMemCheck.dir/build: NightlyMemCheck
 .PHONY : lib/yaml-cpp/CMakeFiles/NightlyMemCheck.dir/build
 
 lib/yaml-cpp/CMakeFiles/NightlyMemCheck.dir/clean:
-	cd /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/build/lib/yaml-cpp && $(CMAKE_COMMAND) -P CMakeFiles/NightlyMemCheck.dir/cmake_clean.cmake
+	cd /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/build/lib/yaml-cpp && $(CMAKE_COMMAND) -P CMakeFiles/NightlyMemCheck.dir/cmake_clean.cmake
 .PHONY : lib/yaml-cpp/CMakeFiles/NightlyMemCheck.dir/clean
 
 lib/yaml-cpp/CMakeFiles/NightlyMemCheck.dir/depend:
-	cd /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/lib/yaml-cpp /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/build /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/build/lib/yaml-cpp /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/build/lib/yaml-cpp/CMakeFiles/NightlyMemCheck.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/lib/yaml-cpp /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/build /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/build/lib/yaml-cpp /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/build/lib/yaml-cpp/CMakeFiles/NightlyMemCheck.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : lib/yaml-cpp/CMakeFiles/NightlyMemCheck.dir/depend
 

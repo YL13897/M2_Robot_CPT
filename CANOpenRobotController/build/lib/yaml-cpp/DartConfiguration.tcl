@@ -4,8 +4,8 @@
 
 
 # Configuration directories and files
-SourceDirectory: /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/lib/yaml-cpp
-BuildDirectory: /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/build/lib/yaml-cpp
+SourceDirectory: /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/lib/yaml-cpp
+BuildDirectory: /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/build/lib/yaml-cpp
 
 # Where to place the cost data store
 CostDataFile: 
@@ -27,7 +27,7 @@ SubmitInactivityTimeout:
 NightlyStartTime: 00:00:00 EDT
 
 # Commands for the build/test/submit cycle
-ConfigureCommand: "/usr/bin/cmake" "/home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/lib/yaml-cpp"
+ConfigureCommand: "/usr/bin/cmake" "/home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/lib/yaml-cpp"
 MakeCommand: /usr/bin/cmake --build . --config "${CTEST_CONFIGURATION_TYPE}"
 DefaultCTestConfigurationType: Release
 

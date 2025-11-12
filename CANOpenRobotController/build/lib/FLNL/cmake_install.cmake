@@ -1,4 +1,4 @@
-# Install script for directory: /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/lib/FLNL
+# Install script for directory: /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/lib/FLNL
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

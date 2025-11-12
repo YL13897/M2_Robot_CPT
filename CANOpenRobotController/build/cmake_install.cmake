@@ -1,4 +1,4 @@
-# Install script for directory: /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController
+# Install script for directory: /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -44,8 +44,8 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/build/lib/FLNL/cmake_install.cmake")
-  include("/home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/build/lib/yaml-cpp/cmake_install.cmake")
+  include("/home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/build/lib/FLNL/cmake_install.cmake")
+  include("/home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/build/lib/yaml-cpp/cmake_install.cmake")
 
 endif()
 
@@ -57,5 +57,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

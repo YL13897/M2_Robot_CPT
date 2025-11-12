@@ -3,7 +3,7 @@ set(CMAKE_HOST_SYSTEM_NAME "Linux")
 set(CMAKE_HOST_SYSTEM_VERSION "6.14.0-35-generic")
 set(CMAKE_HOST_SYSTEM_PROCESSOR "x86_64")
 
-include("/home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/armhf.cmake")
+include("/home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/armhf.cmake")
 
 set(CMAKE_SYSTEM "Linux")
 set(CMAKE_SYSTEM_NAME "Linux")

@@ -132,7 +132,7 @@ void M2StandbyState::duringCode() {
 
     VM2 Fs = robot->getEndEffForce();
     // Periodic status print
-    if (iterations()%1000==1) 
+    if (iterations()%500==1) 
         robot->printStatus();
 
     // Lightweight logging every N iterations

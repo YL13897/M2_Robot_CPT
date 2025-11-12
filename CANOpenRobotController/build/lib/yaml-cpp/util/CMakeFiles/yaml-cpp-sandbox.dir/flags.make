@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/arm-linux-gnueabihf-g++
 CXX_DEFINES = -DSPDLOG_ACTIVE_LEVEL=SPDLOG_LEVEL_INFO -DSTATE_MACHINE_INCLUDE=\"M2Machine.h\" -DSTATE_MACHINE_TYPE=M2Machine
 
-CXX_INCLUDES = -I/home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/lib/yaml-cpp/include
+CXX_INCLUDES = -I/home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/lib/yaml-cpp/include
 
-CXX_FLAGS =  -Wall -Wno-int-in-bool-context -static -g -O0 -std=gnu++14
+CXX_FLAGS =  -Wall -Wno-int-in-bool-context -static -g -O0 -std=gnu++17
 

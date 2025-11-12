@@ -29,7 +29,7 @@ events:
       Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
       
       The C compiler identification is GNU, found in:
-        /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/build/CMakeFiles/3.28.3/CompilerIdC/a.out
+        /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/build/CMakeFiles/3.28.3/CompilerIdC/a.out
       
   -
     kind: "message-v1"
@@ -51,7 +51,7 @@ events:
       Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
       
       The CXX compiler identification is GNU, found in:
-        /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/build/CMakeFiles/3.28.3/CompilerIdCXX/a.out
+        /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/build/CMakeFiles/3.28.3/CompilerIdCXX/a.out
       
   -
     kind: "try_compile-v1"
@@ -62,8 +62,8 @@ events:
     checks:
       - "Detecting C compiler ABI info"
     directories:
-      source: "/home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/build/CMakeFiles/CMakeScratch/TryCompile-1zlqYa"
-      binary: "/home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/build/CMakeFiles/CMakeScratch/TryCompile-1zlqYa"
+      source: "/home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/build/CMakeFiles/CMakeScratch/TryCompile-1ZanRZ"
+      binary: "/home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/build/CMakeFiles/CMakeScratch/TryCompile-1ZanRZ"
     cmakeVariables:
       CMAKE_C_FLAGS: ""
       CMAKE_EXE_LINKER_FLAGS: ""
@@ -71,13 +71,13 @@ events:
       variable: "CMAKE_C_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: '/home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/build/CMakeFiles/CMakeScratch/TryCompile-1zlqYa'
+        Change Dir: '/home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/build/CMakeFiles/CMakeScratch/TryCompile-1ZanRZ'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_e2738/fast
-        /usr/bin/gmake  -f CMakeFiles/cmTC_e2738.dir/build.make CMakeFiles/cmTC_e2738.dir/build
-        gmake[1]: Entering directory '/home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/build/CMakeFiles/CMakeScratch/TryCompile-1zlqYa'
-        Building C object CMakeFiles/cmTC_e2738.dir/CMakeCCompilerABI.c.o
-        /usr/bin/arm-linux-gnueabihf-gcc   -v -o CMakeFiles/cmTC_e2738.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake-3.28/Modules/CMakeCCompilerABI.c
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_2b2bd/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_2b2bd.dir/build.make CMakeFiles/cmTC_2b2bd.dir/build
+        gmake[1]: Entering directory '/home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/build/CMakeFiles/CMakeScratch/TryCompile-1ZanRZ'
+        Building C object CMakeFiles/cmTC_2b2bd.dir/CMakeCCompilerABI.c.o
+        /usr/bin/arm-linux-gnueabihf-gcc   -v -o CMakeFiles/cmTC_2b2bd.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake-3.28/Modules/CMakeCCompilerABI.c
         Using built-in specs.
         COLLECT_GCC=/usr/bin/arm-linux-gnueabihf-gcc
         Target: arm-linux-gnueabihf
@@ -85,8 +85,8 @@ events:
         Thread model: posix
         Supported LTO compression algorithms: zlib zstd
         gcc version 13.3.0 (Ubuntu 13.3.0-6ubuntu2~24.04) 
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_e2738.dir/CMakeCCompilerABI.c.o' '-c'  '-mfloat-abi=hard' '-mtls-dialect=gnu' '-mthumb' '-mlibarch=armv7-a+fp' '-march=armv7-a+fp' '-dumpdir' 'CMakeFiles/cmTC_e2738.dir/'
-         /usr/libexec/gcc-cross/arm-linux-gnueabihf/13/cc1 -quiet -v -imultilib . -imultiarch arm-linux-gnueabihf /usr/share/cmake-3.28/Modules/CMakeCCompilerABI.c -D_TIME_BITS=64 -D_FILE_OFFSET_BITS=64 -quiet -dumpdir CMakeFiles/cmTC_e2738.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mfloat-abi=hard -mtls-dialect=gnu -mthumb -mlibarch=armv7-a+fp -march=armv7-a+fp -version -fstack-protector-strong -Wformat -Wformat-security -o /tmp/cc86g9ZJ.s
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_2b2bd.dir/CMakeCCompilerABI.c.o' '-c'  '-mfloat-abi=hard' '-mtls-dialect=gnu' '-mthumb' '-mlibarch=armv7-a+fp' '-march=armv7-a+fp' '-dumpdir' 'CMakeFiles/cmTC_2b2bd.dir/'
+         /usr/libexec/gcc-cross/arm-linux-gnueabihf/13/cc1 -quiet -v -imultilib . -imultiarch arm-linux-gnueabihf /usr/share/cmake-3.28/Modules/CMakeCCompilerABI.c -D_TIME_BITS=64 -D_FILE_OFFSET_BITS=64 -quiet -dumpdir CMakeFiles/cmTC_2b2bd.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mfloat-abi=hard -mtls-dialect=gnu -mthumb -mlibarch=armv7-a+fp -march=armv7-a+fp -version -fstack-protector-strong -Wformat -Wformat-security -o /tmp/ccNvsmFx.s
         GNU C17 (Ubuntu 13.3.0-6ubuntu2~24.04) version 13.3.0 (arm-linux-gnueabihf)
         	compiled by GNU C version 13.3.0, GMP version 6.3.0, MPFR version 4.2.1, MPC version 1.3.1, isl version isl-0.26-GMP
         
@@ -102,15 +102,15 @@ events:
          /usr/include
         End of search list.
         Compiler executable checksum: dd45baefaf7384e158d3d79e97997a94
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_e2738.dir/CMakeCCompilerABI.c.o' '-c'  '-mfloat-abi=hard' '-mtls-dialect=gnu' '-mthumb' '-mlibarch=armv7-a+fp' '-march=armv7-a+fp' '-dumpdir' 'CMakeFiles/cmTC_e2738.dir/'
-         /usr/lib/gcc-cross/arm-linux-gnueabihf/13/../../../../arm-linux-gnueabihf/bin/as -v -march=armv7-a+fp -mfloat-abi=hard -meabi=5 -o CMakeFiles/cmTC_e2738.dir/CMakeCCompilerABI.c.o /tmp/cc86g9ZJ.s
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_2b2bd.dir/CMakeCCompilerABI.c.o' '-c'  '-mfloat-abi=hard' '-mtls-dialect=gnu' '-mthumb' '-mlibarch=armv7-a+fp' '-march=armv7-a+fp' '-dumpdir' 'CMakeFiles/cmTC_2b2bd.dir/'
+         /usr/lib/gcc-cross/arm-linux-gnueabihf/13/../../../../arm-linux-gnueabihf/bin/as -v -march=armv7-a+fp -mfloat-abi=hard -meabi=5 -o CMakeFiles/cmTC_2b2bd.dir/CMakeCCompilerABI.c.o /tmp/ccNvsmFx.s
         GNU assembler version 2.42 (arm-linux-gnueabihf) using BFD version (GNU Binutils for Ubuntu) 2.42
         COMPILER_PATH=/usr/libexec/gcc-cross/arm-linux-gnueabihf/13/:/usr/libexec/gcc-cross/arm-linux-gnueabihf/13/:/usr/libexec/gcc-cross/arm-linux-gnueabihf/:/usr/lib/gcc-cross/arm-linux-gnueabihf/13/:/usr/lib/gcc-cross/arm-linux-gnueabihf/:/usr/lib/gcc-cross/arm-linux-gnueabihf/13/../../../../arm-linux-gnueabihf/bin/
         LIBRARY_PATH=/usr/lib/gcc-cross/arm-linux-gnueabihf/13/:/usr/lib/gcc-cross/arm-linux-gnueabihf/13/../../../../arm-linux-gnueabihf/lib/:/lib/arm-linux-gnueabihf/:/lib/:/usr/lib/arm-linux-gnueabihf/:/usr/lib/
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_e2738.dir/CMakeCCompilerABI.c.o' '-c'  '-mfloat-abi=hard' '-mtls-dialect=gnu' '-mthumb' '-mlibarch=armv7-a+fp' '-march=armv7-a+fp' '-dumpdir' 'CMakeFiles/cmTC_e2738.dir/CMakeCCompilerABI.c.'
-        Linking C executable cmTC_e2738
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e2738.dir/link.txt --verbose=1
-        /usr/bin/arm-linux-gnueabihf-gcc  -v -rdynamic CMakeFiles/cmTC_e2738.dir/CMakeCCompilerABI.c.o -o cmTC_e2738 
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_2b2bd.dir/CMakeCCompilerABI.c.o' '-c'  '-mfloat-abi=hard' '-mtls-dialect=gnu' '-mthumb' '-mlibarch=armv7-a+fp' '-march=armv7-a+fp' '-dumpdir' 'CMakeFiles/cmTC_2b2bd.dir/CMakeCCompilerABI.c.'
+        Linking C executable cmTC_2b2bd
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2b2bd.dir/link.txt --verbose=1
+        /usr/bin/arm-linux-gnueabihf-gcc  -v -rdynamic CMakeFiles/cmTC_2b2bd.dir/CMakeCCompilerABI.c.o -o cmTC_2b2bd 
         Using built-in specs.
         COLLECT_GCC=/usr/bin/arm-linux-gnueabihf-gcc
         COLLECT_LTO_WRAPPER=/usr/libexec/gcc-cross/arm-linux-gnueabihf/13/lto-wrapper
@@ -121,10 +121,10 @@ events:
         gcc version 13.3.0 (Ubuntu 13.3.0-6ubuntu2~24.04) 
         COMPILER_PATH=/usr/libexec/gcc-cross/arm-linux-gnueabihf/13/:/usr/libexec/gcc-cross/arm-linux-gnueabihf/13/:/usr/libexec/gcc-cross/arm-linux-gnueabihf/:/usr/lib/gcc-cross/arm-linux-gnueabihf/13/:/usr/lib/gcc-cross/arm-linux-gnueabihf/:/usr/lib/gcc-cross/arm-linux-gnueabihf/13/../../../../arm-linux-gnueabihf/bin/
         LIBRARY_PATH=/usr/lib/gcc-cross/arm-linux-gnueabihf/13/:/usr/lib/gcc-cross/arm-linux-gnueabihf/13/../../../../arm-linux-gnueabihf/lib/:/lib/arm-linux-gnueabihf/:/lib/:/usr/lib/arm-linux-gnueabihf/:/usr/lib/
-        COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_e2738'  '-mfloat-abi=hard' '-mtls-dialect=gnu' '-mthumb' '-mlibarch=armv7-a+fp' '-march=armv7-a+fp' '-dumpdir' 'cmTC_e2738.'
-         /usr/libexec/gcc-cross/arm-linux-gnueabihf/13/collect2 -plugin /usr/libexec/gcc-cross/arm-linux-gnueabihf/13/liblto_plugin.so -plugin-opt=/usr/libexec/gcc-cross/arm-linux-gnueabihf/13/lto-wrapper -plugin-opt=-fresolution=/tmp/cc2PVrJX.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/ --build-id --eh-frame-hdr -export-dynamic -dynamic-linker /lib/ld-linux-armhf.so.3 -X --hash-style=gnu --as-needed -m armelf_linux_eabi -pie -z now -z relro -o cmTC_e2738 /usr/lib/gcc-cross/arm-linux-gnueabihf/13/../../../../arm-linux-gnueabihf/lib/Scrt1.o /usr/lib/gcc-cross/arm-linux-gnueabihf/13/../../../../arm-linux-gnueabihf/lib/crti.o /usr/lib/gcc-cross/arm-linux-gnueabihf/13/crtbeginS.o -L/usr/lib/gcc-cross/arm-linux-gnueabihf/13 -L/usr/lib/gcc-cross/arm-linux-gnueabihf/13/../../../../arm-linux-gnueabihf/lib -L/lib/arm-linux-gnueabihf -L/usr/lib/arm-linux-gnueabihf CMakeFiles/cmTC_e2738.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc-cross/arm-linux-gnueabihf/13/crtendS.o /usr/lib/gcc-cross/arm-linux-gnueabihf/13/../../../../arm-linux-gnueabihf/lib/crtn.o
-        COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_e2738'  '-mfloat-abi=hard' '-mtls-dialect=gnu' '-mthumb' '-mlibarch=armv7-a+fp' '-march=armv7-a+fp' '-dumpdir' 'cmTC_e2738.'
-        gmake[1]: Leaving directory '/home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/build/CMakeFiles/CMakeScratch/TryCompile-1zlqYa'
+        COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_2b2bd'  '-mfloat-abi=hard' '-mtls-dialect=gnu' '-mthumb' '-mlibarch=armv7-a+fp' '-march=armv7-a+fp' '-dumpdir' 'cmTC_2b2bd.'
+         /usr/libexec/gcc-cross/arm-linux-gnueabihf/13/collect2 -plugin /usr/libexec/gcc-cross/arm-linux-gnueabihf/13/liblto_plugin.so -plugin-opt=/usr/libexec/gcc-cross/arm-linux-gnueabihf/13/lto-wrapper -plugin-opt=-fresolution=/tmp/cckriDsS.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/ --build-id --eh-frame-hdr -export-dynamic -dynamic-linker /lib/ld-linux-armhf.so.3 -X --hash-style=gnu --as-needed -m armelf_linux_eabi -pie -z now -z relro -o cmTC_2b2bd /usr/lib/gcc-cross/arm-linux-gnueabihf/13/../../../../arm-linux-gnueabihf/lib/Scrt1.o /usr/lib/gcc-cross/arm-linux-gnueabihf/13/../../../../arm-linux-gnueabihf/lib/crti.o /usr/lib/gcc-cross/arm-linux-gnueabihf/13/crtbeginS.o -L/usr/lib/gcc-cross/arm-linux-gnueabihf/13 -L/usr/lib/gcc-cross/arm-linux-gnueabihf/13/../../../../arm-linux-gnueabihf/lib -L/lib/arm-linux-gnueabihf -L/usr/lib/arm-linux-gnueabihf CMakeFiles/cmTC_2b2bd.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc-cross/arm-linux-gnueabihf/13/crtendS.o /usr/lib/gcc-cross/arm-linux-gnueabihf/13/../../../../arm-linux-gnueabihf/lib/crtn.o
+        COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_2b2bd'  '-mfloat-abi=hard' '-mtls-dialect=gnu' '-mthumb' '-mlibarch=armv7-a+fp' '-march=armv7-a+fp' '-dumpdir' 'cmTC_2b2bd.'
+        gmake[1]: Leaving directory '/home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/build/CMakeFiles/CMakeScratch/TryCompile-1ZanRZ'
         
       exitCode: 0
   -
@@ -156,13 +156,13 @@ events:
     message: |
       Parsed C implicit link information:
         link line regex: [^( *|.*[/\\])(arm-linux-gnueabihf-ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
-        ignore line: [Change Dir: '/home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/build/CMakeFiles/CMakeScratch/TryCompile-1zlqYa']
+        ignore line: [Change Dir: '/home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/build/CMakeFiles/CMakeScratch/TryCompile-1ZanRZ']
         ignore line: []
-        ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_e2738/fast]
-        ignore line: [/usr/bin/gmake  -f CMakeFiles/cmTC_e2738.dir/build.make CMakeFiles/cmTC_e2738.dir/build]
-        ignore line: [gmake[1]: Entering directory '/home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/build/CMakeFiles/CMakeScratch/TryCompile-1zlqYa']
-        ignore line: [Building C object CMakeFiles/cmTC_e2738.dir/CMakeCCompilerABI.c.o]
-        ignore line: [/usr/bin/arm-linux-gnueabihf-gcc   -v -o CMakeFiles/cmTC_e2738.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake-3.28/Modules/CMakeCCompilerABI.c]
+        ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_2b2bd/fast]
+        ignore line: [/usr/bin/gmake  -f CMakeFiles/cmTC_2b2bd.dir/build.make CMakeFiles/cmTC_2b2bd.dir/build]
+        ignore line: [gmake[1]: Entering directory '/home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/build/CMakeFiles/CMakeScratch/TryCompile-1ZanRZ']
+        ignore line: [Building C object CMakeFiles/cmTC_2b2bd.dir/CMakeCCompilerABI.c.o]
+        ignore line: [/usr/bin/arm-linux-gnueabihf-gcc   -v -o CMakeFiles/cmTC_2b2bd.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake-3.28/Modules/CMakeCCompilerABI.c]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=/usr/bin/arm-linux-gnueabihf-gcc]
         ignore line: [Target: arm-linux-gnueabihf]
@@ -170,8 +170,8 @@ events:
         ignore line: [Thread model: posix]
         ignore line: [Supported LTO compression algorithms: zlib zstd]
         ignore line: [gcc version 13.3.0 (Ubuntu 13.3.0-6ubuntu2~24.04) ]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_e2738.dir/CMakeCCompilerABI.c.o' '-c'  '-mfloat-abi=hard' '-mtls-dialect=gnu' '-mthumb' '-mlibarch=armv7-a+fp' '-march=armv7-a+fp' '-dumpdir' 'CMakeFiles/cmTC_e2738.dir/']
-        ignore line: [ /usr/libexec/gcc-cross/arm-linux-gnueabihf/13/cc1 -quiet -v -imultilib . -imultiarch arm-linux-gnueabihf /usr/share/cmake-3.28/Modules/CMakeCCompilerABI.c -D_TIME_BITS=64 -D_FILE_OFFSET_BITS=64 -quiet -dumpdir CMakeFiles/cmTC_e2738.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mfloat-abi=hard -mtls-dialect=gnu -mthumb -mlibarch=armv7-a+fp -march=armv7-a+fp -version -fstack-protector-strong -Wformat -Wformat-security -o /tmp/cc86g9ZJ.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_2b2bd.dir/CMakeCCompilerABI.c.o' '-c'  '-mfloat-abi=hard' '-mtls-dialect=gnu' '-mthumb' '-mlibarch=armv7-a+fp' '-march=armv7-a+fp' '-dumpdir' 'CMakeFiles/cmTC_2b2bd.dir/']
+        ignore line: [ /usr/libexec/gcc-cross/arm-linux-gnueabihf/13/cc1 -quiet -v -imultilib . -imultiarch arm-linux-gnueabihf /usr/share/cmake-3.28/Modules/CMakeCCompilerABI.c -D_TIME_BITS=64 -D_FILE_OFFSET_BITS=64 -quiet -dumpdir CMakeFiles/cmTC_2b2bd.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mfloat-abi=hard -mtls-dialect=gnu -mthumb -mlibarch=armv7-a+fp -march=armv7-a+fp -version -fstack-protector-strong -Wformat -Wformat-security -o /tmp/ccNvsmFx.s]
         ignore line: [GNU C17 (Ubuntu 13.3.0-6ubuntu2~24.04) version 13.3.0 (arm-linux-gnueabihf)]
         ignore line: [	compiled by GNU C version 13.3.0  GMP version 6.3.0  MPFR version 4.2.1  MPC version 1.3.1  isl version isl-0.26-GMP]
         ignore line: []
@@ -187,15 +187,15 @@ events:
         ignore line: [ /usr/include]
         ignore line: [End of search list.]
         ignore line: [Compiler executable checksum: dd45baefaf7384e158d3d79e97997a94]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_e2738.dir/CMakeCCompilerABI.c.o' '-c'  '-mfloat-abi=hard' '-mtls-dialect=gnu' '-mthumb' '-mlibarch=armv7-a+fp' '-march=armv7-a+fp' '-dumpdir' 'CMakeFiles/cmTC_e2738.dir/']
-        ignore line: [ /usr/lib/gcc-cross/arm-linux-gnueabihf/13/../../../../arm-linux-gnueabihf/bin/as -v -march=armv7-a+fp -mfloat-abi=hard -meabi=5 -o CMakeFiles/cmTC_e2738.dir/CMakeCCompilerABI.c.o /tmp/cc86g9ZJ.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_2b2bd.dir/CMakeCCompilerABI.c.o' '-c'  '-mfloat-abi=hard' '-mtls-dialect=gnu' '-mthumb' '-mlibarch=armv7-a+fp' '-march=armv7-a+fp' '-dumpdir' 'CMakeFiles/cmTC_2b2bd.dir/']
+        ignore line: [ /usr/lib/gcc-cross/arm-linux-gnueabihf/13/../../../../arm-linux-gnueabihf/bin/as -v -march=armv7-a+fp -mfloat-abi=hard -meabi=5 -o CMakeFiles/cmTC_2b2bd.dir/CMakeCCompilerABI.c.o /tmp/ccNvsmFx.s]
         ignore line: [GNU assembler version 2.42 (arm-linux-gnueabihf) using BFD version (GNU Binutils for Ubuntu) 2.42]
         ignore line: [COMPILER_PATH=/usr/libexec/gcc-cross/arm-linux-gnueabihf/13/:/usr/libexec/gcc-cross/arm-linux-gnueabihf/13/:/usr/libexec/gcc-cross/arm-linux-gnueabihf/:/usr/lib/gcc-cross/arm-linux-gnueabihf/13/:/usr/lib/gcc-cross/arm-linux-gnueabihf/:/usr/lib/gcc-cross/arm-linux-gnueabihf/13/../../../../arm-linux-gnueabihf/bin/]
         ignore line: [LIBRARY_PATH=/usr/lib/gcc-cross/arm-linux-gnueabihf/13/:/usr/lib/gcc-cross/arm-linux-gnueabihf/13/../../../../arm-linux-gnueabihf/lib/:/lib/arm-linux-gnueabihf/:/lib/:/usr/lib/arm-linux-gnueabihf/:/usr/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_e2738.dir/CMakeCCompilerABI.c.o' '-c'  '-mfloat-abi=hard' '-mtls-dialect=gnu' '-mthumb' '-mlibarch=armv7-a+fp' '-march=armv7-a+fp' '-dumpdir' 'CMakeFiles/cmTC_e2738.dir/CMakeCCompilerABI.c.']
-        ignore line: [Linking C executable cmTC_e2738]
-        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e2738.dir/link.txt --verbose=1]
-        ignore line: [/usr/bin/arm-linux-gnueabihf-gcc  -v -rdynamic CMakeFiles/cmTC_e2738.dir/CMakeCCompilerABI.c.o -o cmTC_e2738 ]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_2b2bd.dir/CMakeCCompilerABI.c.o' '-c'  '-mfloat-abi=hard' '-mtls-dialect=gnu' '-mthumb' '-mlibarch=armv7-a+fp' '-march=armv7-a+fp' '-dumpdir' 'CMakeFiles/cmTC_2b2bd.dir/CMakeCCompilerABI.c.']
+        ignore line: [Linking C executable cmTC_2b2bd]
+        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2b2bd.dir/link.txt --verbose=1]
+        ignore line: [/usr/bin/arm-linux-gnueabihf-gcc  -v -rdynamic CMakeFiles/cmTC_2b2bd.dir/CMakeCCompilerABI.c.o -o cmTC_2b2bd ]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=/usr/bin/arm-linux-gnueabihf-gcc]
         ignore line: [COLLECT_LTO_WRAPPER=/usr/libexec/gcc-cross/arm-linux-gnueabihf/13/lto-wrapper]
@@ -206,13 +206,13 @@ events:
         ignore line: [gcc version 13.3.0 (Ubuntu 13.3.0-6ubuntu2~24.04) ]
         ignore line: [COMPILER_PATH=/usr/libexec/gcc-cross/arm-linux-gnueabihf/13/:/usr/libexec/gcc-cross/arm-linux-gnueabihf/13/:/usr/libexec/gcc-cross/arm-linux-gnueabihf/:/usr/lib/gcc-cross/arm-linux-gnueabihf/13/:/usr/lib/gcc-cross/arm-linux-gnueabihf/:/usr/lib/gcc-cross/arm-linux-gnueabihf/13/../../../../arm-linux-gnueabihf/bin/]
         ignore line: [LIBRARY_PATH=/usr/lib/gcc-cross/arm-linux-gnueabihf/13/:/usr/lib/gcc-cross/arm-linux-gnueabihf/13/../../../../arm-linux-gnueabihf/lib/:/lib/arm-linux-gnueabihf/:/lib/:/usr/lib/arm-linux-gnueabihf/:/usr/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_e2738'  '-mfloat-abi=hard' '-mtls-dialect=gnu' '-mthumb' '-mlibarch=armv7-a+fp' '-march=armv7-a+fp' '-dumpdir' 'cmTC_e2738.']
-        link line: [ /usr/libexec/gcc-cross/arm-linux-gnueabihf/13/collect2 -plugin /usr/libexec/gcc-cross/arm-linux-gnueabihf/13/liblto_plugin.so -plugin-opt=/usr/libexec/gcc-cross/arm-linux-gnueabihf/13/lto-wrapper -plugin-opt=-fresolution=/tmp/cc2PVrJX.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/ --build-id --eh-frame-hdr -export-dynamic -dynamic-linker /lib/ld-linux-armhf.so.3 -X --hash-style=gnu --as-needed -m armelf_linux_eabi -pie -z now -z relro -o cmTC_e2738 /usr/lib/gcc-cross/arm-linux-gnueabihf/13/../../../../arm-linux-gnueabihf/lib/Scrt1.o /usr/lib/gcc-cross/arm-linux-gnueabihf/13/../../../../arm-linux-gnueabihf/lib/crti.o /usr/lib/gcc-cross/arm-linux-gnueabihf/13/crtbeginS.o -L/usr/lib/gcc-cross/arm-linux-gnueabihf/13 -L/usr/lib/gcc-cross/arm-linux-gnueabihf/13/../../../../arm-linux-gnueabihf/lib -L/lib/arm-linux-gnueabihf -L/usr/lib/arm-linux-gnueabihf CMakeFiles/cmTC_e2738.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc-cross/arm-linux-gnueabihf/13/crtendS.o /usr/lib/gcc-cross/arm-linux-gnueabihf/13/../../../../arm-linux-gnueabihf/lib/crtn.o]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_2b2bd'  '-mfloat-abi=hard' '-mtls-dialect=gnu' '-mthumb' '-mlibarch=armv7-a+fp' '-march=armv7-a+fp' '-dumpdir' 'cmTC_2b2bd.']
+        link line: [ /usr/libexec/gcc-cross/arm-linux-gnueabihf/13/collect2 -plugin /usr/libexec/gcc-cross/arm-linux-gnueabihf/13/liblto_plugin.so -plugin-opt=/usr/libexec/gcc-cross/arm-linux-gnueabihf/13/lto-wrapper -plugin-opt=-fresolution=/tmp/cckriDsS.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/ --build-id --eh-frame-hdr -export-dynamic -dynamic-linker /lib/ld-linux-armhf.so.3 -X --hash-style=gnu --as-needed -m armelf_linux_eabi -pie -z now -z relro -o cmTC_2b2bd /usr/lib/gcc-cross/arm-linux-gnueabihf/13/../../../../arm-linux-gnueabihf/lib/Scrt1.o /usr/lib/gcc-cross/arm-linux-gnueabihf/13/../../../../arm-linux-gnueabihf/lib/crti.o /usr/lib/gcc-cross/arm-linux-gnueabihf/13/crtbeginS.o -L/usr/lib/gcc-cross/arm-linux-gnueabihf/13 -L/usr/lib/gcc-cross/arm-linux-gnueabihf/13/../../../../arm-linux-gnueabihf/lib -L/lib/arm-linux-gnueabihf -L/usr/lib/arm-linux-gnueabihf CMakeFiles/cmTC_2b2bd.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc-cross/arm-linux-gnueabihf/13/crtendS.o /usr/lib/gcc-cross/arm-linux-gnueabihf/13/../../../../arm-linux-gnueabihf/lib/crtn.o]
           arg [/usr/libexec/gcc-cross/arm-linux-gnueabihf/13/collect2] ==> ignore
           arg [-plugin] ==> ignore
           arg [/usr/libexec/gcc-cross/arm-linux-gnueabihf/13/liblto_plugin.so] ==> ignore
           arg [-plugin-opt=/usr/libexec/gcc-cross/arm-linux-gnueabihf/13/lto-wrapper] ==> ignore
-          arg [-plugin-opt=-fresolution=/tmp/cc2PVrJX.res] ==> ignore
+          arg [-plugin-opt=-fresolution=/tmp/cckriDsS.res] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
           arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -233,7 +233,7 @@ events:
           arg [-znow] ==> ignore
           arg [-zrelro] ==> ignore
           arg [-o] ==> ignore
-          arg [cmTC_e2738] ==> ignore
+          arg [cmTC_2b2bd] ==> ignore
           arg [/usr/lib/gcc-cross/arm-linux-gnueabihf/13/../../../../arm-linux-gnueabihf/lib/Scrt1.o] ==> obj [/usr/lib/gcc-cross/arm-linux-gnueabihf/13/../../../../arm-linux-gnueabihf/lib/Scrt1.o]
           arg [/usr/lib/gcc-cross/arm-linux-gnueabihf/13/../../../../arm-linux-gnueabihf/lib/crti.o] ==> obj [/usr/lib/gcc-cross/arm-linux-gnueabihf/13/../../../../arm-linux-gnueabihf/lib/crti.o]
           arg [/usr/lib/gcc-cross/arm-linux-gnueabihf/13/crtbeginS.o] ==> obj [/usr/lib/gcc-cross/arm-linux-gnueabihf/13/crtbeginS.o]
@@ -241,7 +241,7 @@ events:
           arg [-L/usr/lib/gcc-cross/arm-linux-gnueabihf/13/../../../../arm-linux-gnueabihf/lib] ==> dir [/usr/lib/gcc-cross/arm-linux-gnueabihf/13/../../../../arm-linux-gnueabihf/lib]
           arg [-L/lib/arm-linux-gnueabihf] ==> dir [/lib/arm-linux-gnueabihf]
           arg [-L/usr/lib/arm-linux-gnueabihf] ==> dir [/usr/lib/arm-linux-gnueabihf]
-          arg [CMakeFiles/cmTC_e2738.dir/CMakeCCompilerABI.c.o] ==> ignore
+          arg [CMakeFiles/cmTC_2b2bd.dir/CMakeCCompilerABI.c.o] ==> ignore
           arg [-lgcc] ==> lib [gcc]
           arg [--push-state] ==> ignore
           arg [--as-needed] ==> ignore
@@ -277,8 +277,8 @@ events:
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "/home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/build/CMakeFiles/CMakeScratch/TryCompile-P2QkSn"
-      binary: "/home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/build/CMakeFiles/CMakeScratch/TryCompile-P2QkSn"
+      source: "/home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/build/CMakeFiles/CMakeScratch/TryCompile-ppOWeh"
+      binary: "/home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/build/CMakeFiles/CMakeScratch/TryCompile-ppOWeh"
     cmakeVariables:
       CMAKE_CXX_FLAGS: ""
       CMAKE_EXE_LINKER_FLAGS: ""
@@ -286,13 +286,13 @@ events:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: '/home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/build/CMakeFiles/CMakeScratch/TryCompile-P2QkSn'
+        Change Dir: '/home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/build/CMakeFiles/CMakeScratch/TryCompile-ppOWeh'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_fbbf2/fast
-        /usr/bin/gmake  -f CMakeFiles/cmTC_fbbf2.dir/build.make CMakeFiles/cmTC_fbbf2.dir/build
-        gmake[1]: Entering directory '/home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/build/CMakeFiles/CMakeScratch/TryCompile-P2QkSn'
-        Building CXX object CMakeFiles/cmTC_fbbf2.dir/CMakeCXXCompilerABI.cpp.o
-        /usr/bin/arm-linux-gnueabihf-g++   -v -o CMakeFiles/cmTC_fbbf2.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_acb47/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_acb47.dir/build.make CMakeFiles/cmTC_acb47.dir/build
+        gmake[1]: Entering directory '/home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/build/CMakeFiles/CMakeScratch/TryCompile-ppOWeh'
+        Building CXX object CMakeFiles/cmTC_acb47.dir/CMakeCXXCompilerABI.cpp.o
+        /usr/bin/arm-linux-gnueabihf-g++   -v -o CMakeFiles/cmTC_acb47.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp
         Using built-in specs.
         COLLECT_GCC=/usr/bin/arm-linux-gnueabihf-g++
         Target: arm-linux-gnueabihf
@@ -300,8 +300,8 @@ events:
         Thread model: posix
         Supported LTO compression algorithms: zlib zstd
         gcc version 13.3.0 (Ubuntu 13.3.0-6ubuntu2~24.04) 
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_fbbf2.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc'  '-mfloat-abi=hard' '-mtls-dialect=gnu' '-mthumb' '-mlibarch=armv7-a+fp' '-march=armv7-a+fp' '-dumpdir' 'CMakeFiles/cmTC_fbbf2.dir/'
-         /usr/libexec/gcc-cross/arm-linux-gnueabihf/13/cc1plus -quiet -v -imultilib . -imultiarch arm-linux-gnueabihf -D_GNU_SOURCE /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp -D_TIME_BITS=64 -D_FILE_OFFSET_BITS=64 -quiet -dumpdir CMakeFiles/cmTC_fbbf2.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mfloat-abi=hard -mtls-dialect=gnu -mthumb -mlibarch=armv7-a+fp -march=armv7-a+fp -version -fstack-protector-strong -Wformat -Wformat-security -o /tmp/ccGjAFNP.s
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_acb47.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc'  '-mfloat-abi=hard' '-mtls-dialect=gnu' '-mthumb' '-mlibarch=armv7-a+fp' '-march=armv7-a+fp' '-dumpdir' 'CMakeFiles/cmTC_acb47.dir/'
+         /usr/libexec/gcc-cross/arm-linux-gnueabihf/13/cc1plus -quiet -v -imultilib . -imultiarch arm-linux-gnueabihf -D_GNU_SOURCE /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp -D_TIME_BITS=64 -D_FILE_OFFSET_BITS=64 -quiet -dumpdir CMakeFiles/cmTC_acb47.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mfloat-abi=hard -mtls-dialect=gnu -mthumb -mlibarch=armv7-a+fp -march=armv7-a+fp -version -fstack-protector-strong -Wformat -Wformat-security -o /tmp/ccNQ4vnj.s
         GNU C++17 (Ubuntu 13.3.0-6ubuntu2~24.04) version 13.3.0 (arm-linux-gnueabihf)
         	compiled by GNU C version 13.3.0, GMP version 6.3.0, MPFR version 4.2.1, MPC version 1.3.1, isl version isl-0.26-GMP
         
@@ -320,15 +320,15 @@ events:
          /usr/include
         End of search list.
         Compiler executable checksum: 8dc1aab621cce2dee143c54fcfcf3434
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_fbbf2.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc'  '-mfloat-abi=hard' '-mtls-dialect=gnu' '-mthumb' '-mlibarch=armv7-a+fp' '-march=armv7-a+fp' '-dumpdir' 'CMakeFiles/cmTC_fbbf2.dir/'
-         /usr/lib/gcc-cross/arm-linux-gnueabihf/13/../../../../arm-linux-gnueabihf/bin/as -v -march=armv7-a+fp -mfloat-abi=hard -meabi=5 -o CMakeFiles/cmTC_fbbf2.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccGjAFNP.s
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_acb47.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc'  '-mfloat-abi=hard' '-mtls-dialect=gnu' '-mthumb' '-mlibarch=armv7-a+fp' '-march=armv7-a+fp' '-dumpdir' 'CMakeFiles/cmTC_acb47.dir/'
+         /usr/lib/gcc-cross/arm-linux-gnueabihf/13/../../../../arm-linux-gnueabihf/bin/as -v -march=armv7-a+fp -mfloat-abi=hard -meabi=5 -o CMakeFiles/cmTC_acb47.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccNQ4vnj.s
         GNU assembler version 2.42 (arm-linux-gnueabihf) using BFD version (GNU Binutils for Ubuntu) 2.42
         COMPILER_PATH=/usr/libexec/gcc-cross/arm-linux-gnueabihf/13/:/usr/libexec/gcc-cross/arm-linux-gnueabihf/13/:/usr/libexec/gcc-cross/arm-linux-gnueabihf/:/usr/lib/gcc-cross/arm-linux-gnueabihf/13/:/usr/lib/gcc-cross/arm-linux-gnueabihf/:/usr/lib/gcc-cross/arm-linux-gnueabihf/13/../../../../arm-linux-gnueabihf/bin/
         LIBRARY_PATH=/usr/lib/gcc-cross/arm-linux-gnueabihf/13/:/usr/lib/gcc-cross/arm-linux-gnueabihf/13/../../../../arm-linux-gnueabihf/lib/:/lib/arm-linux-gnueabihf/:/lib/:/usr/lib/arm-linux-gnueabihf/:/usr/lib/
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_fbbf2.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc'  '-mfloat-abi=hard' '-mtls-dialect=gnu' '-mthumb' '-mlibarch=armv7-a+fp' '-march=armv7-a+fp' '-dumpdir' 'CMakeFiles/cmTC_fbbf2.dir/CMakeCXXCompilerABI.cpp.'
-        Linking CXX executable cmTC_fbbf2
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_fbbf2.dir/link.txt --verbose=1
-        /usr/bin/arm-linux-gnueabihf-g++  -v -rdynamic CMakeFiles/cmTC_fbbf2.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_fbbf2 
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_acb47.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc'  '-mfloat-abi=hard' '-mtls-dialect=gnu' '-mthumb' '-mlibarch=armv7-a+fp' '-march=armv7-a+fp' '-dumpdir' 'CMakeFiles/cmTC_acb47.dir/CMakeCXXCompilerABI.cpp.'
+        Linking CXX executable cmTC_acb47
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_acb47.dir/link.txt --verbose=1
+        /usr/bin/arm-linux-gnueabihf-g++  -v -rdynamic CMakeFiles/cmTC_acb47.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_acb47 
         Using built-in specs.
         COLLECT_GCC=/usr/bin/arm-linux-gnueabihf-g++
         COLLECT_LTO_WRAPPER=/usr/libexec/gcc-cross/arm-linux-gnueabihf/13/lto-wrapper
@@ -339,10 +339,10 @@ events:
         gcc version 13.3.0 (Ubuntu 13.3.0-6ubuntu2~24.04) 
         COMPILER_PATH=/usr/libexec/gcc-cross/arm-linux-gnueabihf/13/:/usr/libexec/gcc-cross/arm-linux-gnueabihf/13/:/usr/libexec/gcc-cross/arm-linux-gnueabihf/:/usr/lib/gcc-cross/arm-linux-gnueabihf/13/:/usr/lib/gcc-cross/arm-linux-gnueabihf/:/usr/lib/gcc-cross/arm-linux-gnueabihf/13/../../../../arm-linux-gnueabihf/bin/
         LIBRARY_PATH=/usr/lib/gcc-cross/arm-linux-gnueabihf/13/:/usr/lib/gcc-cross/arm-linux-gnueabihf/13/../../../../arm-linux-gnueabihf/lib/:/lib/arm-linux-gnueabihf/:/lib/:/usr/lib/arm-linux-gnueabihf/:/usr/lib/
-        COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_fbbf2' '-shared-libgcc'  '-mfloat-abi=hard' '-mtls-dialect=gnu' '-mthumb' '-mlibarch=armv7-a+fp' '-march=armv7-a+fp' '-dumpdir' 'cmTC_fbbf2.'
-         /usr/libexec/gcc-cross/arm-linux-gnueabihf/13/collect2 -plugin /usr/libexec/gcc-cross/arm-linux-gnueabihf/13/liblto_plugin.so -plugin-opt=/usr/libexec/gcc-cross/arm-linux-gnueabihf/13/lto-wrapper -plugin-opt=-fresolution=/tmp/ccyt9Mcd.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/ --build-id --eh-frame-hdr -export-dynamic -dynamic-linker /lib/ld-linux-armhf.so.3 -X --hash-style=gnu --as-needed -m armelf_linux_eabi -pie -z now -z relro -o cmTC_fbbf2 /usr/lib/gcc-cross/arm-linux-gnueabihf/13/../../../../arm-linux-gnueabihf/lib/Scrt1.o /usr/lib/gcc-cross/arm-linux-gnueabihf/13/../../../../arm-linux-gnueabihf/lib/crti.o /usr/lib/gcc-cross/arm-linux-gnueabihf/13/crtbeginS.o -L/usr/lib/gcc-cross/arm-linux-gnueabihf/13 -L/usr/lib/gcc-cross/arm-linux-gnueabihf/13/../../../../arm-linux-gnueabihf/lib -L/lib/arm-linux-gnueabihf -L/usr/lib/arm-linux-gnueabihf CMakeFiles/cmTC_fbbf2.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc-cross/arm-linux-gnueabihf/13/crtendS.o /usr/lib/gcc-cross/arm-linux-gnueabihf/13/../../../../arm-linux-gnueabihf/lib/crtn.o
-        COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_fbbf2' '-shared-libgcc'  '-mfloat-abi=hard' '-mtls-dialect=gnu' '-mthumb' '-mlibarch=armv7-a+fp' '-march=armv7-a+fp' '-dumpdir' 'cmTC_fbbf2.'
-        gmake[1]: Leaving directory '/home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/build/CMakeFiles/CMakeScratch/TryCompile-P2QkSn'
+        COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_acb47' '-shared-libgcc'  '-mfloat-abi=hard' '-mtls-dialect=gnu' '-mthumb' '-mlibarch=armv7-a+fp' '-march=armv7-a+fp' '-dumpdir' 'cmTC_acb47.'
+         /usr/libexec/gcc-cross/arm-linux-gnueabihf/13/collect2 -plugin /usr/libexec/gcc-cross/arm-linux-gnueabihf/13/liblto_plugin.so -plugin-opt=/usr/libexec/gcc-cross/arm-linux-gnueabihf/13/lto-wrapper -plugin-opt=-fresolution=/tmp/ccgM4MVA.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/ --build-id --eh-frame-hdr -export-dynamic -dynamic-linker /lib/ld-linux-armhf.so.3 -X --hash-style=gnu --as-needed -m armelf_linux_eabi -pie -z now -z relro -o cmTC_acb47 /usr/lib/gcc-cross/arm-linux-gnueabihf/13/../../../../arm-linux-gnueabihf/lib/Scrt1.o /usr/lib/gcc-cross/arm-linux-gnueabihf/13/../../../../arm-linux-gnueabihf/lib/crti.o /usr/lib/gcc-cross/arm-linux-gnueabihf/13/crtbeginS.o -L/usr/lib/gcc-cross/arm-linux-gnueabihf/13 -L/usr/lib/gcc-cross/arm-linux-gnueabihf/13/../../../../arm-linux-gnueabihf/lib -L/lib/arm-linux-gnueabihf -L/usr/lib/arm-linux-gnueabihf CMakeFiles/cmTC_acb47.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc-cross/arm-linux-gnueabihf/13/crtendS.o /usr/lib/gcc-cross/arm-linux-gnueabihf/13/../../../../arm-linux-gnueabihf/lib/crtn.o
+        COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_acb47' '-shared-libgcc'  '-mfloat-abi=hard' '-mtls-dialect=gnu' '-mthumb' '-mlibarch=armv7-a+fp' '-march=armv7-a+fp' '-dumpdir' 'cmTC_acb47.'
+        gmake[1]: Leaving directory '/home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/build/CMakeFiles/CMakeScratch/TryCompile-ppOWeh'
         
       exitCode: 0
   -
@@ -380,13 +380,13 @@ events:
     message: |
       Parsed CXX implicit link information:
         link line regex: [^( *|.*[/\\])(arm-linux-gnueabihf-ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
-        ignore line: [Change Dir: '/home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/build/CMakeFiles/CMakeScratch/TryCompile-P2QkSn']
+        ignore line: [Change Dir: '/home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/build/CMakeFiles/CMakeScratch/TryCompile-ppOWeh']
         ignore line: []
-        ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_fbbf2/fast]
-        ignore line: [/usr/bin/gmake  -f CMakeFiles/cmTC_fbbf2.dir/build.make CMakeFiles/cmTC_fbbf2.dir/build]
-        ignore line: [gmake[1]: Entering directory '/home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/build/CMakeFiles/CMakeScratch/TryCompile-P2QkSn']
-        ignore line: [Building CXX object CMakeFiles/cmTC_fbbf2.dir/CMakeCXXCompilerABI.cpp.o]
-        ignore line: [/usr/bin/arm-linux-gnueabihf-g++   -v -o CMakeFiles/cmTC_fbbf2.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_acb47/fast]
+        ignore line: [/usr/bin/gmake  -f CMakeFiles/cmTC_acb47.dir/build.make CMakeFiles/cmTC_acb47.dir/build]
+        ignore line: [gmake[1]: Entering directory '/home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/build/CMakeFiles/CMakeScratch/TryCompile-ppOWeh']
+        ignore line: [Building CXX object CMakeFiles/cmTC_acb47.dir/CMakeCXXCompilerABI.cpp.o]
+        ignore line: [/usr/bin/arm-linux-gnueabihf-g++   -v -o CMakeFiles/cmTC_acb47.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=/usr/bin/arm-linux-gnueabihf-g++]
         ignore line: [Target: arm-linux-gnueabihf]
@@ -394,8 +394,8 @@ events:
         ignore line: [Thread model: posix]
         ignore line: [Supported LTO compression algorithms: zlib zstd]
         ignore line: [gcc version 13.3.0 (Ubuntu 13.3.0-6ubuntu2~24.04) ]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_fbbf2.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc'  '-mfloat-abi=hard' '-mtls-dialect=gnu' '-mthumb' '-mlibarch=armv7-a+fp' '-march=armv7-a+fp' '-dumpdir' 'CMakeFiles/cmTC_fbbf2.dir/']
-        ignore line: [ /usr/libexec/gcc-cross/arm-linux-gnueabihf/13/cc1plus -quiet -v -imultilib . -imultiarch arm-linux-gnueabihf -D_GNU_SOURCE /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp -D_TIME_BITS=64 -D_FILE_OFFSET_BITS=64 -quiet -dumpdir CMakeFiles/cmTC_fbbf2.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mfloat-abi=hard -mtls-dialect=gnu -mthumb -mlibarch=armv7-a+fp -march=armv7-a+fp -version -fstack-protector-strong -Wformat -Wformat-security -o /tmp/ccGjAFNP.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_acb47.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc'  '-mfloat-abi=hard' '-mtls-dialect=gnu' '-mthumb' '-mlibarch=armv7-a+fp' '-march=armv7-a+fp' '-dumpdir' 'CMakeFiles/cmTC_acb47.dir/']
+        ignore line: [ /usr/libexec/gcc-cross/arm-linux-gnueabihf/13/cc1plus -quiet -v -imultilib . -imultiarch arm-linux-gnueabihf -D_GNU_SOURCE /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp -D_TIME_BITS=64 -D_FILE_OFFSET_BITS=64 -quiet -dumpdir CMakeFiles/cmTC_acb47.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mfloat-abi=hard -mtls-dialect=gnu -mthumb -mlibarch=armv7-a+fp -march=armv7-a+fp -version -fstack-protector-strong -Wformat -Wformat-security -o /tmp/ccNQ4vnj.s]
         ignore line: [GNU C++17 (Ubuntu 13.3.0-6ubuntu2~24.04) version 13.3.0 (arm-linux-gnueabihf)]
         ignore line: [	compiled by GNU C version 13.3.0  GMP version 6.3.0  MPFR version 4.2.1  MPC version 1.3.1  isl version isl-0.26-GMP]
         ignore line: []
@@ -414,15 +414,15 @@ events:
         ignore line: [ /usr/include]
         ignore line: [End of search list.]
         ignore line: [Compiler executable checksum: 8dc1aab621cce2dee143c54fcfcf3434]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_fbbf2.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc'  '-mfloat-abi=hard' '-mtls-dialect=gnu' '-mthumb' '-mlibarch=armv7-a+fp' '-march=armv7-a+fp' '-dumpdir' 'CMakeFiles/cmTC_fbbf2.dir/']
-        ignore line: [ /usr/lib/gcc-cross/arm-linux-gnueabihf/13/../../../../arm-linux-gnueabihf/bin/as -v -march=armv7-a+fp -mfloat-abi=hard -meabi=5 -o CMakeFiles/cmTC_fbbf2.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccGjAFNP.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_acb47.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc'  '-mfloat-abi=hard' '-mtls-dialect=gnu' '-mthumb' '-mlibarch=armv7-a+fp' '-march=armv7-a+fp' '-dumpdir' 'CMakeFiles/cmTC_acb47.dir/']
+        ignore line: [ /usr/lib/gcc-cross/arm-linux-gnueabihf/13/../../../../arm-linux-gnueabihf/bin/as -v -march=armv7-a+fp -mfloat-abi=hard -meabi=5 -o CMakeFiles/cmTC_acb47.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccNQ4vnj.s]
         ignore line: [GNU assembler version 2.42 (arm-linux-gnueabihf) using BFD version (GNU Binutils for Ubuntu) 2.42]
         ignore line: [COMPILER_PATH=/usr/libexec/gcc-cross/arm-linux-gnueabihf/13/:/usr/libexec/gcc-cross/arm-linux-gnueabihf/13/:/usr/libexec/gcc-cross/arm-linux-gnueabihf/:/usr/lib/gcc-cross/arm-linux-gnueabihf/13/:/usr/lib/gcc-cross/arm-linux-gnueabihf/:/usr/lib/gcc-cross/arm-linux-gnueabihf/13/../../../../arm-linux-gnueabihf/bin/]
         ignore line: [LIBRARY_PATH=/usr/lib/gcc-cross/arm-linux-gnueabihf/13/:/usr/lib/gcc-cross/arm-linux-gnueabihf/13/../../../../arm-linux-gnueabihf/lib/:/lib/arm-linux-gnueabihf/:/lib/:/usr/lib/arm-linux-gnueabihf/:/usr/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_fbbf2.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc'  '-mfloat-abi=hard' '-mtls-dialect=gnu' '-mthumb' '-mlibarch=armv7-a+fp' '-march=armv7-a+fp' '-dumpdir' 'CMakeFiles/cmTC_fbbf2.dir/CMakeCXXCompilerABI.cpp.']
-        ignore line: [Linking CXX executable cmTC_fbbf2]
-        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_fbbf2.dir/link.txt --verbose=1]
-        ignore line: [/usr/bin/arm-linux-gnueabihf-g++  -v -rdynamic CMakeFiles/cmTC_fbbf2.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_fbbf2 ]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_acb47.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc'  '-mfloat-abi=hard' '-mtls-dialect=gnu' '-mthumb' '-mlibarch=armv7-a+fp' '-march=armv7-a+fp' '-dumpdir' 'CMakeFiles/cmTC_acb47.dir/CMakeCXXCompilerABI.cpp.']
+        ignore line: [Linking CXX executable cmTC_acb47]
+        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_acb47.dir/link.txt --verbose=1]
+        ignore line: [/usr/bin/arm-linux-gnueabihf-g++  -v -rdynamic CMakeFiles/cmTC_acb47.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_acb47 ]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=/usr/bin/arm-linux-gnueabihf-g++]
         ignore line: [COLLECT_LTO_WRAPPER=/usr/libexec/gcc-cross/arm-linux-gnueabihf/13/lto-wrapper]
@@ -433,13 +433,13 @@ events:
         ignore line: [gcc version 13.3.0 (Ubuntu 13.3.0-6ubuntu2~24.04) ]
         ignore line: [COMPILER_PATH=/usr/libexec/gcc-cross/arm-linux-gnueabihf/13/:/usr/libexec/gcc-cross/arm-linux-gnueabihf/13/:/usr/libexec/gcc-cross/arm-linux-gnueabihf/:/usr/lib/gcc-cross/arm-linux-gnueabihf/13/:/usr/lib/gcc-cross/arm-linux-gnueabihf/:/usr/lib/gcc-cross/arm-linux-gnueabihf/13/../../../../arm-linux-gnueabihf/bin/]
         ignore line: [LIBRARY_PATH=/usr/lib/gcc-cross/arm-linux-gnueabihf/13/:/usr/lib/gcc-cross/arm-linux-gnueabihf/13/../../../../arm-linux-gnueabihf/lib/:/lib/arm-linux-gnueabihf/:/lib/:/usr/lib/arm-linux-gnueabihf/:/usr/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_fbbf2' '-shared-libgcc'  '-mfloat-abi=hard' '-mtls-dialect=gnu' '-mthumb' '-mlibarch=armv7-a+fp' '-march=armv7-a+fp' '-dumpdir' 'cmTC_fbbf2.']
-        link line: [ /usr/libexec/gcc-cross/arm-linux-gnueabihf/13/collect2 -plugin /usr/libexec/gcc-cross/arm-linux-gnueabihf/13/liblto_plugin.so -plugin-opt=/usr/libexec/gcc-cross/arm-linux-gnueabihf/13/lto-wrapper -plugin-opt=-fresolution=/tmp/ccyt9Mcd.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/ --build-id --eh-frame-hdr -export-dynamic -dynamic-linker /lib/ld-linux-armhf.so.3 -X --hash-style=gnu --as-needed -m armelf_linux_eabi -pie -z now -z relro -o cmTC_fbbf2 /usr/lib/gcc-cross/arm-linux-gnueabihf/13/../../../../arm-linux-gnueabihf/lib/Scrt1.o /usr/lib/gcc-cross/arm-linux-gnueabihf/13/../../../../arm-linux-gnueabihf/lib/crti.o /usr/lib/gcc-cross/arm-linux-gnueabihf/13/crtbeginS.o -L/usr/lib/gcc-cross/arm-linux-gnueabihf/13 -L/usr/lib/gcc-cross/arm-linux-gnueabihf/13/../../../../arm-linux-gnueabihf/lib -L/lib/arm-linux-gnueabihf -L/usr/lib/arm-linux-gnueabihf CMakeFiles/cmTC_fbbf2.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc-cross/arm-linux-gnueabihf/13/crtendS.o /usr/lib/gcc-cross/arm-linux-gnueabihf/13/../../../../arm-linux-gnueabihf/lib/crtn.o]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_acb47' '-shared-libgcc'  '-mfloat-abi=hard' '-mtls-dialect=gnu' '-mthumb' '-mlibarch=armv7-a+fp' '-march=armv7-a+fp' '-dumpdir' 'cmTC_acb47.']
+        link line: [ /usr/libexec/gcc-cross/arm-linux-gnueabihf/13/collect2 -plugin /usr/libexec/gcc-cross/arm-linux-gnueabihf/13/liblto_plugin.so -plugin-opt=/usr/libexec/gcc-cross/arm-linux-gnueabihf/13/lto-wrapper -plugin-opt=-fresolution=/tmp/ccgM4MVA.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/ --build-id --eh-frame-hdr -export-dynamic -dynamic-linker /lib/ld-linux-armhf.so.3 -X --hash-style=gnu --as-needed -m armelf_linux_eabi -pie -z now -z relro -o cmTC_acb47 /usr/lib/gcc-cross/arm-linux-gnueabihf/13/../../../../arm-linux-gnueabihf/lib/Scrt1.o /usr/lib/gcc-cross/arm-linux-gnueabihf/13/../../../../arm-linux-gnueabihf/lib/crti.o /usr/lib/gcc-cross/arm-linux-gnueabihf/13/crtbeginS.o -L/usr/lib/gcc-cross/arm-linux-gnueabihf/13 -L/usr/lib/gcc-cross/arm-linux-gnueabihf/13/../../../../arm-linux-gnueabihf/lib -L/lib/arm-linux-gnueabihf -L/usr/lib/arm-linux-gnueabihf CMakeFiles/cmTC_acb47.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc-cross/arm-linux-gnueabihf/13/crtendS.o /usr/lib/gcc-cross/arm-linux-gnueabihf/13/../../../../arm-linux-gnueabihf/lib/crtn.o]
           arg [/usr/libexec/gcc-cross/arm-linux-gnueabihf/13/collect2] ==> ignore
           arg [-plugin] ==> ignore
           arg [/usr/libexec/gcc-cross/arm-linux-gnueabihf/13/liblto_plugin.so] ==> ignore
           arg [-plugin-opt=/usr/libexec/gcc-cross/arm-linux-gnueabihf/13/lto-wrapper] ==> ignore
-          arg [-plugin-opt=-fresolution=/tmp/ccyt9Mcd.res] ==> ignore
+          arg [-plugin-opt=-fresolution=/tmp/ccgM4MVA.res] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
           arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -460,7 +460,7 @@ events:
           arg [-znow] ==> ignore
           arg [-zrelro] ==> ignore
           arg [-o] ==> ignore
-          arg [cmTC_fbbf2] ==> ignore
+          arg [cmTC_acb47] ==> ignore
           arg [/usr/lib/gcc-cross/arm-linux-gnueabihf/13/../../../../arm-linux-gnueabihf/lib/Scrt1.o] ==> obj [/usr/lib/gcc-cross/arm-linux-gnueabihf/13/../../../../arm-linux-gnueabihf/lib/Scrt1.o]
           arg [/usr/lib/gcc-cross/arm-linux-gnueabihf/13/../../../../arm-linux-gnueabihf/lib/crti.o] ==> obj [/usr/lib/gcc-cross/arm-linux-gnueabihf/13/../../../../arm-linux-gnueabihf/lib/crti.o]
           arg [/usr/lib/gcc-cross/arm-linux-gnueabihf/13/crtbeginS.o] ==> obj [/usr/lib/gcc-cross/arm-linux-gnueabihf/13/crtbeginS.o]
@@ -468,7 +468,7 @@ events:
           arg [-L/usr/lib/gcc-cross/arm-linux-gnueabihf/13/../../../../arm-linux-gnueabihf/lib] ==> dir [/usr/lib/gcc-cross/arm-linux-gnueabihf/13/../../../../arm-linux-gnueabihf/lib]
           arg [-L/lib/arm-linux-gnueabihf] ==> dir [/lib/arm-linux-gnueabihf]
           arg [-L/usr/lib/arm-linux-gnueabihf] ==> dir [/usr/lib/arm-linux-gnueabihf]
-          arg [CMakeFiles/cmTC_fbbf2.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+          arg [CMakeFiles/cmTC_acb47.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
           arg [-lstdc++] ==> lib [stdc++]
           arg [-lm] ==> lib [m]
           arg [-lgcc_s] ==> lib [gcc_s]
@@ -503,8 +503,8 @@ events:
     checks:
       - "Performing Test CMAKE_HAVE_LIBC_PTHREAD"
     directories:
-      source: "/home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/build/CMakeFiles/CMakeScratch/TryCompile-IFB3aq"
-      binary: "/home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/build/CMakeFiles/CMakeScratch/TryCompile-IFB3aq"
+      source: "/home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/build/CMakeFiles/CMakeScratch/TryCompile-GTq1WG"
+      binary: "/home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/build/CMakeFiles/CMakeScratch/TryCompile-GTq1WG"
     cmakeVariables:
       CMAKE_C_FLAGS: ""
       CMAKE_EXE_LINKER_FLAGS: ""
@@ -512,17 +512,17 @@ events:
       variable: "CMAKE_HAVE_LIBC_PTHREAD"
       cached: true
       stdout: |
-        Change Dir: '/home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/build/CMakeFiles/CMakeScratch/TryCompile-IFB3aq'
+        Change Dir: '/home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/build/CMakeFiles/CMakeScratch/TryCompile-GTq1WG'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_2f740/fast
-        /usr/bin/gmake  -f CMakeFiles/cmTC_2f740.dir/build.make CMakeFiles/cmTC_2f740.dir/build
-        gmake[1]: Entering directory '/home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/build/CMakeFiles/CMakeScratch/TryCompile-IFB3aq'
-        Building C object CMakeFiles/cmTC_2f740.dir/src.c.o
-        /usr/bin/arm-linux-gnueabihf-gcc -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_2f740.dir/src.c.o -c /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/build/CMakeFiles/CMakeScratch/TryCompile-IFB3aq/src.c
-        Linking C executable cmTC_2f740
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2f740.dir/link.txt --verbose=1
-        /usr/bin/arm-linux-gnueabihf-gcc CMakeFiles/cmTC_2f740.dir/src.c.o -o cmTC_2f740 
-        gmake[1]: Leaving directory '/home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/build/CMakeFiles/CMakeScratch/TryCompile-IFB3aq'
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_7364a/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_7364a.dir/build.make CMakeFiles/cmTC_7364a.dir/build
+        gmake[1]: Entering directory '/home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/build/CMakeFiles/CMakeScratch/TryCompile-GTq1WG'
+        Building C object CMakeFiles/cmTC_7364a.dir/src.c.o
+        /usr/bin/arm-linux-gnueabihf-gcc -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_7364a.dir/src.c.o -c /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/build/CMakeFiles/CMakeScratch/TryCompile-GTq1WG/src.c
+        Linking C executable cmTC_7364a
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7364a.dir/link.txt --verbose=1
+        /usr/bin/arm-linux-gnueabihf-gcc CMakeFiles/cmTC_7364a.dir/src.c.o -o cmTC_7364a 
+        gmake[1]: Leaving directory '/home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/build/CMakeFiles/CMakeScratch/TryCompile-GTq1WG'
         
       exitCode: 0
 ...

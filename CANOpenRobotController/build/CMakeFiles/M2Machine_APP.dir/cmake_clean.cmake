@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/M2Machine_APP.dir/home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/M2Machine/M2Machine.cpp.o"
-  "CMakeFiles/M2Machine_APP.dir/home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/M2Machine/M2Machine.cpp.o.d"
-  "CMakeFiles/M2Machine_APP.dir/home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/M2Machine/M2States.cpp.o"
-  "CMakeFiles/M2Machine_APP.dir/home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/M2Machine/M2States.cpp.o.d"
+  "CMakeFiles/M2Machine_APP.dir/home/yl/Desktop/M2_Robot_CPT/M2Machine/M2Machine.cpp.o"
+  "CMakeFiles/M2Machine_APP.dir/home/yl/Desktop/M2_Robot_CPT/M2Machine/M2Machine.cpp.o.d"
+  "CMakeFiles/M2Machine_APP.dir/home/yl/Desktop/M2_Robot_CPT/M2Machine/M2States.cpp.o"
+  "CMakeFiles/M2Machine_APP.dir/home/yl/Desktop/M2_Robot_CPT/M2Machine/M2States.cpp.o.d"
   "CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANcomms/CO_comm_helpers.c.o"
   "CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANcomms/CO_comm_helpers.c.o.d"
   "CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANcomms/CO_command.c.o"

@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController
+CMAKE_SOURCE_DIR = /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/build
+CMAKE_BINARY_DIR = /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/M2Machine_APP.dir/depend.make
@@ -69,612 +69,612 @@ include CMakeFiles/M2Machine_APP.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/M2Machine_APP.dir/flags.make
 
-CMakeFiles/M2Machine_APP.dir/home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/M2Machine/M2Machine.cpp.o: CMakeFiles/M2Machine_APP.dir/flags.make
-CMakeFiles/M2Machine_APP.dir/home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/M2Machine/M2Machine.cpp.o: /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/M2Machine/M2Machine.cpp
-CMakeFiles/M2Machine_APP.dir/home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/M2Machine/M2Machine.cpp.o: CMakeFiles/M2Machine_APP.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/M2Machine_APP.dir/home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/M2Machine/M2Machine.cpp.o"
-	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/M2Machine_APP.dir/home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/M2Machine/M2Machine.cpp.o -MF CMakeFiles/M2Machine_APP.dir/home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/M2Machine/M2Machine.cpp.o.d -o CMakeFiles/M2Machine_APP.dir/home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/M2Machine/M2Machine.cpp.o -c /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/M2Machine/M2Machine.cpp
+CMakeFiles/M2Machine_APP.dir/home/yl/Desktop/M2_Robot_CPT/M2Machine/M2Machine.cpp.o: CMakeFiles/M2Machine_APP.dir/flags.make
+CMakeFiles/M2Machine_APP.dir/home/yl/Desktop/M2_Robot_CPT/M2Machine/M2Machine.cpp.o: /home/yl/Desktop/M2_Robot_CPT/M2Machine/M2Machine.cpp
+CMakeFiles/M2Machine_APP.dir/home/yl/Desktop/M2_Robot_CPT/M2Machine/M2Machine.cpp.o: CMakeFiles/M2Machine_APP.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/M2Machine_APP.dir/home/yl/Desktop/M2_Robot_CPT/M2Machine/M2Machine.cpp.o"
+	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/M2Machine_APP.dir/home/yl/Desktop/M2_Robot_CPT/M2Machine/M2Machine.cpp.o -MF CMakeFiles/M2Machine_APP.dir/home/yl/Desktop/M2_Robot_CPT/M2Machine/M2Machine.cpp.o.d -o CMakeFiles/M2Machine_APP.dir/home/yl/Desktop/M2_Robot_CPT/M2Machine/M2Machine.cpp.o -c /home/yl/Desktop/M2_Robot_CPT/M2Machine/M2Machine.cpp
 
-CMakeFiles/M2Machine_APP.dir/home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/M2Machine/M2Machine.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/M2Machine_APP.dir/home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/M2Machine/M2Machine.cpp.i"
-	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/M2Machine/M2Machine.cpp > CMakeFiles/M2Machine_APP.dir/home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/M2Machine/M2Machine.cpp.i
+CMakeFiles/M2Machine_APP.dir/home/yl/Desktop/M2_Robot_CPT/M2Machine/M2Machine.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/M2Machine_APP.dir/home/yl/Desktop/M2_Robot_CPT/M2Machine/M2Machine.cpp.i"
+	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/yl/Desktop/M2_Robot_CPT/M2Machine/M2Machine.cpp > CMakeFiles/M2Machine_APP.dir/home/yl/Desktop/M2_Robot_CPT/M2Machine/M2Machine.cpp.i
 
-CMakeFiles/M2Machine_APP.dir/home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/M2Machine/M2Machine.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/M2Machine_APP.dir/home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/M2Machine/M2Machine.cpp.s"
-	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/M2Machine/M2Machine.cpp -o CMakeFiles/M2Machine_APP.dir/home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/M2Machine/M2Machine.cpp.s
+CMakeFiles/M2Machine_APP.dir/home/yl/Desktop/M2_Robot_CPT/M2Machine/M2Machine.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/M2Machine_APP.dir/home/yl/Desktop/M2_Robot_CPT/M2Machine/M2Machine.cpp.s"
+	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/yl/Desktop/M2_Robot_CPT/M2Machine/M2Machine.cpp -o CMakeFiles/M2Machine_APP.dir/home/yl/Desktop/M2_Robot_CPT/M2Machine/M2Machine.cpp.s
 
-CMakeFiles/M2Machine_APP.dir/home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/M2Machine/M2States.cpp.o: CMakeFiles/M2Machine_APP.dir/flags.make
-CMakeFiles/M2Machine_APP.dir/home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/M2Machine/M2States.cpp.o: /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/M2Machine/M2States.cpp
-CMakeFiles/M2Machine_APP.dir/home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/M2Machine/M2States.cpp.o: CMakeFiles/M2Machine_APP.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/M2Machine_APP.dir/home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/M2Machine/M2States.cpp.o"
-	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/M2Machine_APP.dir/home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/M2Machine/M2States.cpp.o -MF CMakeFiles/M2Machine_APP.dir/home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/M2Machine/M2States.cpp.o.d -o CMakeFiles/M2Machine_APP.dir/home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/M2Machine/M2States.cpp.o -c /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/M2Machine/M2States.cpp
+CMakeFiles/M2Machine_APP.dir/home/yl/Desktop/M2_Robot_CPT/M2Machine/M2States.cpp.o: CMakeFiles/M2Machine_APP.dir/flags.make
+CMakeFiles/M2Machine_APP.dir/home/yl/Desktop/M2_Robot_CPT/M2Machine/M2States.cpp.o: /home/yl/Desktop/M2_Robot_CPT/M2Machine/M2States.cpp
+CMakeFiles/M2Machine_APP.dir/home/yl/Desktop/M2_Robot_CPT/M2Machine/M2States.cpp.o: CMakeFiles/M2Machine_APP.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/M2Machine_APP.dir/home/yl/Desktop/M2_Robot_CPT/M2Machine/M2States.cpp.o"
+	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/M2Machine_APP.dir/home/yl/Desktop/M2_Robot_CPT/M2Machine/M2States.cpp.o -MF CMakeFiles/M2Machine_APP.dir/home/yl/Desktop/M2_Robot_CPT/M2Machine/M2States.cpp.o.d -o CMakeFiles/M2Machine_APP.dir/home/yl/Desktop/M2_Robot_CPT/M2Machine/M2States.cpp.o -c /home/yl/Desktop/M2_Robot_CPT/M2Machine/M2States.cpp
 
-CMakeFiles/M2Machine_APP.dir/home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/M2Machine/M2States.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/M2Machine_APP.dir/home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/M2Machine/M2States.cpp.i"
-	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/M2Machine/M2States.cpp > CMakeFiles/M2Machine_APP.dir/home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/M2Machine/M2States.cpp.i
+CMakeFiles/M2Machine_APP.dir/home/yl/Desktop/M2_Robot_CPT/M2Machine/M2States.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/M2Machine_APP.dir/home/yl/Desktop/M2_Robot_CPT/M2Machine/M2States.cpp.i"
+	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/yl/Desktop/M2_Robot_CPT/M2Machine/M2States.cpp > CMakeFiles/M2Machine_APP.dir/home/yl/Desktop/M2_Robot_CPT/M2Machine/M2States.cpp.i
 
-CMakeFiles/M2Machine_APP.dir/home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/M2Machine/M2States.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/M2Machine_APP.dir/home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/M2Machine/M2States.cpp.s"
-	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/M2Machine/M2States.cpp -o CMakeFiles/M2Machine_APP.dir/home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/M2Machine/M2States.cpp.s
+CMakeFiles/M2Machine_APP.dir/home/yl/Desktop/M2_Robot_CPT/M2Machine/M2States.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/M2Machine_APP.dir/home/yl/Desktop/M2_Robot_CPT/M2Machine/M2States.cpp.s"
+	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/yl/Desktop/M2_Robot_CPT/M2Machine/M2States.cpp -o CMakeFiles/M2Machine_APP.dir/home/yl/Desktop/M2_Robot_CPT/M2Machine/M2States.cpp.s
 
 CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANcomms/CO_comm_helpers.c.o: CMakeFiles/M2Machine_APP.dir/flags.make
-CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANcomms/CO_comm_helpers.c.o: /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/core/CANopen/CANcomms/CO_comm_helpers.c
+CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANcomms/CO_comm_helpers.c.o: /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/core/CANopen/CANcomms/CO_comm_helpers.c
 CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANcomms/CO_comm_helpers.c.o: CMakeFiles/M2Machine_APP.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANcomms/CO_comm_helpers.c.o"
-	/usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANcomms/CO_comm_helpers.c.o -MF CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANcomms/CO_comm_helpers.c.o.d -o CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANcomms/CO_comm_helpers.c.o -c /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/core/CANopen/CANcomms/CO_comm_helpers.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANcomms/CO_comm_helpers.c.o"
+	/usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANcomms/CO_comm_helpers.c.o -MF CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANcomms/CO_comm_helpers.c.o.d -o CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANcomms/CO_comm_helpers.c.o -c /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/core/CANopen/CANcomms/CO_comm_helpers.c
 
 CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANcomms/CO_comm_helpers.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANcomms/CO_comm_helpers.c.i"
-	/usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/core/CANopen/CANcomms/CO_comm_helpers.c > CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANcomms/CO_comm_helpers.c.i
+	/usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/core/CANopen/CANcomms/CO_comm_helpers.c > CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANcomms/CO_comm_helpers.c.i
 
 CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANcomms/CO_comm_helpers.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANcomms/CO_comm_helpers.c.s"
-	/usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/core/CANopen/CANcomms/CO_comm_helpers.c -o CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANcomms/CO_comm_helpers.c.s
+	/usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/core/CANopen/CANcomms/CO_comm_helpers.c -o CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANcomms/CO_comm_helpers.c.s
 
 CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANcomms/CO_command.c.o: CMakeFiles/M2Machine_APP.dir/flags.make
-CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANcomms/CO_command.c.o: /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/core/CANopen/CANcomms/CO_command.c
+CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANcomms/CO_command.c.o: /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/core/CANopen/CANcomms/CO_command.c
 CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANcomms/CO_command.c.o: CMakeFiles/M2Machine_APP.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANcomms/CO_command.c.o"
-	/usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANcomms/CO_command.c.o -MF CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANcomms/CO_command.c.o.d -o CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANcomms/CO_command.c.o -c /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/core/CANopen/CANcomms/CO_command.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANcomms/CO_command.c.o"
+	/usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANcomms/CO_command.c.o -MF CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANcomms/CO_command.c.o.d -o CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANcomms/CO_command.c.o -c /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/core/CANopen/CANcomms/CO_command.c
 
 CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANcomms/CO_command.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANcomms/CO_command.c.i"
-	/usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/core/CANopen/CANcomms/CO_command.c > CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANcomms/CO_command.c.i
+	/usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/core/CANopen/CANcomms/CO_command.c > CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANcomms/CO_command.c.i
 
 CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANcomms/CO_command.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANcomms/CO_command.c.s"
-	/usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/core/CANopen/CANcomms/CO_command.c -o CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANcomms/CO_command.c.s
+	/usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/core/CANopen/CANcomms/CO_command.c -o CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANcomms/CO_command.c.s
 
 CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANcomms/CO_master.c.o: CMakeFiles/M2Machine_APP.dir/flags.make
-CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANcomms/CO_master.c.o: /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/core/CANopen/CANcomms/CO_master.c
+CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANcomms/CO_master.c.o: /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/core/CANopen/CANcomms/CO_master.c
 CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANcomms/CO_master.c.o: CMakeFiles/M2Machine_APP.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANcomms/CO_master.c.o"
-	/usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANcomms/CO_master.c.o -MF CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANcomms/CO_master.c.o.d -o CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANcomms/CO_master.c.o -c /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/core/CANopen/CANcomms/CO_master.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANcomms/CO_master.c.o"
+	/usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANcomms/CO_master.c.o -MF CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANcomms/CO_master.c.o.d -o CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANcomms/CO_master.c.o -c /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/core/CANopen/CANcomms/CO_master.c
 
 CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANcomms/CO_master.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANcomms/CO_master.c.i"
-	/usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/core/CANopen/CANcomms/CO_master.c > CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANcomms/CO_master.c.i
+	/usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/core/CANopen/CANcomms/CO_master.c > CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANcomms/CO_master.c.i
 
 CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANcomms/CO_master.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANcomms/CO_master.c.s"
-	/usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/core/CANopen/CANcomms/CO_master.c -o CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANcomms/CO_master.c.s
+	/usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/core/CANopen/CANcomms/CO_master.c -o CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANcomms/CO_master.c.s
 
 CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANcomms/CO_time.c.o: CMakeFiles/M2Machine_APP.dir/flags.make
-CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANcomms/CO_time.c.o: /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/core/CANopen/CANcomms/CO_time.c
+CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANcomms/CO_time.c.o: /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/core/CANopen/CANcomms/CO_time.c
 CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANcomms/CO_time.c.o: CMakeFiles/M2Machine_APP.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANcomms/CO_time.c.o"
-	/usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANcomms/CO_time.c.o -MF CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANcomms/CO_time.c.o.d -o CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANcomms/CO_time.c.o -c /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/core/CANopen/CANcomms/CO_time.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANcomms/CO_time.c.o"
+	/usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANcomms/CO_time.c.o -MF CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANcomms/CO_time.c.o.d -o CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANcomms/CO_time.c.o -c /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/core/CANopen/CANcomms/CO_time.c
 
 CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANcomms/CO_time.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANcomms/CO_time.c.i"
-	/usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/core/CANopen/CANcomms/CO_time.c > CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANcomms/CO_time.c.i
+	/usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/core/CANopen/CANcomms/CO_time.c > CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANcomms/CO_time.c.i
 
 CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANcomms/CO_time.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANcomms/CO_time.c.s"
-	/usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/core/CANopen/CANcomms/CO_time.c -o CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANcomms/CO_time.c.s
+	/usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/core/CANopen/CANcomms/CO_time.c -o CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANcomms/CO_time.c.s
 
 CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/CANopen.c.o: CMakeFiles/M2Machine_APP.dir/flags.make
-CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/CANopen.c.o: /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/core/CANopen/CANopenNode/CANopen.c
+CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/CANopen.c.o: /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/core/CANopen/CANopenNode/CANopen.c
 CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/CANopen.c.o: CMakeFiles/M2Machine_APP.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/CANopen.c.o"
-	/usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/CANopen.c.o -MF CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/CANopen.c.o.d -o CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/CANopen.c.o -c /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/core/CANopen/CANopenNode/CANopen.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/CANopen.c.o"
+	/usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/CANopen.c.o -MF CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/CANopen.c.o.d -o CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/CANopen.c.o -c /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/core/CANopen/CANopenNode/CANopen.c
 
 CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/CANopen.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/CANopen.c.i"
-	/usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/core/CANopen/CANopenNode/CANopen.c > CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/CANopen.c.i
+	/usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/core/CANopen/CANopenNode/CANopen.c > CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/CANopen.c.i
 
 CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/CANopen.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/CANopen.c.s"
-	/usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/core/CANopen/CANopenNode/CANopen.c -o CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/CANopen.c.s
+	/usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/core/CANopen/CANopenNode/CANopen.c -o CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/CANopen.c.s
 
 CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/RPDO.cpp.o: CMakeFiles/M2Machine_APP.dir/flags.make
-CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/RPDO.cpp.o: /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/core/CANopen/CANopenNode/RPDO.cpp
+CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/RPDO.cpp.o: /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/core/CANopen/CANopenNode/RPDO.cpp
 CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/RPDO.cpp.o: CMakeFiles/M2Machine_APP.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/RPDO.cpp.o"
-	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/RPDO.cpp.o -MF CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/RPDO.cpp.o.d -o CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/RPDO.cpp.o -c /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/core/CANopen/CANopenNode/RPDO.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/RPDO.cpp.o"
+	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/RPDO.cpp.o -MF CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/RPDO.cpp.o.d -o CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/RPDO.cpp.o -c /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/core/CANopen/CANopenNode/RPDO.cpp
 
 CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/RPDO.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/RPDO.cpp.i"
-	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/core/CANopen/CANopenNode/RPDO.cpp > CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/RPDO.cpp.i
+	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/core/CANopen/CANopenNode/RPDO.cpp > CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/RPDO.cpp.i
 
 CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/RPDO.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/RPDO.cpp.s"
-	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/core/CANopen/CANopenNode/RPDO.cpp -o CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/RPDO.cpp.s
+	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/core/CANopen/CANopenNode/RPDO.cpp -o CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/RPDO.cpp.s
 
 CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/TPDO.cpp.o: CMakeFiles/M2Machine_APP.dir/flags.make
-CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/TPDO.cpp.o: /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/core/CANopen/CANopenNode/TPDO.cpp
+CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/TPDO.cpp.o: /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/core/CANopen/CANopenNode/TPDO.cpp
 CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/TPDO.cpp.o: CMakeFiles/M2Machine_APP.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/TPDO.cpp.o"
-	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/TPDO.cpp.o -MF CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/TPDO.cpp.o.d -o CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/TPDO.cpp.o -c /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/core/CANopen/CANopenNode/TPDO.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/TPDO.cpp.o"
+	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/TPDO.cpp.o -MF CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/TPDO.cpp.o.d -o CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/TPDO.cpp.o -c /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/core/CANopen/CANopenNode/TPDO.cpp
 
 CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/TPDO.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/TPDO.cpp.i"
-	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/core/CANopen/CANopenNode/TPDO.cpp > CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/TPDO.cpp.i
+	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/core/CANopen/CANopenNode/TPDO.cpp > CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/TPDO.cpp.i
 
 CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/TPDO.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/TPDO.cpp.s"
-	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/core/CANopen/CANopenNode/TPDO.cpp -o CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/TPDO.cpp.s
+	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/core/CANopen/CANopenNode/TPDO.cpp -o CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/TPDO.cpp.s
 
 CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_Emergency.c.o: CMakeFiles/M2Machine_APP.dir/flags.make
-CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_Emergency.c.o: /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/core/CANopen/CANopenNode/stack/CO_Emergency.c
+CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_Emergency.c.o: /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/core/CANopen/CANopenNode/stack/CO_Emergency.c
 CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_Emergency.c.o: CMakeFiles/M2Machine_APP.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_Emergency.c.o"
-	/usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_Emergency.c.o -MF CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_Emergency.c.o.d -o CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_Emergency.c.o -c /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/core/CANopen/CANopenNode/stack/CO_Emergency.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_Emergency.c.o"
+	/usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_Emergency.c.o -MF CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_Emergency.c.o.d -o CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_Emergency.c.o -c /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/core/CANopen/CANopenNode/stack/CO_Emergency.c
 
 CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_Emergency.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_Emergency.c.i"
-	/usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/core/CANopen/CANopenNode/stack/CO_Emergency.c > CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_Emergency.c.i
+	/usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/core/CANopen/CANopenNode/stack/CO_Emergency.c > CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_Emergency.c.i
 
 CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_Emergency.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_Emergency.c.s"
-	/usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/core/CANopen/CANopenNode/stack/CO_Emergency.c -o CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_Emergency.c.s
+	/usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/core/CANopen/CANopenNode/stack/CO_Emergency.c -o CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_Emergency.c.s
 
 CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_HBconsumer.c.o: CMakeFiles/M2Machine_APP.dir/flags.make
-CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_HBconsumer.c.o: /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/core/CANopen/CANopenNode/stack/CO_HBconsumer.c
+CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_HBconsumer.c.o: /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/core/CANopen/CANopenNode/stack/CO_HBconsumer.c
 CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_HBconsumer.c.o: CMakeFiles/M2Machine_APP.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_HBconsumer.c.o"
-	/usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_HBconsumer.c.o -MF CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_HBconsumer.c.o.d -o CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_HBconsumer.c.o -c /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/core/CANopen/CANopenNode/stack/CO_HBconsumer.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_HBconsumer.c.o"
+	/usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_HBconsumer.c.o -MF CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_HBconsumer.c.o.d -o CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_HBconsumer.c.o -c /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/core/CANopen/CANopenNode/stack/CO_HBconsumer.c
 
 CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_HBconsumer.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_HBconsumer.c.i"
-	/usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/core/CANopen/CANopenNode/stack/CO_HBconsumer.c > CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_HBconsumer.c.i
+	/usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/core/CANopen/CANopenNode/stack/CO_HBconsumer.c > CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_HBconsumer.c.i
 
 CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_HBconsumer.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_HBconsumer.c.s"
-	/usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/core/CANopen/CANopenNode/stack/CO_HBconsumer.c -o CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_HBconsumer.c.s
+	/usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/core/CANopen/CANopenNode/stack/CO_HBconsumer.c -o CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_HBconsumer.c.s
 
 CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_NMT_Heartbeat.c.o: CMakeFiles/M2Machine_APP.dir/flags.make
-CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_NMT_Heartbeat.c.o: /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/core/CANopen/CANopenNode/stack/CO_NMT_Heartbeat.c
+CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_NMT_Heartbeat.c.o: /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/core/CANopen/CANopenNode/stack/CO_NMT_Heartbeat.c
 CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_NMT_Heartbeat.c.o: CMakeFiles/M2Machine_APP.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_NMT_Heartbeat.c.o"
-	/usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_NMT_Heartbeat.c.o -MF CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_NMT_Heartbeat.c.o.d -o CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_NMT_Heartbeat.c.o -c /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/core/CANopen/CANopenNode/stack/CO_NMT_Heartbeat.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_NMT_Heartbeat.c.o"
+	/usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_NMT_Heartbeat.c.o -MF CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_NMT_Heartbeat.c.o.d -o CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_NMT_Heartbeat.c.o -c /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/core/CANopen/CANopenNode/stack/CO_NMT_Heartbeat.c
 
 CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_NMT_Heartbeat.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_NMT_Heartbeat.c.i"
-	/usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/core/CANopen/CANopenNode/stack/CO_NMT_Heartbeat.c > CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_NMT_Heartbeat.c.i
+	/usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/core/CANopen/CANopenNode/stack/CO_NMT_Heartbeat.c > CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_NMT_Heartbeat.c.i
 
 CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_NMT_Heartbeat.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_NMT_Heartbeat.c.s"
-	/usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/core/CANopen/CANopenNode/stack/CO_NMT_Heartbeat.c -o CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_NMT_Heartbeat.c.s
+	/usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/core/CANopen/CANopenNode/stack/CO_NMT_Heartbeat.c -o CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_NMT_Heartbeat.c.s
 
 CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_PDO.c.o: CMakeFiles/M2Machine_APP.dir/flags.make
-CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_PDO.c.o: /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/core/CANopen/CANopenNode/stack/CO_PDO.c
+CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_PDO.c.o: /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/core/CANopen/CANopenNode/stack/CO_PDO.c
 CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_PDO.c.o: CMakeFiles/M2Machine_APP.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_PDO.c.o"
-	/usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_PDO.c.o -MF CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_PDO.c.o.d -o CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_PDO.c.o -c /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/core/CANopen/CANopenNode/stack/CO_PDO.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_PDO.c.o"
+	/usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_PDO.c.o -MF CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_PDO.c.o.d -o CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_PDO.c.o -c /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/core/CANopen/CANopenNode/stack/CO_PDO.c
 
 CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_PDO.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_PDO.c.i"
-	/usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/core/CANopen/CANopenNode/stack/CO_PDO.c > CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_PDO.c.i
+	/usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/core/CANopen/CANopenNode/stack/CO_PDO.c > CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_PDO.c.i
 
 CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_PDO.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_PDO.c.s"
-	/usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/core/CANopen/CANopenNode/stack/CO_PDO.c -o CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_PDO.c.s
+	/usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/core/CANopen/CANopenNode/stack/CO_PDO.c -o CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_PDO.c.s
 
 CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_SDO.c.o: CMakeFiles/M2Machine_APP.dir/flags.make
-CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_SDO.c.o: /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/core/CANopen/CANopenNode/stack/CO_SDO.c
+CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_SDO.c.o: /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/core/CANopen/CANopenNode/stack/CO_SDO.c
 CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_SDO.c.o: CMakeFiles/M2Machine_APP.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_SDO.c.o"
-	/usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_SDO.c.o -MF CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_SDO.c.o.d -o CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_SDO.c.o -c /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/core/CANopen/CANopenNode/stack/CO_SDO.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_SDO.c.o"
+	/usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_SDO.c.o -MF CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_SDO.c.o.d -o CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_SDO.c.o -c /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/core/CANopen/CANopenNode/stack/CO_SDO.c
 
 CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_SDO.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_SDO.c.i"
-	/usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/core/CANopen/CANopenNode/stack/CO_SDO.c > CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_SDO.c.i
+	/usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/core/CANopen/CANopenNode/stack/CO_SDO.c > CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_SDO.c.i
 
 CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_SDO.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_SDO.c.s"
-	/usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/core/CANopen/CANopenNode/stack/CO_SDO.c -o CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_SDO.c.s
+	/usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/core/CANopen/CANopenNode/stack/CO_SDO.c -o CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_SDO.c.s
 
 CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_SDOmaster.c.o: CMakeFiles/M2Machine_APP.dir/flags.make
-CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_SDOmaster.c.o: /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/core/CANopen/CANopenNode/stack/CO_SDOmaster.c
+CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_SDOmaster.c.o: /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/core/CANopen/CANopenNode/stack/CO_SDOmaster.c
 CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_SDOmaster.c.o: CMakeFiles/M2Machine_APP.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building C object CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_SDOmaster.c.o"
-	/usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_SDOmaster.c.o -MF CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_SDOmaster.c.o.d -o CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_SDOmaster.c.o -c /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/core/CANopen/CANopenNode/stack/CO_SDOmaster.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building C object CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_SDOmaster.c.o"
+	/usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_SDOmaster.c.o -MF CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_SDOmaster.c.o.d -o CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_SDOmaster.c.o -c /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/core/CANopen/CANopenNode/stack/CO_SDOmaster.c
 
 CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_SDOmaster.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_SDOmaster.c.i"
-	/usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/core/CANopen/CANopenNode/stack/CO_SDOmaster.c > CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_SDOmaster.c.i
+	/usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/core/CANopen/CANopenNode/stack/CO_SDOmaster.c > CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_SDOmaster.c.i
 
 CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_SDOmaster.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_SDOmaster.c.s"
-	/usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/core/CANopen/CANopenNode/stack/CO_SDOmaster.c -o CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_SDOmaster.c.s
+	/usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/core/CANopen/CANopenNode/stack/CO_SDOmaster.c -o CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_SDOmaster.c.s
 
 CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_SYNC.c.o: CMakeFiles/M2Machine_APP.dir/flags.make
-CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_SYNC.c.o: /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/core/CANopen/CANopenNode/stack/CO_SYNC.c
+CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_SYNC.c.o: /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/core/CANopen/CANopenNode/stack/CO_SYNC.c
 CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_SYNC.c.o: CMakeFiles/M2Machine_APP.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building C object CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_SYNC.c.o"
-	/usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_SYNC.c.o -MF CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_SYNC.c.o.d -o CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_SYNC.c.o -c /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/core/CANopen/CANopenNode/stack/CO_SYNC.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building C object CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_SYNC.c.o"
+	/usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_SYNC.c.o -MF CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_SYNC.c.o.d -o CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_SYNC.c.o -c /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/core/CANopen/CANopenNode/stack/CO_SYNC.c
 
 CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_SYNC.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_SYNC.c.i"
-	/usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/core/CANopen/CANopenNode/stack/CO_SYNC.c > CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_SYNC.c.i
+	/usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/core/CANopen/CANopenNode/stack/CO_SYNC.c > CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_SYNC.c.i
 
 CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_SYNC.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_SYNC.c.s"
-	/usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/core/CANopen/CANopenNode/stack/CO_SYNC.c -o CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_SYNC.c.s
+	/usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/core/CANopen/CANopenNode/stack/CO_SYNC.c -o CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_SYNC.c.s
 
 CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_trace.c.o: CMakeFiles/M2Machine_APP.dir/flags.make
-CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_trace.c.o: /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/core/CANopen/CANopenNode/stack/CO_trace.c
+CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_trace.c.o: /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/core/CANopen/CANopenNode/stack/CO_trace.c
 CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_trace.c.o: CMakeFiles/M2Machine_APP.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building C object CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_trace.c.o"
-	/usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_trace.c.o -MF CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_trace.c.o.d -o CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_trace.c.o -c /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/core/CANopen/CANopenNode/stack/CO_trace.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building C object CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_trace.c.o"
+	/usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_trace.c.o -MF CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_trace.c.o.d -o CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_trace.c.o -c /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/core/CANopen/CANopenNode/stack/CO_trace.c
 
 CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_trace.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_trace.c.i"
-	/usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/core/CANopen/CANopenNode/stack/CO_trace.c > CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_trace.c.i
+	/usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/core/CANopen/CANopenNode/stack/CO_trace.c > CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_trace.c.i
 
 CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_trace.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_trace.c.s"
-	/usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/core/CANopen/CANopenNode/stack/CO_trace.c -o CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_trace.c.s
+	/usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/core/CANopen/CANopenNode/stack/CO_trace.c -o CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/CO_trace.c.s
 
 CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/crc16-ccitt.c.o: CMakeFiles/M2Machine_APP.dir/flags.make
-CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/crc16-ccitt.c.o: /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/core/CANopen/CANopenNode/stack/crc16-ccitt.c
+CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/crc16-ccitt.c.o: /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/core/CANopen/CANopenNode/stack/crc16-ccitt.c
 CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/crc16-ccitt.c.o: CMakeFiles/M2Machine_APP.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building C object CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/crc16-ccitt.c.o"
-	/usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/crc16-ccitt.c.o -MF CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/crc16-ccitt.c.o.d -o CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/crc16-ccitt.c.o -c /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/core/CANopen/CANopenNode/stack/crc16-ccitt.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building C object CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/crc16-ccitt.c.o"
+	/usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/crc16-ccitt.c.o -MF CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/crc16-ccitt.c.o.d -o CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/crc16-ccitt.c.o -c /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/core/CANopen/CANopenNode/stack/crc16-ccitt.c
 
 CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/crc16-ccitt.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/crc16-ccitt.c.i"
-	/usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/core/CANopen/CANopenNode/stack/crc16-ccitt.c > CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/crc16-ccitt.c.i
+	/usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/core/CANopen/CANopenNode/stack/crc16-ccitt.c > CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/crc16-ccitt.c.i
 
 CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/crc16-ccitt.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/crc16-ccitt.c.s"
-	/usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/core/CANopen/CANopenNode/stack/crc16-ccitt.c -o CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/crc16-ccitt.c.s
+	/usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/core/CANopen/CANopenNode/stack/crc16-ccitt.c -o CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/crc16-ccitt.c.s
 
 CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/socketCAN/CO_Linux_tasks.c.o: CMakeFiles/M2Machine_APP.dir/flags.make
-CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/socketCAN/CO_Linux_tasks.c.o: /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/core/CANopen/CANopenNode/stack/socketCAN/CO_Linux_tasks.c
+CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/socketCAN/CO_Linux_tasks.c.o: /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/core/CANopen/CANopenNode/stack/socketCAN/CO_Linux_tasks.c
 CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/socketCAN/CO_Linux_tasks.c.o: CMakeFiles/M2Machine_APP.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building C object CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/socketCAN/CO_Linux_tasks.c.o"
-	/usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/socketCAN/CO_Linux_tasks.c.o -MF CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/socketCAN/CO_Linux_tasks.c.o.d -o CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/socketCAN/CO_Linux_tasks.c.o -c /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/core/CANopen/CANopenNode/stack/socketCAN/CO_Linux_tasks.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building C object CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/socketCAN/CO_Linux_tasks.c.o"
+	/usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/socketCAN/CO_Linux_tasks.c.o -MF CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/socketCAN/CO_Linux_tasks.c.o.d -o CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/socketCAN/CO_Linux_tasks.c.o -c /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/core/CANopen/CANopenNode/stack/socketCAN/CO_Linux_tasks.c
 
 CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/socketCAN/CO_Linux_tasks.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/socketCAN/CO_Linux_tasks.c.i"
-	/usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/core/CANopen/CANopenNode/stack/socketCAN/CO_Linux_tasks.c > CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/socketCAN/CO_Linux_tasks.c.i
+	/usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/core/CANopen/CANopenNode/stack/socketCAN/CO_Linux_tasks.c > CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/socketCAN/CO_Linux_tasks.c.i
 
 CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/socketCAN/CO_Linux_tasks.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/socketCAN/CO_Linux_tasks.c.s"
-	/usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/core/CANopen/CANopenNode/stack/socketCAN/CO_Linux_tasks.c -o CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/socketCAN/CO_Linux_tasks.c.s
+	/usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/core/CANopen/CANopenNode/stack/socketCAN/CO_Linux_tasks.c -o CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/socketCAN/CO_Linux_tasks.c.s
 
 CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/socketCAN/CO_OD_storage.c.o: CMakeFiles/M2Machine_APP.dir/flags.make
-CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/socketCAN/CO_OD_storage.c.o: /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/core/CANopen/CANopenNode/stack/socketCAN/CO_OD_storage.c
+CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/socketCAN/CO_OD_storage.c.o: /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/core/CANopen/CANopenNode/stack/socketCAN/CO_OD_storage.c
 CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/socketCAN/CO_OD_storage.c.o: CMakeFiles/M2Machine_APP.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building C object CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/socketCAN/CO_OD_storage.c.o"
-	/usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/socketCAN/CO_OD_storage.c.o -MF CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/socketCAN/CO_OD_storage.c.o.d -o CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/socketCAN/CO_OD_storage.c.o -c /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/core/CANopen/CANopenNode/stack/socketCAN/CO_OD_storage.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building C object CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/socketCAN/CO_OD_storage.c.o"
+	/usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/socketCAN/CO_OD_storage.c.o -MF CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/socketCAN/CO_OD_storage.c.o.d -o CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/socketCAN/CO_OD_storage.c.o -c /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/core/CANopen/CANopenNode/stack/socketCAN/CO_OD_storage.c
 
 CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/socketCAN/CO_OD_storage.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/socketCAN/CO_OD_storage.c.i"
-	/usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/core/CANopen/CANopenNode/stack/socketCAN/CO_OD_storage.c > CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/socketCAN/CO_OD_storage.c.i
+	/usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/core/CANopen/CANopenNode/stack/socketCAN/CO_OD_storage.c > CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/socketCAN/CO_OD_storage.c.i
 
 CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/socketCAN/CO_OD_storage.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/socketCAN/CO_OD_storage.c.s"
-	/usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/core/CANopen/CANopenNode/stack/socketCAN/CO_OD_storage.c -o CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/socketCAN/CO_OD_storage.c.s
+	/usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/core/CANopen/CANopenNode/stack/socketCAN/CO_OD_storage.c -o CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/socketCAN/CO_OD_storage.c.s
 
 CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/socketCAN/CO_driver.c.o: CMakeFiles/M2Machine_APP.dir/flags.make
-CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/socketCAN/CO_driver.c.o: /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/core/CANopen/CANopenNode/stack/socketCAN/CO_driver.c
+CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/socketCAN/CO_driver.c.o: /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/core/CANopen/CANopenNode/stack/socketCAN/CO_driver.c
 CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/socketCAN/CO_driver.c.o: CMakeFiles/M2Machine_APP.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building C object CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/socketCAN/CO_driver.c.o"
-	/usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/socketCAN/CO_driver.c.o -MF CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/socketCAN/CO_driver.c.o.d -o CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/socketCAN/CO_driver.c.o -c /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/core/CANopen/CANopenNode/stack/socketCAN/CO_driver.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building C object CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/socketCAN/CO_driver.c.o"
+	/usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/socketCAN/CO_driver.c.o -MF CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/socketCAN/CO_driver.c.o.d -o CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/socketCAN/CO_driver.c.o -c /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/core/CANopen/CANopenNode/stack/socketCAN/CO_driver.c
 
 CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/socketCAN/CO_driver.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/socketCAN/CO_driver.c.i"
-	/usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/core/CANopen/CANopenNode/stack/socketCAN/CO_driver.c > CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/socketCAN/CO_driver.c.i
+	/usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/core/CANopen/CANopenNode/stack/socketCAN/CO_driver.c > CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/socketCAN/CO_driver.c.i
 
 CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/socketCAN/CO_driver.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/socketCAN/CO_driver.c.s"
-	/usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/core/CANopen/CANopenNode/stack/socketCAN/CO_driver.c -o CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/socketCAN/CO_driver.c.s
+	/usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/core/CANopen/CANopenNode/stack/socketCAN/CO_driver.c -o CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANopenNode/stack/socketCAN/CO_driver.c.s
 
 CMakeFiles/M2Machine_APP.dir/src/core/CANopen/objDict/CO_OD.c.o: CMakeFiles/M2Machine_APP.dir/flags.make
-CMakeFiles/M2Machine_APP.dir/src/core/CANopen/objDict/CO_OD.c.o: /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/core/CANopen/objDict/CO_OD.c
+CMakeFiles/M2Machine_APP.dir/src/core/CANopen/objDict/CO_OD.c.o: /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/core/CANopen/objDict/CO_OD.c
 CMakeFiles/M2Machine_APP.dir/src/core/CANopen/objDict/CO_OD.c.o: CMakeFiles/M2Machine_APP.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building C object CMakeFiles/M2Machine_APP.dir/src/core/CANopen/objDict/CO_OD.c.o"
-	/usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/M2Machine_APP.dir/src/core/CANopen/objDict/CO_OD.c.o -MF CMakeFiles/M2Machine_APP.dir/src/core/CANopen/objDict/CO_OD.c.o.d -o CMakeFiles/M2Machine_APP.dir/src/core/CANopen/objDict/CO_OD.c.o -c /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/core/CANopen/objDict/CO_OD.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building C object CMakeFiles/M2Machine_APP.dir/src/core/CANopen/objDict/CO_OD.c.o"
+	/usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/M2Machine_APP.dir/src/core/CANopen/objDict/CO_OD.c.o -MF CMakeFiles/M2Machine_APP.dir/src/core/CANopen/objDict/CO_OD.c.o.d -o CMakeFiles/M2Machine_APP.dir/src/core/CANopen/objDict/CO_OD.c.o -c /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/core/CANopen/objDict/CO_OD.c
 
 CMakeFiles/M2Machine_APP.dir/src/core/CANopen/objDict/CO_OD.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/M2Machine_APP.dir/src/core/CANopen/objDict/CO_OD.c.i"
-	/usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/core/CANopen/objDict/CO_OD.c > CMakeFiles/M2Machine_APP.dir/src/core/CANopen/objDict/CO_OD.c.i
+	/usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/core/CANopen/objDict/CO_OD.c > CMakeFiles/M2Machine_APP.dir/src/core/CANopen/objDict/CO_OD.c.i
 
 CMakeFiles/M2Machine_APP.dir/src/core/CANopen/objDict/CO_OD.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/M2Machine_APP.dir/src/core/CANopen/objDict/CO_OD.c.s"
-	/usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/core/CANopen/objDict/CO_OD.c -o CMakeFiles/M2Machine_APP.dir/src/core/CANopen/objDict/CO_OD.c.s
+	/usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/core/CANopen/objDict/CO_OD.c -o CMakeFiles/M2Machine_APP.dir/src/core/CANopen/objDict/CO_OD.c.s
 
 CMakeFiles/M2Machine_APP.dir/src/core/application.cpp.o: CMakeFiles/M2Machine_APP.dir/flags.make
-CMakeFiles/M2Machine_APP.dir/src/core/application.cpp.o: /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/core/application.cpp
+CMakeFiles/M2Machine_APP.dir/src/core/application.cpp.o: /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/core/application.cpp
 CMakeFiles/M2Machine_APP.dir/src/core/application.cpp.o: CMakeFiles/M2Machine_APP.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/M2Machine_APP.dir/src/core/application.cpp.o"
-	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/M2Machine_APP.dir/src/core/application.cpp.o -MF CMakeFiles/M2Machine_APP.dir/src/core/application.cpp.o.d -o CMakeFiles/M2Machine_APP.dir/src/core/application.cpp.o -c /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/core/application.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/M2Machine_APP.dir/src/core/application.cpp.o"
+	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/M2Machine_APP.dir/src/core/application.cpp.o -MF CMakeFiles/M2Machine_APP.dir/src/core/application.cpp.o.d -o CMakeFiles/M2Machine_APP.dir/src/core/application.cpp.o -c /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/core/application.cpp
 
 CMakeFiles/M2Machine_APP.dir/src/core/application.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/M2Machine_APP.dir/src/core/application.cpp.i"
-	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/core/application.cpp > CMakeFiles/M2Machine_APP.dir/src/core/application.cpp.i
+	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/core/application.cpp > CMakeFiles/M2Machine_APP.dir/src/core/application.cpp.i
 
 CMakeFiles/M2Machine_APP.dir/src/core/application.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/M2Machine_APP.dir/src/core/application.cpp.s"
-	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/core/application.cpp -o CMakeFiles/M2Machine_APP.dir/src/core/application.cpp.s
+	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/core/application.cpp -o CMakeFiles/M2Machine_APP.dir/src/core/application.cpp.s
 
 CMakeFiles/M2Machine_APP.dir/src/core/logging.cpp.o: CMakeFiles/M2Machine_APP.dir/flags.make
-CMakeFiles/M2Machine_APP.dir/src/core/logging.cpp.o: /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/core/logging.cpp
+CMakeFiles/M2Machine_APP.dir/src/core/logging.cpp.o: /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/core/logging.cpp
 CMakeFiles/M2Machine_APP.dir/src/core/logging.cpp.o: CMakeFiles/M2Machine_APP.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/M2Machine_APP.dir/src/core/logging.cpp.o"
-	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/M2Machine_APP.dir/src/core/logging.cpp.o -MF CMakeFiles/M2Machine_APP.dir/src/core/logging.cpp.o.d -o CMakeFiles/M2Machine_APP.dir/src/core/logging.cpp.o -c /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/core/logging.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/M2Machine_APP.dir/src/core/logging.cpp.o"
+	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/M2Machine_APP.dir/src/core/logging.cpp.o -MF CMakeFiles/M2Machine_APP.dir/src/core/logging.cpp.o.d -o CMakeFiles/M2Machine_APP.dir/src/core/logging.cpp.o -c /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/core/logging.cpp
 
 CMakeFiles/M2Machine_APP.dir/src/core/logging.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/M2Machine_APP.dir/src/core/logging.cpp.i"
-	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/core/logging.cpp > CMakeFiles/M2Machine_APP.dir/src/core/logging.cpp.i
+	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/core/logging.cpp > CMakeFiles/M2Machine_APP.dir/src/core/logging.cpp.i
 
 CMakeFiles/M2Machine_APP.dir/src/core/logging.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/M2Machine_APP.dir/src/core/logging.cpp.s"
-	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/core/logging.cpp -o CMakeFiles/M2Machine_APP.dir/src/core/logging.cpp.s
+	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/core/logging.cpp -o CMakeFiles/M2Machine_APP.dir/src/core/logging.cpp.s
 
 CMakeFiles/M2Machine_APP.dir/src/core/main.cpp.o: CMakeFiles/M2Machine_APP.dir/flags.make
-CMakeFiles/M2Machine_APP.dir/src/core/main.cpp.o: /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/core/main.cpp
+CMakeFiles/M2Machine_APP.dir/src/core/main.cpp.o: /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/core/main.cpp
 CMakeFiles/M2Machine_APP.dir/src/core/main.cpp.o: CMakeFiles/M2Machine_APP.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/M2Machine_APP.dir/src/core/main.cpp.o"
-	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/M2Machine_APP.dir/src/core/main.cpp.o -MF CMakeFiles/M2Machine_APP.dir/src/core/main.cpp.o.d -o CMakeFiles/M2Machine_APP.dir/src/core/main.cpp.o -c /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/core/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/M2Machine_APP.dir/src/core/main.cpp.o"
+	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/M2Machine_APP.dir/src/core/main.cpp.o -MF CMakeFiles/M2Machine_APP.dir/src/core/main.cpp.o.d -o CMakeFiles/M2Machine_APP.dir/src/core/main.cpp.o -c /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/core/main.cpp
 
 CMakeFiles/M2Machine_APP.dir/src/core/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/M2Machine_APP.dir/src/core/main.cpp.i"
-	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/core/main.cpp > CMakeFiles/M2Machine_APP.dir/src/core/main.cpp.i
+	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/core/main.cpp > CMakeFiles/M2Machine_APP.dir/src/core/main.cpp.i
 
 CMakeFiles/M2Machine_APP.dir/src/core/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/M2Machine_APP.dir/src/core/main.cpp.s"
-	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/core/main.cpp -o CMakeFiles/M2Machine_APP.dir/src/core/main.cpp.s
+	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/core/main.cpp -o CMakeFiles/M2Machine_APP.dir/src/core/main.cpp.s
 
 CMakeFiles/M2Machine_APP.dir/src/core/robot/CANDevice.cpp.o: CMakeFiles/M2Machine_APP.dir/flags.make
-CMakeFiles/M2Machine_APP.dir/src/core/robot/CANDevice.cpp.o: /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/core/robot/CANDevice.cpp
+CMakeFiles/M2Machine_APP.dir/src/core/robot/CANDevice.cpp.o: /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/core/robot/CANDevice.cpp
 CMakeFiles/M2Machine_APP.dir/src/core/robot/CANDevice.cpp.o: CMakeFiles/M2Machine_APP.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object CMakeFiles/M2Machine_APP.dir/src/core/robot/CANDevice.cpp.o"
-	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/M2Machine_APP.dir/src/core/robot/CANDevice.cpp.o -MF CMakeFiles/M2Machine_APP.dir/src/core/robot/CANDevice.cpp.o.d -o CMakeFiles/M2Machine_APP.dir/src/core/robot/CANDevice.cpp.o -c /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/core/robot/CANDevice.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object CMakeFiles/M2Machine_APP.dir/src/core/robot/CANDevice.cpp.o"
+	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/M2Machine_APP.dir/src/core/robot/CANDevice.cpp.o -MF CMakeFiles/M2Machine_APP.dir/src/core/robot/CANDevice.cpp.o.d -o CMakeFiles/M2Machine_APP.dir/src/core/robot/CANDevice.cpp.o -c /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/core/robot/CANDevice.cpp
 
 CMakeFiles/M2Machine_APP.dir/src/core/robot/CANDevice.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/M2Machine_APP.dir/src/core/robot/CANDevice.cpp.i"
-	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/core/robot/CANDevice.cpp > CMakeFiles/M2Machine_APP.dir/src/core/robot/CANDevice.cpp.i
+	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/core/robot/CANDevice.cpp > CMakeFiles/M2Machine_APP.dir/src/core/robot/CANDevice.cpp.i
 
 CMakeFiles/M2Machine_APP.dir/src/core/robot/CANDevice.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/M2Machine_APP.dir/src/core/robot/CANDevice.cpp.s"
-	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/core/robot/CANDevice.cpp -o CMakeFiles/M2Machine_APP.dir/src/core/robot/CANDevice.cpp.s
+	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/core/robot/CANDevice.cpp -o CMakeFiles/M2Machine_APP.dir/src/core/robot/CANDevice.cpp.s
 
 CMakeFiles/M2Machine_APP.dir/src/core/robot/Drive.cpp.o: CMakeFiles/M2Machine_APP.dir/flags.make
-CMakeFiles/M2Machine_APP.dir/src/core/robot/Drive.cpp.o: /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/core/robot/Drive.cpp
+CMakeFiles/M2Machine_APP.dir/src/core/robot/Drive.cpp.o: /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/core/robot/Drive.cpp
 CMakeFiles/M2Machine_APP.dir/src/core/robot/Drive.cpp.o: CMakeFiles/M2Machine_APP.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object CMakeFiles/M2Machine_APP.dir/src/core/robot/Drive.cpp.o"
-	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/M2Machine_APP.dir/src/core/robot/Drive.cpp.o -MF CMakeFiles/M2Machine_APP.dir/src/core/robot/Drive.cpp.o.d -o CMakeFiles/M2Machine_APP.dir/src/core/robot/Drive.cpp.o -c /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/core/robot/Drive.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object CMakeFiles/M2Machine_APP.dir/src/core/robot/Drive.cpp.o"
+	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/M2Machine_APP.dir/src/core/robot/Drive.cpp.o -MF CMakeFiles/M2Machine_APP.dir/src/core/robot/Drive.cpp.o.d -o CMakeFiles/M2Machine_APP.dir/src/core/robot/Drive.cpp.o -c /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/core/robot/Drive.cpp
 
 CMakeFiles/M2Machine_APP.dir/src/core/robot/Drive.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/M2Machine_APP.dir/src/core/robot/Drive.cpp.i"
-	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/core/robot/Drive.cpp > CMakeFiles/M2Machine_APP.dir/src/core/robot/Drive.cpp.i
+	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/core/robot/Drive.cpp > CMakeFiles/M2Machine_APP.dir/src/core/robot/Drive.cpp.i
 
 CMakeFiles/M2Machine_APP.dir/src/core/robot/Drive.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/M2Machine_APP.dir/src/core/robot/Drive.cpp.s"
-	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/core/robot/Drive.cpp -o CMakeFiles/M2Machine_APP.dir/src/core/robot/Drive.cpp.s
+	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/core/robot/Drive.cpp -o CMakeFiles/M2Machine_APP.dir/src/core/robot/Drive.cpp.s
 
 CMakeFiles/M2Machine_APP.dir/src/core/robot/InputDevice.cpp.o: CMakeFiles/M2Machine_APP.dir/flags.make
-CMakeFiles/M2Machine_APP.dir/src/core/robot/InputDevice.cpp.o: /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/core/robot/InputDevice.cpp
+CMakeFiles/M2Machine_APP.dir/src/core/robot/InputDevice.cpp.o: /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/core/robot/InputDevice.cpp
 CMakeFiles/M2Machine_APP.dir/src/core/robot/InputDevice.cpp.o: CMakeFiles/M2Machine_APP.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building CXX object CMakeFiles/M2Machine_APP.dir/src/core/robot/InputDevice.cpp.o"
-	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/M2Machine_APP.dir/src/core/robot/InputDevice.cpp.o -MF CMakeFiles/M2Machine_APP.dir/src/core/robot/InputDevice.cpp.o.d -o CMakeFiles/M2Machine_APP.dir/src/core/robot/InputDevice.cpp.o -c /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/core/robot/InputDevice.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building CXX object CMakeFiles/M2Machine_APP.dir/src/core/robot/InputDevice.cpp.o"
+	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/M2Machine_APP.dir/src/core/robot/InputDevice.cpp.o -MF CMakeFiles/M2Machine_APP.dir/src/core/robot/InputDevice.cpp.o.d -o CMakeFiles/M2Machine_APP.dir/src/core/robot/InputDevice.cpp.o -c /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/core/robot/InputDevice.cpp
 
 CMakeFiles/M2Machine_APP.dir/src/core/robot/InputDevice.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/M2Machine_APP.dir/src/core/robot/InputDevice.cpp.i"
-	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/core/robot/InputDevice.cpp > CMakeFiles/M2Machine_APP.dir/src/core/robot/InputDevice.cpp.i
+	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/core/robot/InputDevice.cpp > CMakeFiles/M2Machine_APP.dir/src/core/robot/InputDevice.cpp.i
 
 CMakeFiles/M2Machine_APP.dir/src/core/robot/InputDevice.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/M2Machine_APP.dir/src/core/robot/InputDevice.cpp.s"
-	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/core/robot/InputDevice.cpp -o CMakeFiles/M2Machine_APP.dir/src/core/robot/InputDevice.cpp.s
+	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/core/robot/InputDevice.cpp -o CMakeFiles/M2Machine_APP.dir/src/core/robot/InputDevice.cpp.s
 
 CMakeFiles/M2Machine_APP.dir/src/core/robot/Joint.cpp.o: CMakeFiles/M2Machine_APP.dir/flags.make
-CMakeFiles/M2Machine_APP.dir/src/core/robot/Joint.cpp.o: /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/core/robot/Joint.cpp
+CMakeFiles/M2Machine_APP.dir/src/core/robot/Joint.cpp.o: /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/core/robot/Joint.cpp
 CMakeFiles/M2Machine_APP.dir/src/core/robot/Joint.cpp.o: CMakeFiles/M2Machine_APP.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building CXX object CMakeFiles/M2Machine_APP.dir/src/core/robot/Joint.cpp.o"
-	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/M2Machine_APP.dir/src/core/robot/Joint.cpp.o -MF CMakeFiles/M2Machine_APP.dir/src/core/robot/Joint.cpp.o.d -o CMakeFiles/M2Machine_APP.dir/src/core/robot/Joint.cpp.o -c /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/core/robot/Joint.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building CXX object CMakeFiles/M2Machine_APP.dir/src/core/robot/Joint.cpp.o"
+	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/M2Machine_APP.dir/src/core/robot/Joint.cpp.o -MF CMakeFiles/M2Machine_APP.dir/src/core/robot/Joint.cpp.o.d -o CMakeFiles/M2Machine_APP.dir/src/core/robot/Joint.cpp.o -c /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/core/robot/Joint.cpp
 
 CMakeFiles/M2Machine_APP.dir/src/core/robot/Joint.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/M2Machine_APP.dir/src/core/robot/Joint.cpp.i"
-	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/core/robot/Joint.cpp > CMakeFiles/M2Machine_APP.dir/src/core/robot/Joint.cpp.i
+	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/core/robot/Joint.cpp > CMakeFiles/M2Machine_APP.dir/src/core/robot/Joint.cpp.i
 
 CMakeFiles/M2Machine_APP.dir/src/core/robot/Joint.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/M2Machine_APP.dir/src/core/robot/Joint.cpp.s"
-	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/core/robot/Joint.cpp -o CMakeFiles/M2Machine_APP.dir/src/core/robot/Joint.cpp.s
+	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/core/robot/Joint.cpp -o CMakeFiles/M2Machine_APP.dir/src/core/robot/Joint.cpp.s
 
 CMakeFiles/M2Machine_APP.dir/src/core/robot/Robot.cpp.o: CMakeFiles/M2Machine_APP.dir/flags.make
-CMakeFiles/M2Machine_APP.dir/src/core/robot/Robot.cpp.o: /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/core/robot/Robot.cpp
+CMakeFiles/M2Machine_APP.dir/src/core/robot/Robot.cpp.o: /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/core/robot/Robot.cpp
 CMakeFiles/M2Machine_APP.dir/src/core/robot/Robot.cpp.o: CMakeFiles/M2Machine_APP.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building CXX object CMakeFiles/M2Machine_APP.dir/src/core/robot/Robot.cpp.o"
-	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/M2Machine_APP.dir/src/core/robot/Robot.cpp.o -MF CMakeFiles/M2Machine_APP.dir/src/core/robot/Robot.cpp.o.d -o CMakeFiles/M2Machine_APP.dir/src/core/robot/Robot.cpp.o -c /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/core/robot/Robot.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building CXX object CMakeFiles/M2Machine_APP.dir/src/core/robot/Robot.cpp.o"
+	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/M2Machine_APP.dir/src/core/robot/Robot.cpp.o -MF CMakeFiles/M2Machine_APP.dir/src/core/robot/Robot.cpp.o.d -o CMakeFiles/M2Machine_APP.dir/src/core/robot/Robot.cpp.o -c /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/core/robot/Robot.cpp
 
 CMakeFiles/M2Machine_APP.dir/src/core/robot/Robot.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/M2Machine_APP.dir/src/core/robot/Robot.cpp.i"
-	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/core/robot/Robot.cpp > CMakeFiles/M2Machine_APP.dir/src/core/robot/Robot.cpp.i
+	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/core/robot/Robot.cpp > CMakeFiles/M2Machine_APP.dir/src/core/robot/Robot.cpp.i
 
 CMakeFiles/M2Machine_APP.dir/src/core/robot/Robot.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/M2Machine_APP.dir/src/core/robot/Robot.cpp.s"
-	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/core/robot/Robot.cpp -o CMakeFiles/M2Machine_APP.dir/src/core/robot/Robot.cpp.s
+	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/core/robot/Robot.cpp -o CMakeFiles/M2Machine_APP.dir/src/core/robot/Robot.cpp.s
 
 CMakeFiles/M2Machine_APP.dir/src/core/stateMachine/StateMachine.cpp.o: CMakeFiles/M2Machine_APP.dir/flags.make
-CMakeFiles/M2Machine_APP.dir/src/core/stateMachine/StateMachine.cpp.o: /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/core/stateMachine/StateMachine.cpp
+CMakeFiles/M2Machine_APP.dir/src/core/stateMachine/StateMachine.cpp.o: /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/core/stateMachine/StateMachine.cpp
 CMakeFiles/M2Machine_APP.dir/src/core/stateMachine/StateMachine.cpp.o: CMakeFiles/M2Machine_APP.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building CXX object CMakeFiles/M2Machine_APP.dir/src/core/stateMachine/StateMachine.cpp.o"
-	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/M2Machine_APP.dir/src/core/stateMachine/StateMachine.cpp.o -MF CMakeFiles/M2Machine_APP.dir/src/core/stateMachine/StateMachine.cpp.o.d -o CMakeFiles/M2Machine_APP.dir/src/core/stateMachine/StateMachine.cpp.o -c /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/core/stateMachine/StateMachine.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building CXX object CMakeFiles/M2Machine_APP.dir/src/core/stateMachine/StateMachine.cpp.o"
+	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/M2Machine_APP.dir/src/core/stateMachine/StateMachine.cpp.o -MF CMakeFiles/M2Machine_APP.dir/src/core/stateMachine/StateMachine.cpp.o.d -o CMakeFiles/M2Machine_APP.dir/src/core/stateMachine/StateMachine.cpp.o -c /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/core/stateMachine/StateMachine.cpp
 
 CMakeFiles/M2Machine_APP.dir/src/core/stateMachine/StateMachine.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/M2Machine_APP.dir/src/core/stateMachine/StateMachine.cpp.i"
-	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/core/stateMachine/StateMachine.cpp > CMakeFiles/M2Machine_APP.dir/src/core/stateMachine/StateMachine.cpp.i
+	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/core/stateMachine/StateMachine.cpp > CMakeFiles/M2Machine_APP.dir/src/core/stateMachine/StateMachine.cpp.i
 
 CMakeFiles/M2Machine_APP.dir/src/core/stateMachine/StateMachine.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/M2Machine_APP.dir/src/core/stateMachine/StateMachine.cpp.s"
-	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/core/stateMachine/StateMachine.cpp -o CMakeFiles/M2Machine_APP.dir/src/core/stateMachine/StateMachine.cpp.s
+	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/core/stateMachine/StateMachine.cpp -o CMakeFiles/M2Machine_APP.dir/src/core/stateMachine/StateMachine.cpp.s
 
 CMakeFiles/M2Machine_APP.dir/src/hardware/IO/FourierForceSensor.cpp.o: CMakeFiles/M2Machine_APP.dir/flags.make
-CMakeFiles/M2Machine_APP.dir/src/hardware/IO/FourierForceSensor.cpp.o: /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/hardware/IO/FourierForceSensor.cpp
+CMakeFiles/M2Machine_APP.dir/src/hardware/IO/FourierForceSensor.cpp.o: /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/hardware/IO/FourierForceSensor.cpp
 CMakeFiles/M2Machine_APP.dir/src/hardware/IO/FourierForceSensor.cpp.o: CMakeFiles/M2Machine_APP.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building CXX object CMakeFiles/M2Machine_APP.dir/src/hardware/IO/FourierForceSensor.cpp.o"
-	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/M2Machine_APP.dir/src/hardware/IO/FourierForceSensor.cpp.o -MF CMakeFiles/M2Machine_APP.dir/src/hardware/IO/FourierForceSensor.cpp.o.d -o CMakeFiles/M2Machine_APP.dir/src/hardware/IO/FourierForceSensor.cpp.o -c /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/hardware/IO/FourierForceSensor.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building CXX object CMakeFiles/M2Machine_APP.dir/src/hardware/IO/FourierForceSensor.cpp.o"
+	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/M2Machine_APP.dir/src/hardware/IO/FourierForceSensor.cpp.o -MF CMakeFiles/M2Machine_APP.dir/src/hardware/IO/FourierForceSensor.cpp.o.d -o CMakeFiles/M2Machine_APP.dir/src/hardware/IO/FourierForceSensor.cpp.o -c /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/hardware/IO/FourierForceSensor.cpp
 
 CMakeFiles/M2Machine_APP.dir/src/hardware/IO/FourierForceSensor.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/M2Machine_APP.dir/src/hardware/IO/FourierForceSensor.cpp.i"
-	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/hardware/IO/FourierForceSensor.cpp > CMakeFiles/M2Machine_APP.dir/src/hardware/IO/FourierForceSensor.cpp.i
+	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/hardware/IO/FourierForceSensor.cpp > CMakeFiles/M2Machine_APP.dir/src/hardware/IO/FourierForceSensor.cpp.i
 
 CMakeFiles/M2Machine_APP.dir/src/hardware/IO/FourierForceSensor.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/M2Machine_APP.dir/src/hardware/IO/FourierForceSensor.cpp.s"
-	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/hardware/IO/FourierForceSensor.cpp -o CMakeFiles/M2Machine_APP.dir/src/hardware/IO/FourierForceSensor.cpp.s
+	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/hardware/IO/FourierForceSensor.cpp -o CMakeFiles/M2Machine_APP.dir/src/hardware/IO/FourierForceSensor.cpp.s
 
 CMakeFiles/M2Machine_APP.dir/src/hardware/IO/FourierHandle.cpp.o: CMakeFiles/M2Machine_APP.dir/flags.make
-CMakeFiles/M2Machine_APP.dir/src/hardware/IO/FourierHandle.cpp.o: /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/hardware/IO/FourierHandle.cpp
+CMakeFiles/M2Machine_APP.dir/src/hardware/IO/FourierHandle.cpp.o: /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/hardware/IO/FourierHandle.cpp
 CMakeFiles/M2Machine_APP.dir/src/hardware/IO/FourierHandle.cpp.o: CMakeFiles/M2Machine_APP.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building CXX object CMakeFiles/M2Machine_APP.dir/src/hardware/IO/FourierHandle.cpp.o"
-	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/M2Machine_APP.dir/src/hardware/IO/FourierHandle.cpp.o -MF CMakeFiles/M2Machine_APP.dir/src/hardware/IO/FourierHandle.cpp.o.d -o CMakeFiles/M2Machine_APP.dir/src/hardware/IO/FourierHandle.cpp.o -c /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/hardware/IO/FourierHandle.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building CXX object CMakeFiles/M2Machine_APP.dir/src/hardware/IO/FourierHandle.cpp.o"
+	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/M2Machine_APP.dir/src/hardware/IO/FourierHandle.cpp.o -MF CMakeFiles/M2Machine_APP.dir/src/hardware/IO/FourierHandle.cpp.o.d -o CMakeFiles/M2Machine_APP.dir/src/hardware/IO/FourierHandle.cpp.o -c /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/hardware/IO/FourierHandle.cpp
 
 CMakeFiles/M2Machine_APP.dir/src/hardware/IO/FourierHandle.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/M2Machine_APP.dir/src/hardware/IO/FourierHandle.cpp.i"
-	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/hardware/IO/FourierHandle.cpp > CMakeFiles/M2Machine_APP.dir/src/hardware/IO/FourierHandle.cpp.i
+	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/hardware/IO/FourierHandle.cpp > CMakeFiles/M2Machine_APP.dir/src/hardware/IO/FourierHandle.cpp.i
 
 CMakeFiles/M2Machine_APP.dir/src/hardware/IO/FourierHandle.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/M2Machine_APP.dir/src/hardware/IO/FourierHandle.cpp.s"
-	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/hardware/IO/FourierHandle.cpp -o CMakeFiles/M2Machine_APP.dir/src/hardware/IO/FourierHandle.cpp.s
+	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/hardware/IO/FourierHandle.cpp -o CMakeFiles/M2Machine_APP.dir/src/hardware/IO/FourierHandle.cpp.s
 
 CMakeFiles/M2Machine_APP.dir/src/hardware/IO/HX711.cpp.o: CMakeFiles/M2Machine_APP.dir/flags.make
-CMakeFiles/M2Machine_APP.dir/src/hardware/IO/HX711.cpp.o: /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/hardware/IO/HX711.cpp
+CMakeFiles/M2Machine_APP.dir/src/hardware/IO/HX711.cpp.o: /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/hardware/IO/HX711.cpp
 CMakeFiles/M2Machine_APP.dir/src/hardware/IO/HX711.cpp.o: CMakeFiles/M2Machine_APP.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building CXX object CMakeFiles/M2Machine_APP.dir/src/hardware/IO/HX711.cpp.o"
-	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/M2Machine_APP.dir/src/hardware/IO/HX711.cpp.o -MF CMakeFiles/M2Machine_APP.dir/src/hardware/IO/HX711.cpp.o.d -o CMakeFiles/M2Machine_APP.dir/src/hardware/IO/HX711.cpp.o -c /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/hardware/IO/HX711.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building CXX object CMakeFiles/M2Machine_APP.dir/src/hardware/IO/HX711.cpp.o"
+	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/M2Machine_APP.dir/src/hardware/IO/HX711.cpp.o -MF CMakeFiles/M2Machine_APP.dir/src/hardware/IO/HX711.cpp.o.d -o CMakeFiles/M2Machine_APP.dir/src/hardware/IO/HX711.cpp.o -c /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/hardware/IO/HX711.cpp
 
 CMakeFiles/M2Machine_APP.dir/src/hardware/IO/HX711.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/M2Machine_APP.dir/src/hardware/IO/HX711.cpp.i"
-	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/hardware/IO/HX711.cpp > CMakeFiles/M2Machine_APP.dir/src/hardware/IO/HX711.cpp.i
+	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/hardware/IO/HX711.cpp > CMakeFiles/M2Machine_APP.dir/src/hardware/IO/HX711.cpp.i
 
 CMakeFiles/M2Machine_APP.dir/src/hardware/IO/HX711.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/M2Machine_APP.dir/src/hardware/IO/HX711.cpp.s"
-	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/hardware/IO/HX711.cpp -o CMakeFiles/M2Machine_APP.dir/src/hardware/IO/HX711.cpp.s
+	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/hardware/IO/HX711.cpp -o CMakeFiles/M2Machine_APP.dir/src/hardware/IO/HX711.cpp.s
 
 CMakeFiles/M2Machine_APP.dir/src/hardware/IO/Joystick.cpp.o: CMakeFiles/M2Machine_APP.dir/flags.make
-CMakeFiles/M2Machine_APP.dir/src/hardware/IO/Joystick.cpp.o: /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/hardware/IO/Joystick.cpp
+CMakeFiles/M2Machine_APP.dir/src/hardware/IO/Joystick.cpp.o: /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/hardware/IO/Joystick.cpp
 CMakeFiles/M2Machine_APP.dir/src/hardware/IO/Joystick.cpp.o: CMakeFiles/M2Machine_APP.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building CXX object CMakeFiles/M2Machine_APP.dir/src/hardware/IO/Joystick.cpp.o"
-	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/M2Machine_APP.dir/src/hardware/IO/Joystick.cpp.o -MF CMakeFiles/M2Machine_APP.dir/src/hardware/IO/Joystick.cpp.o.d -o CMakeFiles/M2Machine_APP.dir/src/hardware/IO/Joystick.cpp.o -c /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/hardware/IO/Joystick.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building CXX object CMakeFiles/M2Machine_APP.dir/src/hardware/IO/Joystick.cpp.o"
+	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/M2Machine_APP.dir/src/hardware/IO/Joystick.cpp.o -MF CMakeFiles/M2Machine_APP.dir/src/hardware/IO/Joystick.cpp.o.d -o CMakeFiles/M2Machine_APP.dir/src/hardware/IO/Joystick.cpp.o -c /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/hardware/IO/Joystick.cpp
 
 CMakeFiles/M2Machine_APP.dir/src/hardware/IO/Joystick.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/M2Machine_APP.dir/src/hardware/IO/Joystick.cpp.i"
-	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/hardware/IO/Joystick.cpp > CMakeFiles/M2Machine_APP.dir/src/hardware/IO/Joystick.cpp.i
+	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/hardware/IO/Joystick.cpp > CMakeFiles/M2Machine_APP.dir/src/hardware/IO/Joystick.cpp.i
 
 CMakeFiles/M2Machine_APP.dir/src/hardware/IO/Joystick.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/M2Machine_APP.dir/src/hardware/IO/Joystick.cpp.s"
-	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/hardware/IO/Joystick.cpp -o CMakeFiles/M2Machine_APP.dir/src/hardware/IO/Joystick.cpp.s
+	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/hardware/IO/Joystick.cpp -o CMakeFiles/M2Machine_APP.dir/src/hardware/IO/Joystick.cpp.s
 
 CMakeFiles/M2Machine_APP.dir/src/hardware/IO/Keyboard.cpp.o: CMakeFiles/M2Machine_APP.dir/flags.make
-CMakeFiles/M2Machine_APP.dir/src/hardware/IO/Keyboard.cpp.o: /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/hardware/IO/Keyboard.cpp
+CMakeFiles/M2Machine_APP.dir/src/hardware/IO/Keyboard.cpp.o: /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/hardware/IO/Keyboard.cpp
 CMakeFiles/M2Machine_APP.dir/src/hardware/IO/Keyboard.cpp.o: CMakeFiles/M2Machine_APP.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Building CXX object CMakeFiles/M2Machine_APP.dir/src/hardware/IO/Keyboard.cpp.o"
-	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/M2Machine_APP.dir/src/hardware/IO/Keyboard.cpp.o -MF CMakeFiles/M2Machine_APP.dir/src/hardware/IO/Keyboard.cpp.o.d -o CMakeFiles/M2Machine_APP.dir/src/hardware/IO/Keyboard.cpp.o -c /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/hardware/IO/Keyboard.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Building CXX object CMakeFiles/M2Machine_APP.dir/src/hardware/IO/Keyboard.cpp.o"
+	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/M2Machine_APP.dir/src/hardware/IO/Keyboard.cpp.o -MF CMakeFiles/M2Machine_APP.dir/src/hardware/IO/Keyboard.cpp.o.d -o CMakeFiles/M2Machine_APP.dir/src/hardware/IO/Keyboard.cpp.o -c /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/hardware/IO/Keyboard.cpp
 
 CMakeFiles/M2Machine_APP.dir/src/hardware/IO/Keyboard.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/M2Machine_APP.dir/src/hardware/IO/Keyboard.cpp.i"
-	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/hardware/IO/Keyboard.cpp > CMakeFiles/M2Machine_APP.dir/src/hardware/IO/Keyboard.cpp.i
+	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/hardware/IO/Keyboard.cpp > CMakeFiles/M2Machine_APP.dir/src/hardware/IO/Keyboard.cpp.i
 
 CMakeFiles/M2Machine_APP.dir/src/hardware/IO/Keyboard.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/M2Machine_APP.dir/src/hardware/IO/Keyboard.cpp.s"
-	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/hardware/IO/Keyboard.cpp -o CMakeFiles/M2Machine_APP.dir/src/hardware/IO/Keyboard.cpp.s
+	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/hardware/IO/Keyboard.cpp -o CMakeFiles/M2Machine_APP.dir/src/hardware/IO/Keyboard.cpp.s
 
 CMakeFiles/M2Machine_APP.dir/src/hardware/IO/RobotousRFT.cpp.o: CMakeFiles/M2Machine_APP.dir/flags.make
-CMakeFiles/M2Machine_APP.dir/src/hardware/IO/RobotousRFT.cpp.o: /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/hardware/IO/RobotousRFT.cpp
+CMakeFiles/M2Machine_APP.dir/src/hardware/IO/RobotousRFT.cpp.o: /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/hardware/IO/RobotousRFT.cpp
 CMakeFiles/M2Machine_APP.dir/src/hardware/IO/RobotousRFT.cpp.o: CMakeFiles/M2Machine_APP.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Building CXX object CMakeFiles/M2Machine_APP.dir/src/hardware/IO/RobotousRFT.cpp.o"
-	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/M2Machine_APP.dir/src/hardware/IO/RobotousRFT.cpp.o -MF CMakeFiles/M2Machine_APP.dir/src/hardware/IO/RobotousRFT.cpp.o.d -o CMakeFiles/M2Machine_APP.dir/src/hardware/IO/RobotousRFT.cpp.o -c /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/hardware/IO/RobotousRFT.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Building CXX object CMakeFiles/M2Machine_APP.dir/src/hardware/IO/RobotousRFT.cpp.o"
+	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/M2Machine_APP.dir/src/hardware/IO/RobotousRFT.cpp.o -MF CMakeFiles/M2Machine_APP.dir/src/hardware/IO/RobotousRFT.cpp.o.d -o CMakeFiles/M2Machine_APP.dir/src/hardware/IO/RobotousRFT.cpp.o -c /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/hardware/IO/RobotousRFT.cpp
 
 CMakeFiles/M2Machine_APP.dir/src/hardware/IO/RobotousRFT.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/M2Machine_APP.dir/src/hardware/IO/RobotousRFT.cpp.i"
-	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/hardware/IO/RobotousRFT.cpp > CMakeFiles/M2Machine_APP.dir/src/hardware/IO/RobotousRFT.cpp.i
+	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/hardware/IO/RobotousRFT.cpp > CMakeFiles/M2Machine_APP.dir/src/hardware/IO/RobotousRFT.cpp.i
 
 CMakeFiles/M2Machine_APP.dir/src/hardware/IO/RobotousRFT.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/M2Machine_APP.dir/src/hardware/IO/RobotousRFT.cpp.s"
-	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/hardware/IO/RobotousRFT.cpp -o CMakeFiles/M2Machine_APP.dir/src/hardware/IO/RobotousRFT.cpp.s
+	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/hardware/IO/RobotousRFT.cpp -o CMakeFiles/M2Machine_APP.dir/src/hardware/IO/RobotousRFT.cpp.s
 
 CMakeFiles/M2Machine_APP.dir/src/hardware/IO/TechnaidIMU.cpp.o: CMakeFiles/M2Machine_APP.dir/flags.make
-CMakeFiles/M2Machine_APP.dir/src/hardware/IO/TechnaidIMU.cpp.o: /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/hardware/IO/TechnaidIMU.cpp
+CMakeFiles/M2Machine_APP.dir/src/hardware/IO/TechnaidIMU.cpp.o: /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/hardware/IO/TechnaidIMU.cpp
 CMakeFiles/M2Machine_APP.dir/src/hardware/IO/TechnaidIMU.cpp.o: CMakeFiles/M2Machine_APP.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Building CXX object CMakeFiles/M2Machine_APP.dir/src/hardware/IO/TechnaidIMU.cpp.o"
-	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/M2Machine_APP.dir/src/hardware/IO/TechnaidIMU.cpp.o -MF CMakeFiles/M2Machine_APP.dir/src/hardware/IO/TechnaidIMU.cpp.o.d -o CMakeFiles/M2Machine_APP.dir/src/hardware/IO/TechnaidIMU.cpp.o -c /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/hardware/IO/TechnaidIMU.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Building CXX object CMakeFiles/M2Machine_APP.dir/src/hardware/IO/TechnaidIMU.cpp.o"
+	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/M2Machine_APP.dir/src/hardware/IO/TechnaidIMU.cpp.o -MF CMakeFiles/M2Machine_APP.dir/src/hardware/IO/TechnaidIMU.cpp.o.d -o CMakeFiles/M2Machine_APP.dir/src/hardware/IO/TechnaidIMU.cpp.o -c /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/hardware/IO/TechnaidIMU.cpp
 
 CMakeFiles/M2Machine_APP.dir/src/hardware/IO/TechnaidIMU.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/M2Machine_APP.dir/src/hardware/IO/TechnaidIMU.cpp.i"
-	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/hardware/IO/TechnaidIMU.cpp > CMakeFiles/M2Machine_APP.dir/src/hardware/IO/TechnaidIMU.cpp.i
+	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/hardware/IO/TechnaidIMU.cpp > CMakeFiles/M2Machine_APP.dir/src/hardware/IO/TechnaidIMU.cpp.i
 
 CMakeFiles/M2Machine_APP.dir/src/hardware/IO/TechnaidIMU.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/M2Machine_APP.dir/src/hardware/IO/TechnaidIMU.cpp.s"
-	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/hardware/IO/TechnaidIMU.cpp -o CMakeFiles/M2Machine_APP.dir/src/hardware/IO/TechnaidIMU.cpp.s
+	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/hardware/IO/TechnaidIMU.cpp -o CMakeFiles/M2Machine_APP.dir/src/hardware/IO/TechnaidIMU.cpp.s
 
 CMakeFiles/M2Machine_APP.dir/src/hardware/IO/iobb.c.o: CMakeFiles/M2Machine_APP.dir/flags.make
-CMakeFiles/M2Machine_APP.dir/src/hardware/IO/iobb.c.o: /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/hardware/IO/iobb.c
+CMakeFiles/M2Machine_APP.dir/src/hardware/IO/iobb.c.o: /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/hardware/IO/iobb.c
 CMakeFiles/M2Machine_APP.dir/src/hardware/IO/iobb.c.o: CMakeFiles/M2Machine_APP.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Building C object CMakeFiles/M2Machine_APP.dir/src/hardware/IO/iobb.c.o"
-	/usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/M2Machine_APP.dir/src/hardware/IO/iobb.c.o -MF CMakeFiles/M2Machine_APP.dir/src/hardware/IO/iobb.c.o.d -o CMakeFiles/M2Machine_APP.dir/src/hardware/IO/iobb.c.o -c /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/hardware/IO/iobb.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Building C object CMakeFiles/M2Machine_APP.dir/src/hardware/IO/iobb.c.o"
+	/usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/M2Machine_APP.dir/src/hardware/IO/iobb.c.o -MF CMakeFiles/M2Machine_APP.dir/src/hardware/IO/iobb.c.o.d -o CMakeFiles/M2Machine_APP.dir/src/hardware/IO/iobb.c.o -c /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/hardware/IO/iobb.c
 
 CMakeFiles/M2Machine_APP.dir/src/hardware/IO/iobb.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/M2Machine_APP.dir/src/hardware/IO/iobb.c.i"
-	/usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/hardware/IO/iobb.c > CMakeFiles/M2Machine_APP.dir/src/hardware/IO/iobb.c.i
+	/usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/hardware/IO/iobb.c > CMakeFiles/M2Machine_APP.dir/src/hardware/IO/iobb.c.i
 
 CMakeFiles/M2Machine_APP.dir/src/hardware/IO/iobb.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/M2Machine_APP.dir/src/hardware/IO/iobb.c.s"
-	/usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/hardware/IO/iobb.c -o CMakeFiles/M2Machine_APP.dir/src/hardware/IO/iobb.c.s
+	/usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/hardware/IO/iobb.c -o CMakeFiles/M2Machine_APP.dir/src/hardware/IO/iobb.c.s
 
 CMakeFiles/M2Machine_APP.dir/src/hardware/drives/CopleyDrive.cpp.o: CMakeFiles/M2Machine_APP.dir/flags.make
-CMakeFiles/M2Machine_APP.dir/src/hardware/drives/CopleyDrive.cpp.o: /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/hardware/drives/CopleyDrive.cpp
+CMakeFiles/M2Machine_APP.dir/src/hardware/drives/CopleyDrive.cpp.o: /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/hardware/drives/CopleyDrive.cpp
 CMakeFiles/M2Machine_APP.dir/src/hardware/drives/CopleyDrive.cpp.o: CMakeFiles/M2Machine_APP.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Building CXX object CMakeFiles/M2Machine_APP.dir/src/hardware/drives/CopleyDrive.cpp.o"
-	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/M2Machine_APP.dir/src/hardware/drives/CopleyDrive.cpp.o -MF CMakeFiles/M2Machine_APP.dir/src/hardware/drives/CopleyDrive.cpp.o.d -o CMakeFiles/M2Machine_APP.dir/src/hardware/drives/CopleyDrive.cpp.o -c /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/hardware/drives/CopleyDrive.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Building CXX object CMakeFiles/M2Machine_APP.dir/src/hardware/drives/CopleyDrive.cpp.o"
+	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/M2Machine_APP.dir/src/hardware/drives/CopleyDrive.cpp.o -MF CMakeFiles/M2Machine_APP.dir/src/hardware/drives/CopleyDrive.cpp.o.d -o CMakeFiles/M2Machine_APP.dir/src/hardware/drives/CopleyDrive.cpp.o -c /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/hardware/drives/CopleyDrive.cpp
 
 CMakeFiles/M2Machine_APP.dir/src/hardware/drives/CopleyDrive.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/M2Machine_APP.dir/src/hardware/drives/CopleyDrive.cpp.i"
-	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/hardware/drives/CopleyDrive.cpp > CMakeFiles/M2Machine_APP.dir/src/hardware/drives/CopleyDrive.cpp.i
+	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/hardware/drives/CopleyDrive.cpp > CMakeFiles/M2Machine_APP.dir/src/hardware/drives/CopleyDrive.cpp.i
 
 CMakeFiles/M2Machine_APP.dir/src/hardware/drives/CopleyDrive.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/M2Machine_APP.dir/src/hardware/drives/CopleyDrive.cpp.s"
-	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/hardware/drives/CopleyDrive.cpp -o CMakeFiles/M2Machine_APP.dir/src/hardware/drives/CopleyDrive.cpp.s
+	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/hardware/drives/CopleyDrive.cpp -o CMakeFiles/M2Machine_APP.dir/src/hardware/drives/CopleyDrive.cpp.s
 
 CMakeFiles/M2Machine_APP.dir/src/hardware/drives/KincoDrive.cpp.o: CMakeFiles/M2Machine_APP.dir/flags.make
-CMakeFiles/M2Machine_APP.dir/src/hardware/drives/KincoDrive.cpp.o: /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/hardware/drives/KincoDrive.cpp
+CMakeFiles/M2Machine_APP.dir/src/hardware/drives/KincoDrive.cpp.o: /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/hardware/drives/KincoDrive.cpp
 CMakeFiles/M2Machine_APP.dir/src/hardware/drives/KincoDrive.cpp.o: CMakeFiles/M2Machine_APP.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Building CXX object CMakeFiles/M2Machine_APP.dir/src/hardware/drives/KincoDrive.cpp.o"
-	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/M2Machine_APP.dir/src/hardware/drives/KincoDrive.cpp.o -MF CMakeFiles/M2Machine_APP.dir/src/hardware/drives/KincoDrive.cpp.o.d -o CMakeFiles/M2Machine_APP.dir/src/hardware/drives/KincoDrive.cpp.o -c /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/hardware/drives/KincoDrive.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Building CXX object CMakeFiles/M2Machine_APP.dir/src/hardware/drives/KincoDrive.cpp.o"
+	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/M2Machine_APP.dir/src/hardware/drives/KincoDrive.cpp.o -MF CMakeFiles/M2Machine_APP.dir/src/hardware/drives/KincoDrive.cpp.o.d -o CMakeFiles/M2Machine_APP.dir/src/hardware/drives/KincoDrive.cpp.o -c /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/hardware/drives/KincoDrive.cpp
 
 CMakeFiles/M2Machine_APP.dir/src/hardware/drives/KincoDrive.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/M2Machine_APP.dir/src/hardware/drives/KincoDrive.cpp.i"
-	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/hardware/drives/KincoDrive.cpp > CMakeFiles/M2Machine_APP.dir/src/hardware/drives/KincoDrive.cpp.i
+	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/hardware/drives/KincoDrive.cpp > CMakeFiles/M2Machine_APP.dir/src/hardware/drives/KincoDrive.cpp.i
 
 CMakeFiles/M2Machine_APP.dir/src/hardware/drives/KincoDrive.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/M2Machine_APP.dir/src/hardware/drives/KincoDrive.cpp.s"
-	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/hardware/drives/KincoDrive.cpp -o CMakeFiles/M2Machine_APP.dir/src/hardware/drives/KincoDrive.cpp.s
+	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/hardware/drives/KincoDrive.cpp -o CMakeFiles/M2Machine_APP.dir/src/hardware/drives/KincoDrive.cpp.s
 
 CMakeFiles/M2Machine_APP.dir/src/hardware/platforms/M2/JointM2.cpp.o: CMakeFiles/M2Machine_APP.dir/flags.make
-CMakeFiles/M2Machine_APP.dir/src/hardware/platforms/M2/JointM2.cpp.o: /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/hardware/platforms/M2/JointM2.cpp
+CMakeFiles/M2Machine_APP.dir/src/hardware/platforms/M2/JointM2.cpp.o: /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/hardware/platforms/M2/JointM2.cpp
 CMakeFiles/M2Machine_APP.dir/src/hardware/platforms/M2/JointM2.cpp.o: CMakeFiles/M2Machine_APP.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_42) "Building CXX object CMakeFiles/M2Machine_APP.dir/src/hardware/platforms/M2/JointM2.cpp.o"
-	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/M2Machine_APP.dir/src/hardware/platforms/M2/JointM2.cpp.o -MF CMakeFiles/M2Machine_APP.dir/src/hardware/platforms/M2/JointM2.cpp.o.d -o CMakeFiles/M2Machine_APP.dir/src/hardware/platforms/M2/JointM2.cpp.o -c /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/hardware/platforms/M2/JointM2.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_42) "Building CXX object CMakeFiles/M2Machine_APP.dir/src/hardware/platforms/M2/JointM2.cpp.o"
+	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/M2Machine_APP.dir/src/hardware/platforms/M2/JointM2.cpp.o -MF CMakeFiles/M2Machine_APP.dir/src/hardware/platforms/M2/JointM2.cpp.o.d -o CMakeFiles/M2Machine_APP.dir/src/hardware/platforms/M2/JointM2.cpp.o -c /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/hardware/platforms/M2/JointM2.cpp
 
 CMakeFiles/M2Machine_APP.dir/src/hardware/platforms/M2/JointM2.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/M2Machine_APP.dir/src/hardware/platforms/M2/JointM2.cpp.i"
-	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/hardware/platforms/M2/JointM2.cpp > CMakeFiles/M2Machine_APP.dir/src/hardware/platforms/M2/JointM2.cpp.i
+	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/hardware/platforms/M2/JointM2.cpp > CMakeFiles/M2Machine_APP.dir/src/hardware/platforms/M2/JointM2.cpp.i
 
 CMakeFiles/M2Machine_APP.dir/src/hardware/platforms/M2/JointM2.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/M2Machine_APP.dir/src/hardware/platforms/M2/JointM2.cpp.s"
-	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/hardware/platforms/M2/JointM2.cpp -o CMakeFiles/M2Machine_APP.dir/src/hardware/platforms/M2/JointM2.cpp.s
+	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/hardware/platforms/M2/JointM2.cpp -o CMakeFiles/M2Machine_APP.dir/src/hardware/platforms/M2/JointM2.cpp.s
 
 CMakeFiles/M2Machine_APP.dir/src/hardware/platforms/M2/RobotM2.cpp.o: CMakeFiles/M2Machine_APP.dir/flags.make
-CMakeFiles/M2Machine_APP.dir/src/hardware/platforms/M2/RobotM2.cpp.o: /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/hardware/platforms/M2/RobotM2.cpp
+CMakeFiles/M2Machine_APP.dir/src/hardware/platforms/M2/RobotM2.cpp.o: /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/hardware/platforms/M2/RobotM2.cpp
 CMakeFiles/M2Machine_APP.dir/src/hardware/platforms/M2/RobotM2.cpp.o: CMakeFiles/M2Machine_APP.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_43) "Building CXX object CMakeFiles/M2Machine_APP.dir/src/hardware/platforms/M2/RobotM2.cpp.o"
-	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/M2Machine_APP.dir/src/hardware/platforms/M2/RobotM2.cpp.o -MF CMakeFiles/M2Machine_APP.dir/src/hardware/platforms/M2/RobotM2.cpp.o.d -o CMakeFiles/M2Machine_APP.dir/src/hardware/platforms/M2/RobotM2.cpp.o -c /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/hardware/platforms/M2/RobotM2.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_43) "Building CXX object CMakeFiles/M2Machine_APP.dir/src/hardware/platforms/M2/RobotM2.cpp.o"
+	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/M2Machine_APP.dir/src/hardware/platforms/M2/RobotM2.cpp.o -MF CMakeFiles/M2Machine_APP.dir/src/hardware/platforms/M2/RobotM2.cpp.o.d -o CMakeFiles/M2Machine_APP.dir/src/hardware/platforms/M2/RobotM2.cpp.o -c /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/hardware/platforms/M2/RobotM2.cpp
 
 CMakeFiles/M2Machine_APP.dir/src/hardware/platforms/M2/RobotM2.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/M2Machine_APP.dir/src/hardware/platforms/M2/RobotM2.cpp.i"
-	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/hardware/platforms/M2/RobotM2.cpp > CMakeFiles/M2Machine_APP.dir/src/hardware/platforms/M2/RobotM2.cpp.i
+	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/hardware/platforms/M2/RobotM2.cpp > CMakeFiles/M2Machine_APP.dir/src/hardware/platforms/M2/RobotM2.cpp.i
 
 CMakeFiles/M2Machine_APP.dir/src/hardware/platforms/M2/RobotM2.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/M2Machine_APP.dir/src/hardware/platforms/M2/RobotM2.cpp.s"
-	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/src/hardware/platforms/M2/RobotM2.cpp -o CMakeFiles/M2Machine_APP.dir/src/hardware/platforms/M2/RobotM2.cpp.s
+	/usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/src/hardware/platforms/M2/RobotM2.cpp -o CMakeFiles/M2Machine_APP.dir/src/hardware/platforms/M2/RobotM2.cpp.s
 
 # Object files for target M2Machine_APP
 M2Machine_APP_OBJECTS = \
-"CMakeFiles/M2Machine_APP.dir/home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/M2Machine/M2Machine.cpp.o" \
-"CMakeFiles/M2Machine_APP.dir/home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/M2Machine/M2States.cpp.o" \
+"CMakeFiles/M2Machine_APP.dir/home/yl/Desktop/M2_Robot_CPT/M2Machine/M2Machine.cpp.o" \
+"CMakeFiles/M2Machine_APP.dir/home/yl/Desktop/M2_Robot_CPT/M2Machine/M2States.cpp.o" \
 "CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANcomms/CO_comm_helpers.c.o" \
 "CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANcomms/CO_command.c.o" \
 "CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANcomms/CO_master.c.o" \
@@ -720,8 +720,8 @@ M2Machine_APP_OBJECTS = \
 # External object files for target M2Machine_APP
 M2Machine_APP_EXTERNAL_OBJECTS =
 
-M2Machine_APP: CMakeFiles/M2Machine_APP.dir/home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/M2Machine/M2Machine.cpp.o
-M2Machine_APP: CMakeFiles/M2Machine_APP.dir/home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/M2Machine/M2States.cpp.o
+M2Machine_APP: CMakeFiles/M2Machine_APP.dir/home/yl/Desktop/M2_Robot_CPT/M2Machine/M2Machine.cpp.o
+M2Machine_APP: CMakeFiles/M2Machine_APP.dir/home/yl/Desktop/M2_Robot_CPT/M2Machine/M2States.cpp.o
 M2Machine_APP: CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANcomms/CO_comm_helpers.c.o
 M2Machine_APP: CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANcomms/CO_command.c.o
 M2Machine_APP: CMakeFiles/M2Machine_APP.dir/src/core/CANopen/CANcomms/CO_master.c.o
@@ -767,7 +767,7 @@ M2Machine_APP: CMakeFiles/M2Machine_APP.dir/build.make
 M2Machine_APP: lib/yaml-cpp/libyaml-cppd.a
 M2Machine_APP: lib/FLNL/liblibFLNL.a
 M2Machine_APP: CMakeFiles/M2Machine_APP.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_44) "Linking CXX executable M2Machine_APP"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_44) "Linking CXX executable M2Machine_APP"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/M2Machine_APP.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -779,6 +779,6 @@ CMakeFiles/M2Machine_APP.dir/clean:
 .PHONY : CMakeFiles/M2Machine_APP.dir/clean
 
 CMakeFiles/M2Machine_APP.dir/depend:
-	cd /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/build /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/build /home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController/build/CMakeFiles/M2Machine_APP.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/build /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/build /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/build/CMakeFiles/M2Machine_APP.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/M2Machine_APP.dir/depend
 
