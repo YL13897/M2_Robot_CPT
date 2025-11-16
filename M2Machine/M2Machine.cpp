@@ -115,7 +115,10 @@ void M2Machine::init() {
             sessionId = std::to_string(secs);
         }
         // UI server used to exchange simple commands and telemetry with Unity
-        UIserver = std::make_shared<FLNLHelper>(*robot(), "192.168.8.104");
+        // UIserver = std::make_shared<FLNLHelper>(*robot(), "192.168.8.104");
+        // UIserver = std::make_shared<FLNLHelper>(*robot(), "169.254.52.239");
+        // UIserver = std::make_shared<FLNLHelper>(*robot(), "192.168.10.2");
+        UIserver = std::make_shared<FLNLHelper>(*robot(), "0.0.0.0");
     } else {
         spdlog::critical("Failed robot initialisation. Exiting...");
         std::raise(SIGTERM);
@@ -128,11 +131,42 @@ void M2Machine::end() {
     StateMachine::end();
 }
 
+// void M2Machine::hwStateUpdate() {
+//     // Drive the underlying state machine and push current state to UI
+//     StateMachine::hwStateUpdate();
+//     if (UIserver) UIserver->sendState();
+// }
+
+// void M2Machine::hwStateUpdate() {
+//     // Drive the underlying state machine and push current state to UI
+//     StateMachine::hwStateUpdate();
+//     static double lastSend = 0.0;
+//     double now = system_time_sec();
+//     if (UIserver){
+//         if(now - lastSend > 0.005) {// 200Hz
+//             UIserver->sendState();
+//         }
+//             lastSend = system_time_sec();
+// }}
+
 void M2Machine::hwStateUpdate() {
     // Drive the underlying state machine and push current state to UI
     StateMachine::hwStateUpdate();
-    if (UIserver) UIserver->sendState();
+
+    static auto last = std::chrono::steady_clock::now();  // 上次发送时间
+    auto now = std::chrono::steady_clock::now();
+
+   
+    constexpr double interval_ms = 50.0; // 20Hz
+
+    if (std::chrono::duration<double, std::milli>(now - last).count() >= interval_ms) {
+        if (UIserver) {
+            UIserver->sendState();
+        }
+        last = now;
+    }
 }
+        
 /*
  * SPDX-License-Identifier: MIT
  *

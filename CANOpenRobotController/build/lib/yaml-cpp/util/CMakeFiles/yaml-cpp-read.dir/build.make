@@ -73,15 +73,15 @@ lib/yaml-cpp/util/CMakeFiles/yaml-cpp-read.dir/read.cpp.o: lib/yaml-cpp/util/CMa
 lib/yaml-cpp/util/CMakeFiles/yaml-cpp-read.dir/read.cpp.o: /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/lib/yaml-cpp/util/read.cpp
 lib/yaml-cpp/util/CMakeFiles/yaml-cpp-read.dir/read.cpp.o: lib/yaml-cpp/util/CMakeFiles/yaml-cpp-read.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object lib/yaml-cpp/util/CMakeFiles/yaml-cpp-read.dir/read.cpp.o"
-	cd /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/build/lib/yaml-cpp/util && /usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT lib/yaml-cpp/util/CMakeFiles/yaml-cpp-read.dir/read.cpp.o -MF CMakeFiles/yaml-cpp-read.dir/read.cpp.o.d -o CMakeFiles/yaml-cpp-read.dir/read.cpp.o -c /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/lib/yaml-cpp/util/read.cpp
+	cd /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/build/lib/yaml-cpp/util && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT lib/yaml-cpp/util/CMakeFiles/yaml-cpp-read.dir/read.cpp.o -MF CMakeFiles/yaml-cpp-read.dir/read.cpp.o.d -o CMakeFiles/yaml-cpp-read.dir/read.cpp.o -c /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/lib/yaml-cpp/util/read.cpp
 
 lib/yaml-cpp/util/CMakeFiles/yaml-cpp-read.dir/read.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/yaml-cpp-read.dir/read.cpp.i"
-	cd /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/build/lib/yaml-cpp/util && /usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/lib/yaml-cpp/util/read.cpp > CMakeFiles/yaml-cpp-read.dir/read.cpp.i
+	cd /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/build/lib/yaml-cpp/util && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/lib/yaml-cpp/util/read.cpp > CMakeFiles/yaml-cpp-read.dir/read.cpp.i
 
 lib/yaml-cpp/util/CMakeFiles/yaml-cpp-read.dir/read.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/yaml-cpp-read.dir/read.cpp.s"
-	cd /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/build/lib/yaml-cpp/util && /usr/bin/arm-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/lib/yaml-cpp/util/read.cpp -o CMakeFiles/yaml-cpp-read.dir/read.cpp.s
+	cd /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/build/lib/yaml-cpp/util && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/yl/Desktop/M2_Robot_CPT/CANOpenRobotController/lib/yaml-cpp/util/read.cpp -o CMakeFiles/yaml-cpp-read.dir/read.cpp.s
 
 # Object files for target yaml-cpp-read
 yaml__cpp__read_OBJECTS = \

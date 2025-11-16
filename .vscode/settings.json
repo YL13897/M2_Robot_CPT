@@ -1,3 +1,4 @@
 {
-    "cmake.sourceDirectory": "/home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController"
+    "cmake.sourceDirectory": "/home/yl/Desktop/Unimelb/M2Robot/CPT_M2robot_CANO/CANOpenRobotController",
+    "dotnet.preferCSharpExtension": true
 }

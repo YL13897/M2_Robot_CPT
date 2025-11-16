@@ -155,10 +155,16 @@ public:
 
     // --- Perturbation force arrays loaded from CSV ---
     std::vector<double> upPerturbForce;
+    std::vector<double> upPerturbForce2;
     std::vector<double> leftPerturbForce;
     size_t perturbIndex = 0;
     bool injectingUp = false;
     bool injectingLeft = false;
+
+    double F_const_up = 30.0;   // Set the constant perturbation force magnitude (N)
+    double F_const_left = -15.0; // Make sure left force is negative
+
+
     // --- WAIT_START hold-at-A configuration ---
     bool waitHoldLatched_ = false;  
     double k_hold = 2000.0;           
@@ -170,10 +176,14 @@ public:
 
 public:
     // experiment config
+    // VM2 A{0.45, 0.002};
+    // VM2 C{0.45, 0.302};
     VM2 A{0.45, 0.002};
-    VM2 C{0.45, 0.302};
+    VM2 C{0.45, 0.252};
 
-    double epsA = 0.05;
+
+    // double epsA = 0.05;
+    // double epsC = 0.05;
     double epsC = 0.05;
     
     double lastTrpsT_ = -1.0;
@@ -182,14 +192,17 @@ public:
     std::vector<VM2> trialEndPositions_;   
     bool sendPosOnlyOnTimeout_ = false;    
     
-    double k = 50;
-    double d = 6;
+    // double k = 150;
+    // double d = 6;
+    double k = 500;
+    double d = 20;
 
     double robotForceMagUp  = 35;
     double robotForceMagLeft= 17.5;
     
-    double internalForceDur  = 1.2;
-    double trialMaxTime      = 1.2;
+    // double internalForceDur  = 1.2;
+    double trialMaxTime      = 0.5;
+    double  trialExtendTime = 0.5; // extra time after timeout to reach C
 
     VM2    internalForce     = VM2::Zero();
 
@@ -202,7 +215,7 @@ public:
 
     double probLeft = 0.5;
 
-    bool   enablePIDToA = true;
+    bool enablePIDToA = false;
     double KpToA = 6.0;
     double KiToA = 35.0;
     double KdToA = 1.0;

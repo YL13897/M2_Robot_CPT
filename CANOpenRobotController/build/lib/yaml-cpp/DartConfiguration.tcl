@@ -14,7 +14,7 @@ CostDataFile:
 Site: yl-msi
 
 # Build name is osname-revision-compiler, i.e. Linux-2.4.2-2smp-c++
-BuildName: Linux-arm-linux-gnueabihf-g++
+BuildName: Linux-c++
 
 # Subprojects
 LabelsForSubprojects: 
@@ -63,7 +63,7 @@ UpdateOptions:
 UpdateType: 
 
 # Compiler info
-Compiler: /usr/bin/arm-linux-gnueabihf-g++
+Compiler: /usr/bin/c++
 CompilerVersion: 13.3.0
 
 # Dynamic analysis (MemCheck)
