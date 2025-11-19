@@ -54,3 +54,6 @@ dkms.conf
 
 .vscode/
 *.code-workspace
+
+Unity-Ui/  # ignore Unity-Ui folder
+!Unity-Ui/M2-Ui/   # except M2-Ui folder
