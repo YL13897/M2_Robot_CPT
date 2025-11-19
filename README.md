@@ -1,6 +1,6 @@
 # M2 Human–Robot Interaction Experiment Framework
 
-Author: Tiancheng (Gavin) Yang  
+Author: Tiancheng (Gavin) Yang  Yixiang Lin
 Affiliation: The University of Melbourne  
 License: MIT
 
