@@ -157,7 +157,7 @@ void M2Machine::hwStateUpdate() {
     auto now = std::chrono::steady_clock::now();
 
    
-    constexpr double interval_ms = 50.0; // 20Hz
+    constexpr double interval_ms = 25; // 40Hz
 
     if (std::chrono::duration<double, std::milli>(now - last).count() >= interval_ms) {
         if (UIserver) {

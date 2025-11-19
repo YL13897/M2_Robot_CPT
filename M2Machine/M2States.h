@@ -157,12 +157,13 @@ public:
     std::vector<double> upPerturbForce;
     std::vector<double> upPerturbForce2;
     std::vector<double> leftPerturbForce;
+    std::vector<double> leftPerturbForce2;
     size_t perturbIndex = 0;
     bool injectingUp = false;
     bool injectingLeft = false;
 
-    double F_const_up = 30.0;   // Set the constant perturbation force magnitude (N)
-    double F_const_left = -15.0; // Make sure left force is negative
+    double F_const_up = 50.0;   // Set the constant perturbation force magnitude (N)
+    double F_const_left = -30.0; // Make sure left force is negative
 
 
     // --- WAIT_START hold-at-A configuration ---
@@ -184,12 +185,12 @@ public:
 
     // double epsA = 0.05;
     // double epsC = 0.05;
-    double epsC = 0.05;
+    double epsC = 0.08;
     
     double lastTrpsT_ = -1.0;
     double trpsMinInterval_ = 0.5; // 20Hz
 
-    std::vector<VM2> trialEndPositions_;   
+    std::vector<VM2> trialEndPositions_;
     bool sendPosOnlyOnTimeout_ = false;    
     
     // double k = 150;
@@ -201,8 +202,8 @@ public:
     double robotForceMagLeft= 17.5;
     
     // double internalForceDur  = 1.2;
-    double trialMaxTime      = 0.5;
-    double  trialExtendTime = 0.5; // extra time after timeout to reach C
+    double trialMaxTime      = 0.5; // maximum trial time (s)
+    double  trialExtendTime = 0.2; // extra time after timeout to reach C
 
     VM2    internalForce     = VM2::Zero();
 
@@ -306,15 +307,19 @@ private:
         VM2    force;  // sensed end-eff force
     };
     std::deque<WaitSample> waitBuf_;           // rolling buffer of recent WAIT_START samples
-    double preloadThresholdN_ = 3.0;           // adjustable threshold (N), default 3N
-    double preloadWindowSec_  = 0.200;         // window (s), default 200ms
+    double preloadThresholdN_ = 8.0;           // adjustable threshold (N), default 3N
+    // double preloadWindowSec_  = 0.200;         // window (s), default 200ms
+    double preloadWindowSec_  = 0.200; 
     bool   preloadSatisfied_  = false;         // result for the upcoming trial
     std::ofstream preloadWinCsv_;              // raw 200ms window dump
-    std::ofstream trialTagsCsv_;               // per-trial tags (preload yes/no)
+    // std::ofstream trialTagsCsv_;               // per-trial tags (preload yes/no)
+    std::ofstream preloadCsv_;                 // merged preload window log
     void openPreloadCSVs_();
     void closePreloadCSVs_();
-    void writePreloadWindow_(int trialIdxForMode, double tNow);
-    void writeTrialTag_(int trialIdxForMode, int mode, bool flag, double tNow);
+    // void writePreloadWindow_(int trialIdxForMode, double tNow);
+    // void writeTrialTag_(int trialIdxForMode, int mode, bool flag, double tNow);
+    void writePreloadWindow_(int trialIdxForMode, double tNow, int mode, bool preloadFlag);
+    double computeFxMin_(double tNow);
 
     static bool isPrintableAscii(const std::string& s) {
         for (unsigned char ch : s) {
