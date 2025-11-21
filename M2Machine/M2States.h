@@ -162,48 +162,59 @@ public:
     bool injectingUp = false;
     bool injectingLeft = false;
 
-    double F_const_up = 50.0;   // Set the constant perturbation force magnitude (N)
-    double F_const_left = -30.0; // Make sure left force is negative
-
 
     // --- WAIT_START hold-at-A configuration ---
     bool waitHoldLatched_ = false;  
-    double k_hold = 2000.0;           
+    double k_hold = 500.0;           
     double d_hold = 10.0;            
 
     // --- Perturbation CSV loading functions ---
     std::vector<double> loadColumnFromCSV(const std::string& path, int colIndex, double tStart, double tEnd);
     void loadPerturbationForces();
 
-public:
+
+    double F_const_up = 50.0;   // Set the constant perturbation force magnitude (N)
+    double F_const_left = -30.0; // Make sure left force is negative
+
+    bool softWallEnabled = false;
+
+// public:
     // experiment config
     // VM2 A{0.45, 0.002};
     // VM2 C{0.45, 0.302};
+    // VM2 A{0.45, 0.002};
+    // VM2 C{0.45, 0.252};
     VM2 A{0.45, 0.002};
     VM2 C{0.45, 0.252};
 
 
     // double epsA = 0.05;
     // double epsC = 0.05;
-    double epsC = 0.08;
+    double epsC = 0.075;
     
     double lastTrpsT_ = -1.0;
     double trpsMinInterval_ = 0.5; // 20Hz
 
     std::vector<VM2> trialEndPositions_;
-    bool sendPosOnlyOnTimeout_ = false;    
+    // bool sendPosOnlyOnTimeout_ = false;    
     
     // double k = 150;
     // double d = 6;
-    double k = 500;
+    double k = 200;
     double d = 20;
 
-    double robotForceMagUp  = 35;
+    double robotForceMagUp  = 17.5;
     double robotForceMagLeft= 17.5;
     
     // double internalForceDur  = 1.2;
     double trialMaxTime      = 0.5; // maximum trial time (s)
     double  trialExtendTime = 0.2; // extra time after timeout to reach C
+
+    const double x_min = 0.10;   // left boundary (m)
+    const double x_max = 0.55;   // left boundary (m)
+    const double k_wall = 1800.0; // wall stiffness N/m
+    const double d_wall = 50.0;  // wall damping N·s/m
+    const double y_max = 0.35;   // upper boundary (m)
 
     VM2    internalForce     = VM2::Zero();
 
@@ -217,8 +228,8 @@ public:
     double probLeft = 0.5;
 
     bool enablePIDToA = false;
-    double KpToA = 6.0;
-    double KiToA = 35.0;
+    double KpToA = 5.0;
+    double KiToA = 30.0;
     double KdToA = 1.0;
     VM2    iErrToA = VM2::Zero();
     double iToA_max = 15.0;
@@ -228,11 +239,11 @@ public:
     int    meta_targetSucc  = 10;
     int    meta_maxTrials   = 10;
 
-    double V2_Smax = 110.0;
+    // double V2_Smax = 110.0;
 
     // ToA related variables
     double holdTimeA  = 0.25;
-    double epsA_hold  = 0.06;
+    double epsA_hold  = 0.20;
     double inBandSince = 0.0;
     VM2    Xi;
     double T_toA  = 2.0;

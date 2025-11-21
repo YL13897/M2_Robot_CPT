@@ -149,24 +149,83 @@ void M2Machine::end() {
 //             lastSend = system_time_sec();
 // }}
 
-void M2Machine::hwStateUpdate() {
-    // Drive the underlying state machine and push current state to UI
-    StateMachine::hwStateUpdate();
+// void M2Machine::hwStateUpdate() {
+//     // Drive the underlying state machine and push current state to UI
+//     StateMachine::hwStateUpdate();
 
-    static auto last = std::chrono::steady_clock::now();  // 上次发送时间
-    auto now = std::chrono::steady_clock::now();
+//     static auto last = std::chrono::steady_clock::now();  // 上次发送时间
+//     auto now = std::chrono::steady_clock::now();
 
    
-    constexpr double interval_ms = 25; // 40Hz
+//     constexpr double interval_ms = 25; // 40Hz
 
-    if (std::chrono::duration<double, std::milli>(now - last).count() >= interval_ms) {
-        if (UIserver) {
-            UIserver->sendState();
+//     if (std::chrono::duration<double, std::milli>(now - last).count() >= interval_ms) {
+//         if (UIserver) {
+//             UIserver->sendState();
+//         }
+//         last = now;
+//     }
+// }
+
+
+
+
+// void M2Machine::hwStateUpdate() {
+//     // 每次循环先检查是否掉线，掉线则等待新连接
+//     if (!UIserver->isConnected()) 
+//         {
+//             spdlog::critical("UI disconnected. Waiting for new connection...");
+//             UIserver->reconnect();
+//             spdlog::info("UI reconnected.");
+//     }
+
+//     StateMachine::hwStateUpdate();
+
+//     static auto last = std::chrono::steady_clock::now();
+//     auto now = std::chrono::steady_clock::now();
+//     constexpr double interval_ms = 25; // 40Hz
+
+//     if (std::chrono::duration<double, std::milli>(now - last).count() >= interval_ms) {
+//         if (UIserver) {
+//             UIserver->sendState();
+//         }
+//         last = now;
+//     }
+// }
+
+
+// 成员或静态局部
+static bool connected = false;
+static auto lastCheck = std::chrono::steady_clock::now();
+
+void M2Machine::hwStateUpdate() {
+    auto now = std::chrono::steady_clock::now();
+
+    // 每 1s 检查一次
+    if (UIserver && std::chrono::duration<double,std::milli>(now - lastCheck).count() > 1000.0) {
+        connected = UIserver->isConnected();
+        if (!connected) {
+            spdlog::critical("UI down, waiting reconnect...");
+            UIserver->reconnect();       // 阻塞等待新客户端
+            connected = UIserver->isConnected();
+            spdlog::info("UI reconnected");
         }
-        last = now;
+        lastCheck = now;
+    }
+
+    StateMachine::hwStateUpdate();
+
+    // 仅在已连接时发状态
+    static auto lastSend = std::chrono::steady_clock::now();
+    if (connected && std::chrono::duration<double,std::milli>(now - lastSend).count() >= 25.0) {
+        UIserver->sendState();
+        lastSend = now;
     }
 }
-        
+
+
+
+
 /*
  * SPDX-License-Identifier: MIT
  *
