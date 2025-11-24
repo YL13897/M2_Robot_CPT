@@ -264,7 +264,10 @@ void M2ProbMoveState::duringCode() {
                 finishedFlag = true;
                 if (machine && machine->UIserver) machine->UIserver->sendCmd("OK");
                 machine->UIserver->clearCmd();
+                k_hold = k_hold_cmd; 
+                d_hold = d_hold_cmd;
                 spdlog::info("GLOBAL: HALT -> finishedFlag=1");
+
                 continue;
             }
             
@@ -375,6 +378,31 @@ void M2ProbMoveState::duringCode() {
                     machine->UIserver->sendCmd("OK");
                 machine->UIserver->clearCmd();
                 spdlog::info("GLOBAL: FRC2 -> F_const_up={}, F_const_left={}", F_const_up, F_const_left);
+                continue;
+            }
+
+
+            if (cu.rfind("HLKD",0)==0 && a.size() >= 2) {
+
+                if (waitHoldLatched_) {
+                    // 正在 hold，先排队，等释放后再应用
+                    k_hold_cmd = a[0];
+                    d_hold_cmd = a[1];
+                    // spdlog::info("GLOBAL: HLKD queued (latched) k_hold={}, d_hold={}", k_hold_cmd, d_hold_cmd);
+                } else {
+                    // 不在 hold，立即生效
+                    k_hold_cmd = a[0];
+                    d_hold_cmd = a[1];
+                    k_hold = k_hold_cmd; 
+                    d_hold = d_hold_cmd;
+                    // spdlog::info("GLOBAL: HLKD applied k_hold={}, d_hold={}", k_hold, d_hold);
+                }
+
+
+                if (machine && machine->UIserver)
+                    machine->UIserver->sendCmd("OK");
+                machine->UIserver->clearCmd();
+                // spdlog::info("GLOBAL: HLKD -> k_hold={}, d_hold={}", k_hold_cmd, d_hold_cmd);
                 continue;
             }
 
@@ -519,6 +547,10 @@ void M2ProbMoveState::duringCode() {
                 }
             }
 
+
+            // 在 WAIT_START 分支内，日志前取当前力
+            VM2 F_wait = waitBuf_.empty() ? VM2::Zero() : waitBuf_.back().force;
+            double F_wait_norm = F_wait.norm();
             
             if (iterations() % 1000 == 1) {
                 spdlog::info(
@@ -527,11 +559,19 @@ void M2ProbMoveState::duringCode() {
                     successfulTrials, totalTrialsV1, totalScoreV2, totalTrialsV2,
                     finishedFlag ? 1 : 0
                 );
+
+                spdlog::info("F=({:.3f},{:.3f}), |F|={:.3f}", F_wait(0), F_wait(1), F_wait_norm);
             }
-            
+
             if (atA_hold) {
                 waitHoldLatched_ = true;
             }
+
+            if (!waitHoldLatched_) {
+                if (pending_k_hold >= 0.0) { k_hold = pending_k_hold; pending_k_hold = -1.0; }
+                if (pending_d_hold >= 0.0) { d_hold = pending_d_hold; pending_d_hold = -1.0; }
+            }
+
 
             if (waitHoldLatched_) {
                 
@@ -539,10 +579,14 @@ void M2ProbMoveState::duringCode() {
                 VM2 dXh = robot->getEndEffVelocity();
                 Eigen::Matrix2d K = Eigen::Matrix2d::Identity() * k_hold;
                 Eigen::Matrix2d D = Eigen::Matrix2d::Identity() * d_hold;
+                if (!hold_log_once) {
+                    spdlog::info("HLKD -> k_hold={}, d_hold={}", k_hold, d_hold);
+                    hold_log_once = true; 
+                }
                 VM2 F_hold = K * (A - Xh) + D * (VM2::Zero() - dXh);
                 applyForce(F_hold);  
             } else {
-                
+                hold_log_once = false;
                 // robot->setEndEffForceWithCompensation(VM2::Zero());
                 this->applyForce(VM2::Zero());
             }
@@ -617,7 +661,7 @@ void M2ProbMoveState::duringCode() {
 
             // Transition condition check
             // bool reachedC = (n < epsC) && (tTrial >= minTrialEvalTime);
-            bool reachedC = (n < epsC) && (tTrial >= minTrialEvalTime) && X(1) < (C[1]+0.30); // also require not too high (y<30cm)
+            bool reachedC = (n < epsC) && (tTrial >= minTrialEvalTime) && X(1) < (C[1]+ epsC); // also require not too high
             // bool timeout = (tTrial >= (trialMaxTime + trialExtendTime));
             bool timeout = (tTrial >= (trialMaxTime));
             bool timeoutTrial = (tTrial >= trialMaxTime);
@@ -650,7 +694,8 @@ void M2ProbMoveState::duringCode() {
 
             // -------------------- Internal force -------------------------
             if (injectingUp) {
-                if (!reachedC && timeoutTrial==false) {
+                // if (!reachedC && timeoutTrial==false) {
+                if (timeoutTrial==false) {
                 // Apply upward perturbation only until target is reached
                     F_int(1) = F_const_up;
                     spdlog::info("F_int(1) = {:.3f}", F_int(1));
@@ -971,7 +1016,8 @@ void M2ProbMoveState::exitCode() {
 VM2 M2ProbMoveState::impedance(const VM2& X0, const VM2& X, const VM2& dX, const VM2& dXd) {
     Eigen::Matrix2d K = Eigen::Matrix2d::Identity() * k;
     Eigen::Matrix2d D = Eigen::Matrix2d::Identity() * d;
-    return K * (X0 - X) + D * (dXd - dX);
+    // return K * (X0 - X) + D * (dXd - dX);
+    return K * (X0 - X) - D * dX;
 }
 
 VM2 M2ProbMoveState::readUserForce() {

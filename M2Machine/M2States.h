@@ -165,9 +165,16 @@ public:
 
     // --- WAIT_START hold-at-A configuration ---
     bool waitHoldLatched_ = false;  
-    double k_hold = 500.0;           
-    double d_hold = 10.0;            
+    double k_hold = 800.0; // Default 350        
+    double d_hold = 35.0;            
 
+    double k_hold_cmd = 800.0; // Default 350
+    double d_hold_cmd = 35.0;
+
+    double pending_k_hold = -1.0; // -1 means no pending change for k_hold and d_hold
+    double pending_d_hold = -1.0;
+
+    bool hold_log_once = false;
     // --- Perturbation CSV loading functions ---
     std::vector<double> loadColumnFromCSV(const std::string& path, int colIndex, double tStart, double tEnd);
     void loadPerturbationForces();
@@ -185,12 +192,12 @@ public:
     // VM2 A{0.45, 0.002};
     // VM2 C{0.45, 0.252};
     VM2 A{0.45, 0.002};
-    VM2 C{0.45, 0.252};
+    VM2 C{0.45, 0.222};
 
 
     // double epsA = 0.05;
     // double epsC = 0.05;
-    double epsC = 0.075;
+    double epsC = 0.08;  //default 0.05
     
     double lastTrpsT_ = -1.0;
     double trpsMinInterval_ = 0.5; // 20Hz
@@ -201,7 +208,7 @@ public:
     // double k = 150;
     // double d = 6;
     double k = 200;
-    double d = 20;
+    double d = 15;
 
     double robotForceMagUp  = 17.5;
     double robotForceMagLeft= 17.5;
@@ -243,7 +250,7 @@ public:
 
     // ToA related variables
     double holdTimeA  = 0.25;
-    double epsA_hold  = 0.20;
+    double epsA_hold  = 0.15;
     double inBandSince = 0.0;
     VM2    Xi;
     double T_toA  = 2.0;
