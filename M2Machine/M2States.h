@@ -165,19 +165,19 @@ public:
 
     // --- WAIT_START hold-at-A configuration ---
     bool waitHoldLatched_ = false;  
-    double k_hold = 800.0; // Default 350        
+    double k_hold = 1000.0; // Default 350        
     double d_hold = 35.0;            
 
-    double k_hold_cmd = 800.0; // Default 350
+    double k_hold_cmd = 1000.0; // Default 350
     double d_hold_cmd = 35.0;
-
-    double pending_k_hold = -1.0; // -1 means no pending change for k_hold and d_hold
-    double pending_d_hold = -1.0;
 
     bool hold_log_once = false;
     // --- Perturbation CSV loading functions ---
     std::vector<double> loadColumnFromCSV(const std::string& path, int colIndex, double tStart, double tEnd);
     void loadPerturbationForces();
+
+    bool trialIsLeft = true;
+    // bool trialIsLeft = false;
 
 
     double F_const_up = 50.0;   // Set the constant perturbation force magnitude (N)
@@ -190,9 +190,11 @@ public:
     // VM2 A{0.45, 0.002};
     // VM2 C{0.45, 0.302};
     // VM2 A{0.45, 0.002};
-    // VM2 C{0.45, 0.252};
-    VM2 A{0.45, 0.002};
-    VM2 C{0.45, 0.222};
+    // VM2 C{0.45, 0.222};
+    VM2 A{0.32, 0.002};
+    VM2 C{0.32, 0.222};
+    // VM2 A{0.32, 0.050};
+    // VM2 C{0.32, 0.250};
 
 
     // double epsA = 0.05;
@@ -217,11 +219,11 @@ public:
     double trialMaxTime      = 0.5; // maximum trial time (s)
     double  trialExtendTime = 0.2; // extra time after timeout to reach C
 
-    const double x_min = 0.10;   // left boundary (m)
+    const double x_min = 0.05;   // left boundary (m)
     const double x_max = 0.55;   // left boundary (m)
     const double k_wall = 1800.0; // wall stiffness N/m
     const double d_wall = 50.0;  // wall damping N·s/m
-    const double y_max = 0.35;   // upper boundary (m)
+    const double y_max = 0.38;   // upper boundary (m)
 
     VM2    internalForce     = VM2::Zero();
 
@@ -325,7 +327,7 @@ private:
         VM2    force;  // sensed end-eff force
     };
     std::deque<WaitSample> waitBuf_;           // rolling buffer of recent WAIT_START samples
-    double preloadThresholdN_ = 8.0;           // adjustable threshold (N), default 3N
+    double preloadThresholdN_ = 10.0;           // adjustable threshold (N), default 3N
     // double preloadWindowSec_  = 0.200;         // window (s), default 200ms
     double preloadWindowSec_  = 0.200; 
     bool   preloadSatisfied_  = false;         // result for the upcoming trial

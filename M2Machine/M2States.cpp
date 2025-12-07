@@ -348,21 +348,21 @@ void M2ProbMoveState::duringCode() {
                 continue;
             }
 
-            // Allow adjusting preload threshold/window from UI
-            if (cu.rfind("S_PLT",0)==0 && !a.empty()) {
-                preloadThresholdN_ = a[0];
-                if (machine && machine->UIserver) machine->UIserver->sendCmd("OK");
-                machine->UIserver->clearCmd();
-                spdlog::info("GLOBAL: S_PLT -> preloadThresholdN_={}", preloadThresholdN_);
-                continue;
-            }
-            if (cu.rfind("S_PLW",0)==0 && !a.empty()) {
-                preloadWindowSec_ = std::max(0.0, a[0]);
-                if (machine && machine->UIserver) machine->UIserver->sendCmd("OK");
-                machine->UIserver->clearCmd();
-                // spdlog::info("GLOBAL: S_PLW -> preloadWindowSec_={}", preloadWindowSec_);
-                continue;
-            }
+            // // Allow adjusting preload threshold/window from UI
+            // if (cu.rfind("S_PLT",0)==0 && !a.empty()) {
+            //     preloadThresholdN_ = a[0];
+            //     if (machine && machine->UIserver) machine->UIserver->sendCmd("OK");
+            //     machine->UIserver->clearCmd();
+            //     spdlog::info("GLOBAL: S_PLT -> preloadThresholdN_={}", preloadThresholdN_);
+            //     continue;
+            // }
+            // if (cu.rfind("S_PLW",0)==0 && !a.empty()) {
+            //     preloadWindowSec_ = std::max(0.0, a[0]);
+            //     if (machine && machine->UIserver) machine->UIserver->sendCmd("OK");
+            //     machine->UIserver->clearCmd();
+            //     // spdlog::info("GLOBAL: S_PLW -> preloadWindowSec_={}", preloadWindowSec_);
+            //     continue;
+            // }
 
 
             if (cu.rfind("FRC2",0)==0 && a.size() >= 2) {
@@ -374,6 +374,9 @@ void M2ProbMoveState::duringCode() {
 
                 F_const_up = a[0];
                 F_const_left = a[1];
+                if (F_const_left > 0 && trialIsLeft){F_const_left = -F_const_left;} // leftward force must be negative or zero
+                else if (F_const_left < 0 && !trialIsLeft){F_const_left = -F_const_left;} // rightward force must be positive or zero
+                
                 if (machine && machine->UIserver)
                     machine->UIserver->sendCmd("OK");
                 machine->UIserver->clearCmd();
@@ -567,11 +570,6 @@ void M2ProbMoveState::duringCode() {
                 waitHoldLatched_ = true;
             }
 
-            if (!waitHoldLatched_) {
-                if (pending_k_hold >= 0.0) { k_hold = pending_k_hold; pending_k_hold = -1.0; }
-                if (pending_d_hold >= 0.0) { d_hold = pending_d_hold; pending_d_hold = -1.0; }
-            }
-
 
             if (waitHoldLatched_) {
                 
@@ -603,8 +601,8 @@ void M2ProbMoveState::duringCode() {
                 effortIntegral = 0.0;
                 rawEffortIntegral = 0.0;
                 
-                if (injectingUp)       baselineImpulseN = 4000;   
-                else if (injectingLeft) baselineImpulseN = 5270;  
+                if (injectingUp)       baselineImpulseN = 0;   // default value 4000;
+                else if (injectingLeft) baselineImpulseN = 0;  // default value 5270;
                 else                    baselineImpulseN = 0.0;  
 
                 if (machine && machine->UIserver) {
@@ -613,7 +611,7 @@ void M2ProbMoveState::duringCode() {
                     oss.precision(3);
                     int curTrialForMode = (currentMode == V1_COUNT_SUCCESS) ? totalTrialsV1 : totalTrialsV2;
                     oss << "TRIAL_BEGIN t=" << trialStartTime
-                        << " dir=" << (internalForce(0) < -1e-9 ? "LEFT" : (internalForce(1) > 1e-9 ? "UP" : "NONE"))
+                        << " dir=" << (internalForce(0) < -1e-9 ? "SIDE" : (internalForce(1) > 1e-9 ? "UP" : "NONE"))
                         << " pLeft=" << probLeft
                         << " mode=" << (currentMode == V1_COUNT_SUCCESS ? 1 : 2)
                         << " cur_trial=" << curTrialForMode
@@ -691,6 +689,11 @@ void M2ProbMoveState::duringCode() {
             //         }
             // }
 
+            if (trialIsLeft){
+                F_const_left = -std::abs(F_const_left);
+            }else{
+                F_const_left = std::abs(F_const_left);
+            }
 
             // -------------------- Internal force -------------------------
             if (injectingUp) {
@@ -698,7 +701,7 @@ void M2ProbMoveState::duringCode() {
                 if (timeoutTrial==false) {
                 // Apply upward perturbation only until target is reached
                     F_int(1) = F_const_up;
-                    spdlog::info("F_int(1) = {:.3f}", F_int(1));
+                    // spdlog::info("F_int(1) = {:.3f}", F_int(1));
                     // if (perturbIndex < upPerturbForce2.size()) {
                     //         F_int(1) = upPerturbForce2[perturbIndex++];
                            
@@ -729,7 +732,7 @@ void M2ProbMoveState::duringCode() {
         
                 if (!reachedC && timeoutTrial==false) {
                         F_int(0) = F_const_left;
-                        spdlog::info("F_int(0) = {:.3f}", F_int(0));
+                        // spdlog::info("F_int(0) = {:.3f}", F_int(0));
                     }
                 // if (perturbIndex < leftPerturbForce.size()) {
                 //         F_int(0) = leftPerturbForce2[perturbIndex++];
@@ -834,7 +837,7 @@ void M2ProbMoveState::duringCode() {
 
             const double now = running();
             // if ((!sendPosOnlyOnTimeout_ || timeout) &&(lastTrpsT_ <0.0 || (now -lastTrpsT_) >=trpsMinInterval_)){
-            if (timeout && (lastTrpsT_ < 0.0 || (now - lastTrpsT_) >= trpsMinInterval_)) {
+            if (timeout || reachedC && (lastTrpsT_ < 0.0 || (now - lastTrpsT_) >= trpsMinInterval_)) {
                 
                 if (machine && machine->UIserver) {
                     std::vector<double> q;
@@ -899,7 +902,7 @@ void M2ProbMoveState::duringCode() {
                         << " dist=" << n
                         << " effort=" << effortIntegral
                         << " trialScore=" << trialScore
-                        << " dir=" << (internalForce(0) < -1e-9 ? "LEFT" : (internalForce(1) > 1e-9 ? "UP" : "NONE"))
+                        << " dir=" << (internalForce(0) < -1e-9 ? "SIDE" : (internalForce(1) > 1e-9 ? "UP" : "NONE"))
                         << " pLeft=" << probLeft
                         << " mode=" << (currentMode == V1_COUNT_SUCCESS ? 1 : 2);
                     int curTrial = (currentMode == V1_COUNT_SUCCESS) ? totalTrialsV1 : totalTrialsV2;
@@ -1043,7 +1046,7 @@ void M2ProbMoveState::decideInternalForceDirection() {
     injectingLeft = (internalForce(0) < -1e-9);
     injectingUp   = (internalForce(1) >  1e-9);
     perturbIndex  = 0;
-    spdlog::info("TRIAL direction (deterministic): {}", (dirFlag < 0 ? "LEFT" : "UP"));
+    spdlog::info("TRIAL direction (deterministic): {}", (dirFlag < 0 ? "SIDE" : "UP"));
 }
 
 void M2ProbMoveState::resetToAPlan(const VM2& Xnow) {
@@ -1061,8 +1064,8 @@ void M2ProbMoveState::resetToAIntegrators() {
 void M2ProbMoveState::buildDeterministicSchedule() {
     trialSchedule_.clear();
     // const int seed = 1111111;
-    const int seed = 1456070;
-    // const int seed = 1661471;
+    // const int seed = 1456070;
+    const int seed = 1661471;
     const int total = 10;
     
     const double eps = 1e-3;
@@ -1235,7 +1238,8 @@ void M2ProbMoveState::loadPerturbationForces() {
 
     for(int i=0;i<500;i++){
         upPerturbForce2.push_back(F_const_up);
-        if (F_const_left > 0){ F_const_left = -F_const_left;}
+        if (F_const_left > 0 && trialIsLeft){ F_const_left = -F_const_left;}
+        else if (F_const_left <0 && !trialIsLeft){ F_const_left = -F_const_left;}
         leftPerturbForce2.push_back(F_const_left);
     }
 
