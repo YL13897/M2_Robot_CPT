@@ -51,6 +51,7 @@ Module.symvers
 Mkfile.old
 dkms.conf
 
+.DS_Store
 
 Unity-Ui/M2_Ui/*
 !Unity-Ui/M2_Ui/Assets/
