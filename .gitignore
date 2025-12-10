@@ -6,7 +6,6 @@
 *.ko
 *.obj
 *.elf
-# .\Unity-Ui\M2-Ui\Libraries\*
 
 # Linker output
 *.ilk
@@ -53,7 +52,6 @@ Mkfile.old
 dkms.conf
 
 
-
 Unity-Ui/
 !Unity-Ui/M2_Ui/
 
@@ -61,4 +59,3 @@ Unity-Ui/
 *.code-workspace
 
 CANOpenRobotController/build/
-
