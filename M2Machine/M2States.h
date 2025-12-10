@@ -7,33 +7,6 @@
  *                 effort computation, deterministic perturbation scheduling, and
  *                 Unity interface synchronization.
  *
- *      Author:    Tiancheng (Gavin) Yang
- *      Student ID: 1456070
- *      Affiliation: The University of Melbourne
- *      Contact:   tianchengy2@student.unimelb.edu.au
- *
- * -------------------------------------------------------------------------------------
- *      Copyright (c) 2025 Tiancheng Yang, The University of Melbourne
- *      License: MIT
- *
- *      Permission is hereby granted, free of charge, to any person obtaining a copy
- *      of this software and associated documentation files (the “Software”), to deal
- *      in the Software without restriction, including without limitation the rights
- *      to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- *      copies of the Software, and to permit persons to whom the Software is
- *      furnished to do so, subject to the following conditions:
- *
- *      The above copyright notice and this permission notice shall be included in all
- *      copies or substantial portions of the Software.
- *
- *      THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- *      IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- *      FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- *      AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- *      LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- *      OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- *      SOFTWARE.
- *
  * =====================================================================================
  */
 
@@ -223,7 +196,7 @@ public:
     const double x_max = 0.55;   // left boundary (m)
     const double k_wall = 1800.0; // wall stiffness N/m
     const double d_wall = 50.0;  // wall damping N·s/m
-    const double y_max = 0.38;   // upper boundary (m)
+    const double y_max = 0.40;   // upper boundary (m)
 
     VM2    internalForce     = VM2::Zero();
 
@@ -251,8 +224,9 @@ public:
     // double V2_Smax = 110.0;
 
     // ToA related variables
-    double holdTimeA  = 0.25;
-    double epsA_hold  = 0.15;
+    // double holdTimeA  = 0.25;
+    double holdTimeA  = 1;
+    double epsA_hold  = 0.10;
     double inBandSince = 0.0;
     VM2    Xi;
     double T_toA  = 2.0;
@@ -311,6 +285,11 @@ private:
     int totalTrialsV1 = 0;
     double totalScoreV2 = 0.0;
     int totalTrialsV2 = 0;
+
+    // ToA notification flag
+    bool atA_notified_ = false;
+
+    // --- UI command debounce ---
     // STRT debounce (seconds)
     double lastStrtTime = -1.0;
     double strtMinInterval = 1.0;
@@ -361,21 +340,8 @@ private:
     }
 
     void sendUI_(const std::string& msg);
+
 };
 
 #endif
-/*
- * SPDX-License-Identifier: MIT
- *
- * M2 Probabilistic Move Controller – State Interfaces
- *
- * Copyright (c) 2025  Tiancheng Yang
- * Affiliation: University of Melbourne
- *
- * License: This file is licensed under the MIT License (see LICENSE at repo root).
- *
- * Data and Usage Notes:
- * - WAIT_START logs raw 200ms preload windows to `logs/PreloadWindow_<session>.csv`.
- * - Per-trial preload tags are written to `logs/TrialTags_<session>.csv`.
- * - Configure preload via `S_PLT` (N) and `S_PLW` (s) UI commands.
- */
+

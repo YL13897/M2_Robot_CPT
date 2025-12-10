@@ -236,6 +236,8 @@ void M2ProbMoveState::entryCode() {
     loadPerturbationForces();
     buildDeterministicSchedule();
     softWallEnabled = false;  
+
+    atA_notified_ = false;
 }
 
 // Main loop: drain UI, then run phase switch (TO_A / WAIT_START / TRIAL)
@@ -415,6 +417,8 @@ void M2ProbMoveState::duringCode() {
             machine->UIserver->clearCmd();
         }
     }
+
+
     // === END GLOBAL COMMAND DRAIN ===
     // Phase controller: TO_A -> WAIT_START -> TRIAL
     switch (currentPhase) {
@@ -453,21 +457,27 @@ void M2ProbMoveState::duringCode() {
 
             // Transition condition check
             double distA = (A - X).norm();
-            bool atA = false;
+            bool atA_hold = false;
             if (distA < epsA_hold) {
                 if (inBandSince == 0.0) {
-                    inBandSince = running();
-                } else if (running() - inBandSince >= holdTimeA) {
-                    atA = true;
+                    inBandSince = running();}
+                else if ((running() - inBandSince) >= holdTimeA) {
+                    atA_hold = true;
+                    if (machine && machine->UIserver && !atA_notified_) {
+                        machine->UIserver->sendCmd("AT_A");
+                        atA_notified_ = true;
+                        spdlog::info("Checked, atA_hold!");
+                    }
                 }
             } else {
                 inBandSince = 0.0;
+                atA_notified_ = false;
             }
 
-            if (atA) {
+            if (atA_hold) {
                 softWallEnabled = true;
                 currentPhase = WAIT_START;
-                betweenTrials = true;               
+                betweenTrials = true;       
                 spdlog::info("TO_A -> WAIT_START (betweenTrials=1)");
             }
             break;
@@ -492,12 +502,21 @@ void M2ProbMoveState::duringCode() {
 
             VM2 X = robot->getEndEffPosition();
             double distToA = (A - X).norm();
-            bool atA_hold = false;
+            bool atA_hold = false;           
             if (distToA < epsA_hold) {
                 if (inBandSince == 0.0) inBandSince = running();
-                else if ((running() - inBandSince) >= holdTimeA) atA_hold = true;
+                else if ((running() - inBandSince) >= holdTimeA) {
+                    atA_hold = true;
+                    if (machine && machine->UIserver && !atA_notified_) {
+                        machine->UIserver->sendCmd("AT_A");
+                        atA_notified_ = true;
+                        spdlog::info("Checked, atA_hold!");
+                    }     
+                
+                }
             } else {
                 inBandSince = 0.0;
+                atA_notified_ = false;
             }
             if (pendingStart && atA_hold) {
                 // On STRT: evaluate last preload window and log
@@ -978,6 +997,26 @@ void M2ProbMoveState::duringCode() {
                     return;                    // important: exit now to avoid any further TRIAL computations this frame
                 }
 
+
+                // inside TRIAL, when timeout block sets up the next round
+                // if (!finishedFlag) {
+                //     injectingUp = false;
+                //     injectingLeft = false;
+                //     perturbIndex = 0;
+
+                //     currentPhase    = TO_A;     // go recenter first
+                //     initToA         = true;
+                //     betweenTrials   = false;    // only becomes true when TO_A reaches A
+                //     waitHoldLatched_= false;
+                //     pendingStart    = false;    // optional: force a fresh STRT after recentering
+                //     inBandSince     = 0.0;
+                //     effortIntegral  = 0.0;
+                //     waitBuf_.clear();
+                //     preloadSatisfied_ = false;
+                //     spdlog::info("TRIAL finished -> TO_A; will start next trial after reaching A");
+                //     return;
+                // }
+
             }
             break;
         }
@@ -1069,13 +1108,15 @@ void M2ProbMoveState::buildDeterministicSchedule() {
     const int total = 10;
     
     const double eps = 1e-3;
-    if (probLeft <= eps) {                 // 0% 左：全 UP(+1)
+    // 0% case：all UP(+1)
+    if (probLeft <= eps) {                 
         trialSchedule_.assign(total, +1);
         trialIdx_ = 0;
         
         return;
     }
-    if (probLeft >= 1.0 - eps) {           // 100% 左：全 LEFT(-1)  
+    // 100% case：all LEFT(-1)  
+    if (probLeft >= 1.0 - eps) {           
         trialSchedule_.assign(total, -1);
         trialIdx_ = 0;
         
@@ -1503,18 +1544,3 @@ void M2ProbMoveState::writePreloadWindow_(int trialIdxForMode,
 //         << "\n";
 // }
 
-/*
- * SPDX-License-Identifier: MIT
- *
- * M2 Probabilistic Move Controller – State Implementations
- *
- * Copyright (c) 2025  Tiancheng Yang
- * Affiliation: University of Melbourne
- *
- * License: This file is licensed under the MIT License (see LICENSE at repo root).
- *
- * Data and Usage Notes:
- * - Writes state-specific CSV logs under `logs/`.
- * - WAIT_START evaluates last 200ms preload window before consuming STRT.
- * - UI params: `S_PLT` (threshold, N), `S_PLW` (window, s).
- */
