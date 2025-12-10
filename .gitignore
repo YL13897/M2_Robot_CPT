@@ -52,9 +52,10 @@ Mkfile.old
 dkms.conf
 
 
-Unity-Ui/*
+Unity-Ui/
+!Unity-Ui/M2_Ui/
 
 .vscode/
 *.code-workspace
 
-# CANOpenRobotController/build/
+CANOpenRobotController/build/
