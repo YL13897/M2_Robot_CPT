@@ -272,6 +272,10 @@ class FLNLHelper
             return false;
         }
 
+        /** \brief Is the server connected to a client?
+        */  
+        bool isConnected() { return FLNLServer.IsConnected(); }
+
     private:
         server FLNLServer;
 
@@ -280,6 +284,8 @@ class FLNLHelper
         std::vector<double> stateValues;                //!< All state double values to be sent
         std::chrono::steady_clock::time_point initTime;
         double runningTime = 0;                         //!< Time since initialisation in s
+
+        
 };
 
 #endif //FLNLHELPER_H

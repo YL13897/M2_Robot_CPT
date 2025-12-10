@@ -7,33 +7,6 @@
  *                 effort computation, deterministic perturbation scheduling, and
  *                 Unity interface synchronization.
  *
- *      Author:    Tiancheng (Gavin) Yang
- *      Student ID: 1456070
- *      Affiliation: The University of Melbourne
- *      Contact:   tianchengy2@student.unimelb.edu.au
- *
- * -------------------------------------------------------------------------------------
- *      Copyright (c) 2025 Tiancheng Yang, The University of Melbourne
- *      License: MIT
- *
- *      Permission is hereby granted, free of charge, to any person obtaining a copy
- *      of this software and associated documentation files (the “Software”), to deal
- *      in the Software without restriction, including without limitation the rights
- *      to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- *      copies of the Software, and to permit persons to whom the Software is
- *      furnished to do so, subject to the following conditions:
- *
- *      The above copyright notice and this permission notice shall be included in all
- *      copies or substantial portions of the Software.
- *
- *      THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- *      IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- *      FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- *      AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- *      LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- *      OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- *      SOFTWARE.
- *
  * =====================================================================================
  */
 
@@ -155,41 +128,75 @@ public:
 
     // --- Perturbation force arrays loaded from CSV ---
     std::vector<double> upPerturbForce;
+    std::vector<double> upPerturbForce2;
     std::vector<double> leftPerturbForce;
+    std::vector<double> leftPerturbForce2;
     size_t perturbIndex = 0;
     bool injectingUp = false;
     bool injectingLeft = false;
+
+
     // --- WAIT_START hold-at-A configuration ---
     bool waitHoldLatched_ = false;  
-    double k_hold = 2000.0;           
-    double d_hold = 10.0;            
+    double k_hold = 1000.0; // Default 350        
+    double d_hold = 35.0;            
 
+    double k_hold_cmd = 1000.0; // Default 350
+    double d_hold_cmd = 35.0;
+
+    bool hold_log_once = false;
     // --- Perturbation CSV loading functions ---
     std::vector<double> loadColumnFromCSV(const std::string& path, int colIndex, double tStart, double tEnd);
     void loadPerturbationForces();
 
-public:
-    // experiment config
-    VM2 A{0.45, 0.002};
-    VM2 C{0.45, 0.302};
+    bool trialIsLeft = true;
+    // bool trialIsLeft = false;
 
-    double epsA = 0.05;
-    double epsC = 0.05;
+
+    double F_const_up = 50.0;   // Set the constant perturbation force magnitude (N)
+    double F_const_left = -30.0; // Make sure left force is negative
+
+    bool softWallEnabled = false;
+
+// public:
+    // experiment config
+    // VM2 A{0.45, 0.002};
+    // VM2 C{0.45, 0.302};
+    // VM2 A{0.45, 0.002};
+    // VM2 C{0.45, 0.222};
+    VM2 A{0.32, 0.002};
+    VM2 C{0.32, 0.222};
+    // VM2 A{0.32, 0.050};
+    // VM2 C{0.32, 0.250};
+
+
+    // double epsA = 0.05;
+    // double epsC = 0.05;
+    double epsC = 0.08;  //default 0.05
     
     double lastTrpsT_ = -1.0;
     double trpsMinInterval_ = 0.5; // 20Hz
 
-    std::vector<VM2> trialEndPositions_;   
-    bool sendPosOnlyOnTimeout_ = false;    
+    std::vector<VM2> trialEndPositions_;
+    // bool sendPosOnlyOnTimeout_ = false;    
     
-    double k = 50;
-    double d = 6;
+    // double k = 150;
+    // double d = 6;
+    double k = 200;
+    double d = 15;
 
-    double robotForceMagUp  = 35;
+    double robotForceMagUp  = 17.5;
     double robotForceMagLeft= 17.5;
     
-    double internalForceDur  = 1.2;
-    double trialMaxTime      = 1.2;
+    // double internalForceDur  = 1.2;
+    double trialMaxTime      = 0.5; // maximum trial time (s)
+    double  trialExtendTime = 0.2; // extra time after timeout to reach C
+
+    const double x_min = 0.05;   // left boundary (m)
+    const double x_max = 0.55;   // left boundary (m)
+    const double k_wall = 1800.0; // wall stiffness N/m
+    const double d_wall = 50.0;  // wall damping N·s/m
+    const double y_max = 0.40;   // upper boundary (m)
 
     VM2    internalForce     = VM2::Zero();
 
@@ -202,9 +209,9 @@ public:
 
     double probLeft = 0.5;
 
-    bool   enablePIDToA = true;
-    double KpToA = 6.0;
-    double KiToA = 35.0;
+    bool enablePIDToA = false;
+    double KpToA = 5.0;
+    double KiToA = 30.0;
     double KdToA = 1.0;
     VM2    iErrToA = VM2::Zero();
     double iToA_max = 15.0;
@@ -214,11 +221,12 @@ public:
     int    meta_targetSucc  = 10;
     int    meta_maxTrials   = 10;
 
-    double V2_Smax = 110.0;
+    // double V2_Smax = 110.0;
 
     // ToA related variables
-    double holdTimeA  = 0.25;
-    double epsA_hold  = 0.06;
+    // double holdTimeA  = 0.25;
+    double holdTimeA  = 1;
+    double epsA_hold  = 0.10;
     double inBandSince = 0.0;
     VM2    Xi;
     double T_toA  = 2.0;
@@ -277,6 +285,11 @@ private:
     int totalTrialsV1 = 0;
     double totalScoreV2 = 0.0;
     int totalTrialsV2 = 0;
+
+    // ToA notification flag
+    bool atA_notified_ = false;
+
+    // --- UI command debounce ---
     // STRT debounce (seconds)
     double lastStrtTime = -1.0;
     double strtMinInterval = 1.0;
@@ -293,15 +306,19 @@ private:
         VM2    force;  // sensed end-eff force
     };
     std::deque<WaitSample> waitBuf_;           // rolling buffer of recent WAIT_START samples
-    double preloadThresholdN_ = 3.0;           // adjustable threshold (N), default 3N
-    double preloadWindowSec_  = 0.200;         // window (s), default 200ms
+    double preloadThresholdN_ = 10.0;           // adjustable threshold (N), default 3N
+    // double preloadWindowSec_  = 0.200;         // window (s), default 200ms
+    double preloadWindowSec_  = 0.200; 
     bool   preloadSatisfied_  = false;         // result for the upcoming trial
     std::ofstream preloadWinCsv_;              // raw 200ms window dump
-    std::ofstream trialTagsCsv_;               // per-trial tags (preload yes/no)
+    // std::ofstream trialTagsCsv_;               // per-trial tags (preload yes/no)
+    std::ofstream preloadCsv_;                 // merged preload window log
     void openPreloadCSVs_();
     void closePreloadCSVs_();
-    void writePreloadWindow_(int trialIdxForMode, double tNow);
-    void writeTrialTag_(int trialIdxForMode, int mode, bool flag, double tNow);
+    // void writePreloadWindow_(int trialIdxForMode, double tNow);
+    // void writeTrialTag_(int trialIdxForMode, int mode, bool flag, double tNow);
+    void writePreloadWindow_(int trialIdxForMode, double tNow, int mode, bool preloadFlag);
+    double computeFxMin_(double tNow);
 
     static bool isPrintableAscii(const std::string& s) {
         for (unsigned char ch : s) {
@@ -323,21 +340,8 @@ private:
     }
 
     void sendUI_(const std::string& msg);
+
 };
 
 #endif
-/*
- * SPDX-License-Identifier: MIT
- *
- * M2 Probabilistic Move Controller – State Interfaces
- *
- * Copyright (c) 2025  Tiancheng Yang
- * Affiliation: University of Melbourne
- *
- * License: This file is licensed under the MIT License (see LICENSE at repo root).
- *
- * Data and Usage Notes:
- * - WAIT_START logs raw 200ms preload windows to `logs/PreloadWindow_<session>.csv`.
- * - Per-trial preload tags are written to `logs/TrialTags_<session>.csv`.
- * - Configure preload via `S_PLT` (N) and `S_PLW` (s) UI commands.
- */
+

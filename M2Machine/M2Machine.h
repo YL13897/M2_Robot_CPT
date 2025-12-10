@@ -33,20 +33,3 @@ public:
 };
 
 #endif /* M2_MACHINE_H */
-/*
- * SPDX-License-Identifier: MIT
- *
- * M2 Probabilistic Move Controller – State Machine Wrapper
- *
- * Copyright (c) 2025  Tiancheng Yang
- * Affiliation: University of Melbourne
- *
- * License: This file is licensed under the MIT License (see LICENSE at repo root).
- *
- * Data and Usage Notes:
- * - This software logs experimental telemetry under `logs/` (CSV files).
- * - Logged data may contain session identifiers; anonymize before sharing.
- * - UI commands originate from the Unity frontend via FLNLHelper.
- * - For preload detection parameters, see commands `S_PLT` (threshold, N)
- *   and `S_PLW` (window, s). Default: 3.0 N and 0.200 s.
- */
