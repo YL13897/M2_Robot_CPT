@@ -52,7 +52,7 @@ Mkfile.old
 dkms.conf
 
 
-Unity-Ui/
+Unity-Ui/*
 !Unity-Ui/M2_Ui/Assets/
 !Unity-Ui/M2_Ui/Packages/
 !Unity-Ui/M2_Ui/ProjectSettings/
