@@ -227,20 +227,20 @@ void M2ProbMoveState::entryCode() {
     betweenTrials = false;
     lastStrtTime  = -1.0;  // reset debounce timer
 
-    perturbIndex = 0;
     injectingUp = false;
     injectingLeft = false;
     inBandSince = 0.0;
     waitHoldLatched_ = false;
     // Load perturbation forces from CSV
     loadPerturbationForces();
-    buildDeterministicSchedule();
+    if (randomizeOrBlock == 1) buildDeterministicSchedule_random();
+    else buildDeterministicSchedule();
     softWallEnabled = false;  
 
     atA_notified_ = false;
 }
 
-// Main loop: drain UI, then run phase switch (TO_A / WAIT_START / TRIAL)
+// Main loop: drain UI, then run phase switch (TO_A / WAIT_START / TRIAL / ...)
 void M2ProbMoveState::duringCode() {
 
     // === GLOBAL COMMAND DRAIN === (RSTA/HALT/STRT/param set/etc.)
@@ -288,10 +288,13 @@ void M2ProbMoveState::duringCode() {
             
             if (cu.rfind("S_PB", 0) == 0 && !a.empty()) {
                 probLeft = clamp_compat(a[0], 0.0, 1.0);
-                buildDeterministicSchedule();
+                BlockID = a[1];
+                if (randomizeOrBlock == 1) buildDeterministicSchedule_random();
+                else buildDeterministicSchedule();
                 if (machine && machine->UIserver) machine->UIserver->sendCmd("OK");
                 machine->UIserver->clearCmd();
-                spdlog::info("GLOBAL: S_PB applied -> pLeft={:.3f}", probLeft);
+                // spdlog::info("GLOBAL: S_PB applied -> pLeft={:.3f}", currentTrialProb_);
+                spdlog::info("GLOBAL: S_PB applied -> BlockID={}", BlockID);
                 continue;
             }
             
@@ -366,7 +369,7 @@ void M2ProbMoveState::duringCode() {
             //     continue;
             // }
 
-
+            // Directional constant force update
             if (cu.rfind("FRC2",0)==0 && a.size() >= 2) {
 
                 // const double F_UP_MIN = 0.0,  F_UP_MAX = 120.0;    // Upward positive
@@ -386,7 +389,7 @@ void M2ProbMoveState::duringCode() {
                 continue;
             }
 
-
+            // Hold stiffness/damping update
             if (cu.rfind("HLKD",0)==0 && a.size() >= 2) {
 
                 if (waitHoldLatched_) {
@@ -411,6 +414,25 @@ void M2ProbMoveState::duringCode() {
                 continue;
             }
 
+            if (cu.rfind("Q_PB", 0) == 0) { // query pLeft
+                if (randomizeOrBlock == 1){
+                    double pLeft = probLeft;
+                    if (trialSchedule_.empty()) {
+                        buildDeterministicSchedule_random();
+                    }
+                    if (!trialSchedule_.empty()) {
+                        size_t idx = trialIdx_ % trialSchedule_.size();
+                        pLeft = (idx < trialProb_.size()) ? trialProb_[idx] : probLeft;
+                    }
+                    std::vector<double> pLeft_Q;
+                    pLeft_Q.push_back(pLeft);
+                    machine->UIserver->sendCmd("R_PB", {pLeft_Q});
+                    machine->UIserver->clearCmd();
+                    spdlog::info("GLOBAL: Q_PB -> pLeft={:.3f}", pLeft);
+                    continue;
+                }
+            }
+        
 
             // If unknown command
             spdlog::warn("GLOBAL: unknown cmd='{}' (trim='{}') @phase={}", c, cu, (int)currentPhase);
@@ -464,10 +486,12 @@ void M2ProbMoveState::duringCode() {
                 else if ((running() - inBandSince) >= holdTimeA) {
                     atA_hold = true;
                     if (machine && machine->UIserver && !atA_notified_) {
-                        machine->UIserver->sendCmd("AT_A");
+                        std::vector<double> p;
+                        p.push_back(currentTrialProb_);
+                        machine->UIserver->sendCmd("AT_A", p);  // Send p[0] = currentTrialProb_
                         atA_notified_ = true;
-                        spdlog::info("Checked, atA_hold!");
-                    }
+                        spdlog::info("Checked, atA_hold! pLeft={:.3f}", currentTrialProb_);
+                    }     
                 }
             } else {
                 inBandSince = 0.0;
@@ -508,9 +532,11 @@ void M2ProbMoveState::duringCode() {
                 else if ((running() - inBandSince) >= holdTimeA) {
                     atA_hold = true;
                     if (machine && machine->UIserver && !atA_notified_) {
-                        machine->UIserver->sendCmd("AT_A");
+                        std::vector<double> p;
+                        p.push_back(currentTrialProb_);
+                        machine->UIserver->sendCmd("AT_A", p);  // Send p[0] = currentTrialProb_
                         atA_notified_ = true;
-                        spdlog::info("Checked, atA_hold!");
+                        spdlog::info("WAIT_START: Checked, atA_hold! pLeft={:.3f}", currentTrialProb_);
                     }     
                 
                 }
@@ -577,7 +603,7 @@ void M2ProbMoveState::duringCode() {
             if (iterations() % 1000 == 1) {
                 spdlog::info(
                     "WAIT_START cfg: pLeft={:.3f}, mode={}, targetSucc={}, maxTrials={}, V1={}/{}, V2Score={:.3f}({}), finishedFlag={}",
-                    probLeft, meta_scoreMode, meta_targetSucc, meta_maxTrials,
+                    currentTrialProb_, meta_scoreMode, meta_targetSucc, meta_maxTrials,
                     successfulTrials, totalTrialsV1, totalScoreV2, totalTrialsV2,
                     finishedFlag ? 1 : 0
                 );
@@ -631,7 +657,7 @@ void M2ProbMoveState::duringCode() {
                     int curTrialForMode = (currentMode == V1_COUNT_SUCCESS) ? totalTrialsV1 : totalTrialsV2;
                     oss << "TRIAL_BEGIN t=" << trialStartTime
                         << " dir=" << (internalForce(0) < -1e-9 ? "SIDE" : (internalForce(1) > 1e-9 ? "UP" : "NONE"))
-                        << " pLeft=" << probLeft
+                        << " pLeft=" << currentTrialProb_
                         << " mode=" << (currentMode == V1_COUNT_SUCCESS ? 1 : 2)
                         << " cur_trial=" << curTrialForMode
                         << " max_trial=" << meta_maxTrials;
@@ -645,7 +671,8 @@ void M2ProbMoveState::duringCode() {
                         int curTrialForMode = (currentMode == V1_COUNT_SUCCESS) ? totalTrialsV1 : totalTrialsV2;
                         p.push_back(trialStartTime);                             // t
                         p.push_back((double)dirCode);                            // dirCode
-                        p.push_back(probLeft);                                   // pLeft
+                        // p.push_back(probLeft);                                   // pLeft
+                        p.push_back(currentTrialProb_); 
                         p.push_back((double)(currentMode == V1_COUNT_SUCCESS ? 1 : 2)); // mode
                         p.push_back((double)curTrialForMode);                    // cur
                         p.push_back((double)meta_maxTrials);                     // max
@@ -655,7 +682,8 @@ void M2ProbMoveState::duringCode() {
                 }
                 spdlog::info(
                     "TRIAL_BEGIN cfg: pLeft={:.3f}, mode={}, targetSucc={}, maxTrials={}, V1={}/{}, V2Score={:.3f}({})",
-                    probLeft,
+                    // probLeft,
+                    currentTrialProb_,
                     meta_scoreMode,
                     meta_targetSucc,
                     meta_maxTrials,
@@ -842,7 +870,8 @@ void M2ProbMoveState::duringCode() {
                     (running() - trialStartTime),
                     n,
                     effortIntegral,
-                    probLeft,
+                    // probLeft,
+                    currentTrialProb_,
                     meta_scoreMode,
                     meta_targetSucc,
                     meta_maxTrials
@@ -922,7 +951,8 @@ void M2ProbMoveState::duringCode() {
                         << " effort=" << effortIntegral
                         << " trialScore=" << trialScore
                         << " dir=" << (internalForce(0) < -1e-9 ? "SIDE" : (internalForce(1) > 1e-9 ? "UP" : "NONE"))
-                        << " pLeft=" << probLeft
+                        // << " pLeft=" << probLeft
+                        << " pLeft=" << currentTrialProb_
                         << " mode=" << (currentMode == V1_COUNT_SUCCESS ? 1 : 2);
                     int curTrial = (currentMode == V1_COUNT_SUCCESS) ? totalTrialsV1 : totalTrialsV2;
                     oss << " cur_trial=" << curTrial
@@ -979,7 +1009,6 @@ void M2ProbMoveState::duringCode() {
                     // Optionally reset perturbation injection state
                     injectingUp = false;
                     injectingLeft = false;
-                    perturbIndex = 0;
                     // Stay in ProbMove but go back to WAIT_START to await explicit STRT.
                     currentPhase    = WAIT_START;
                     betweenTrials   = true;      // allow param changes between trials
@@ -994,7 +1023,7 @@ void M2ProbMoveState::duringCode() {
                     // if ((running() - trenSendTime_) < 0.02 ) {
                     //      
                     // }   
-                    return;                    // important: exit now to avoid any further TRIAL computations this frame
+                    return;  // important: exit now to avoid any further TRIAL computations this frame
                 }
 
 
@@ -1002,7 +1031,6 @@ void M2ProbMoveState::duringCode() {
                 // if (!finishedFlag) {
                 //     injectingUp = false;
                 //     injectingLeft = false;
-                //     perturbIndex = 0;
 
                 //     currentPhase    = TO_A;     // go recenter first
                 //     initToA         = true;
@@ -1077,16 +1105,71 @@ VM2 M2ProbMoveState::readUserForce() {
     return f;
 }
 
+// void M2ProbMoveState::decideInternalForceDirection() {
+//     if (trialSchedule_.empty()) buildDeterministicSchedule();
+//     int dirFlag = trialSchedule_[trialIdx_ % trialSchedule_.size()];
+//     ++trialIdx_;
+//     internalForce = (dirFlag < 0) ? VM2(-robotForceMagLeft, 0.0) : VM2(0.0, +robotForceMagUp);
+//     injectingLeft = (internalForce(0) < -1e-9);
+//     injectingUp   = (internalForce(1) >  1e-9);
+//     spdlog::info("TRIAL direction (deterministic): {}", (dirFlag < 0 ? "SIDE" : "UP"));
+// }
+
 void M2ProbMoveState::decideInternalForceDirection() {
-    if (trialSchedule_.empty()) buildDeterministicSchedule();
-    int dirFlag = trialSchedule_[trialIdx_ % trialSchedule_.size()];
+    if (trialSchedule_.empty()) {
+        if (randomizeOrBlock == 1) buildDeterministicSchedule_random();
+        else buildDeterministicSchedule();
+    }
+    if (trialSchedule_.empty()) {
+        spdlog::error("trialSchedule_ empty after build; fallback to UP");
+        internalForce = VM2(0.0, +robotForceMagUp);
+        injectingLeft = false; injectingUp = true;
+        currentTrialProb_ = probLeft; currentTrialDir_ = +1;
+        return;
+    }
+
+    size_t idx = trialIdx_ % trialSchedule_.size();
+    int dirFlag = trialSchedule_[idx];
+    currentTrialProb_ = (idx < trialProb_.size()) ? trialProb_[idx] : probLeft;
+    currentTrialDir_  = dirFlag;
     ++trialIdx_;
-    internalForce = (dirFlag < 0) ? VM2(-robotForceMagLeft, 0.0) : VM2(0.0, +robotForceMagUp);
-    injectingLeft = (internalForce(0) < -1e-9);
-    injectingUp   = (internalForce(1) >  1e-9);
-    perturbIndex  = 0;
-    spdlog::info("TRIAL direction (deterministic): {}", (dirFlag < 0 ? "SIDE" : "UP"));
+
+    internalForce = (dirFlag < 0) ? VM2(-robotForceMagLeft, 0.0)
+                                  : VM2(0.0, +robotForceMagUp);
+    injectingLeft = internalForce(0) < -1e-9;
+    injectingUp   = internalForce(1) >  1e-9;
+    spdlog::info("TRIAL direction ({}): {} p={:.3f}",
+                 (randomizeOrBlock == 1 ? "random" : "deterministic"),
+                 (dirFlag < 0 ? "SIDE" : "UP"),
+                 currentTrialProb_);
 }
+
+
+
+
+// void M2ProbMoveState::decideInternalForceDirection() {
+//     // 若 schedule 为空，按开关选择构建方式
+//     if (trialSchedule_.empty()) {
+//         size_t idx = trialIdx_ % trialSchedule_.size();
+//         int dirFlag = trialSchedule_[idx];
+
+//         if (randomizeOrBlock == 1) {
+//             buildDeterministicSchedule_random();
+//             currentTrialProb_ = trialProb_[idx];
+//         } else {
+//             buildDeterministicSchedule();
+//             currentTrialProb_ = probLeft;
+//         }
+//         // currentTrialProb_ = (randomizeOrBlock == 1) ? trialProb_[idx] : probLeft;
+//         currentTrialDir_  = dirFlag;   // -1 或 +1
+//         ++trialIdx_;
+//         internalForce = (dirFlag < 0) ? VM2(-robotForceMagLeft, 0.0) : VM2(0.0, +robotForceMagUp);
+//         injectingLeft = (internalForce(0) < -1e-9);
+//         injectingUp   = (internalForce(1) >  1e-9);
+//         spdlog::info("TRIAL direction ({})", (dirFlag < 0 ? "SIDE" : "UP"));
+//     }   
+// }
+
 
 void M2ProbMoveState::resetToAPlan(const VM2& Xnow) {
     Xi = Xnow;
@@ -1098,13 +1181,30 @@ void M2ProbMoveState::resetToAIntegrators() {
     iErrToA.setZero();
 }
 
+void M2ProbMoveState::dumpScheduleCSV_(const std::vector<int>& dir,
+                                       const std::vector<double>& prob) {
+    const std::string sid   = (machine && !machine->sessionId.empty()) ? machine->sessionId : "UNSET";
+    const std::string fname = std::string("logs/Schedule_") + sid + ".csv";
+    std::ofstream f(fname, std::ios::out);
+    if (!f.is_open()) {
+        spdlog::error("Failed to open schedule CSV: {}", fname);
+        return;
+    }
+    f << "trialIndex,dir,prob\n";
+    for (size_t i = 0; i < dir.size(); ++i) {
+        double p = (i < prob.size()) ? prob[i] : probLeft;
+        f << i+1 << "," << dir[i] << "," << p << "\n";
+    }
+    f.close();
+}
+
 
 
 void M2ProbMoveState::buildDeterministicSchedule() {
     trialSchedule_.clear();
     // const int seed = 1111111;
     // const int seed = 1456070;
-    const int seed = 1661471;
+    // const int seed = 1661471;
     const int total = 10;
     
     const double eps = 1e-3;
@@ -1132,6 +1232,7 @@ void M2ProbMoveState::buildDeterministicSchedule() {
 
     // seed 
     std::mt19937_64 rng(seed);
+    spdlog::info("[SCHEDULE] Building seeded schedule with seed={}", seed);
 
     auto is_strict_alternating = [&](const std::vector<int>& v) -> bool {
         
@@ -1156,26 +1257,101 @@ void M2ProbMoveState::buildDeterministicSchedule() {
     trialSchedule_ = std::move(schedule);
     trialIdx_ = 0;
 
+    trialProb_.assign(trialSchedule_.size(), probLeft);
+
     spdlog::info("[SCHEDULE] Built seeded schedule (total={}, leftCount={}, seed={}, attempts={})",
                  total, leftCount, seed, attempts);
 }
 
-/*void M2ProbMoveState::buildDeterministicSchedule() {
+
+
+void M2ProbMoveState::buildDeterministicSchedule_random() {
+
+
     trialSchedule_.clear();
-    
-    int leftCount = static_cast<int>(std::round(probLeft * 10.0));
-    leftCount = std::max(1, std::min(9, leftCount));
+    trialProb_.clear();
+    const int totalTrials = 100;          // 总 trial
+    const int blockSize = 10;             // 每个 block trial 数
+    const std::vector<double> probList{0.1, 0.3, 0.5, 0.7, 0.9};
+    const int n = probList.size();
 
-    const int total = 10;
-    trialSchedule_.assign(total, +1); 
-    for (int k = 0; k < leftCount; ++k) {
-        int pos = static_cast<int>(std::floor((k + 0.5) * (double)total / (double)leftCount)) % total;
-        trialSchedule_[pos] = -1;
+
+    // 特殊 BlockID 处理
+    if (BlockID == 0) {
+        trialSchedule_.assign(blockSize, +1);  // 全向前
+        trialProb_.assign(blockSize, 0.0);
+        return;
     }
-    trialIdx_ = 0;
+    if (BlockID == 100) {
+        trialSchedule_.assign(blockSize, -1);  // 全向左
+        trialProb_.assign(blockSize, 1.0);
+        return;
+    }
 
-    spdlog::info("[SCHEDULE] Built deterministic 10-trial schedule (leftCount={})", leftCount);
-}*/
+
+    if (fullDir_.empty()) {
+
+        // Step 1：生成每个概率对应 trial
+        std::vector<int> trialScheduleFull;
+        std::vector<double> trialProbFull;
+        trialScheduleFull.reserve(totalTrials);
+        trialProbFull.reserve(totalTrials);
+
+        for (double p : probList) {
+            int numTrials = totalTrials / n;                 // 每个概率出现次数
+            int numLeft = static_cast<int>(std::round(p * numTrials));
+            int numForward = numTrials - numLeft;
+
+            for (int i = 0; i < numLeft; ++i) {
+                trialScheduleFull.push_back(-1);
+                trialProbFull.push_back(p);
+            }
+            for (int i = 0; i < numForward; ++i) {
+                trialScheduleFull.push_back(+1);
+                trialProbFull.push_back(p);
+            }
+        }
+
+        // Step 2：随机打乱整个序列
+        std::mt19937_64 rng(seed);
+        std::vector<size_t> indices(trialScheduleFull.size());
+        std::iota(indices.begin(), indices.end(), 0);
+        std::shuffle(indices.begin(), indices.end(), rng);
+
+        std::vector<int> trialScheduleShuffled;
+        std::vector<double> trialProbShuffled;
+        trialScheduleShuffled.reserve(totalTrials);
+        trialProbShuffled.reserve(totalTrials);
+
+        for (size_t idx : indices) {
+            trialScheduleShuffled.push_back(trialScheduleFull[idx]);
+            trialProbShuffled.push_back(trialProbFull[idx]);
+        }
+
+        fullDir_  = trialScheduleShuffled;
+        fullProb_ = trialProbShuffled;
+
+        dumpScheduleCSV_(trialScheduleShuffled, trialProbShuffled);
+    }
+    else {
+        spdlog::info("[SCHEDULE] Using cached full schedule for BlockID={}", BlockID);
+    }
+    // Step 3：根据 BlockID 取当前 block
+    int numBlocks = totalTrials / blockSize;
+    if (BlockID < 1 || BlockID > numBlocks) {
+        BlockID = 1;
+    }
+    int startIdx = (BlockID - 1) * blockSize;
+
+    trialSchedule_.assign(fullDir_.begin() + startIdx,
+                          fullDir_.begin() + startIdx + blockSize);
+    trialProb_.assign(fullProb_.begin() + startIdx,
+                       fullProb_.begin() + startIdx + blockSize);
+
+    spdlog::info("[SCHEDULE] BlockID={}, blockSize={}, seed={}", BlockID, blockSize, seed);
+}
+
+
 
 // Open logs/M2ProbMove_<session>.csv and write header if new
 void M2ProbMoveState::openCSV() {
@@ -1191,7 +1367,7 @@ void M2ProbMoveState::openCSV() {
     }
     if (csv.tellp() == 0) {
         // MODIFIED: Added effort to CSV header
-        csv << "time,sys_time,session_id,pos_x,pos_y,vel_x,vel_y,internal_fx,internal_fy,user_fx,user_fy,prob_left,score_mode,target_succ,max_trials,effort\n";
+        csv << "time,sys_time,session_id,pos_x,pos_y,vel_x,vel_y,internal_fx,internal_fy,user_fx,user_fy,prob_left,trial_dir,target_succ,max_trials,effort\n";
     }
 }
 
@@ -1208,8 +1384,8 @@ void M2ProbMoveState::writeCSV(double t, const VM2& pos, const VM2& vel,
         << vel(0) << "," << vel(1) << ","
         << fInternal(0) << "," << fInternal(1) << ","
         << fUser(0) << "," << fUser(1) << ","
-        << probLeft << ","
-        << meta_scoreMode << ","
+        << currentTrialProb_ << ","
+        << currentTrialDir_ << ","
         << meta_targetSucc << ","
         << meta_maxTrials << ","
         << effort << "\n";
@@ -1447,7 +1623,7 @@ void M2ProbMoveState::openPreloadCSVs_() {
     if (preloadCsv_.is_open() && preloadCsv_.tellp() == 0) {
         preloadCsv_ << "time,sys_time,session_id,mode,trial,"
                     << "fx,fy,pos_x,pos_y,vel_x,vel_y,prob_left,"
-                    << "preload_flag\n";
+                    << "preload_flag,trial_dir\n";
     }
 }
 
@@ -1498,10 +1674,12 @@ void M2ProbMoveState::writePreloadWindow_(int trialIdxForMode,
             << s.force(0) << "," << s.force(1) << ","
             << s.pos(0) << "," << s.pos(1) << ","
             << s.vel(0) << "," << s.vel(1) << ","
-            << probLeft << ","
+            // << probLeft << ","
+            << currentTrialProb_ << ","
             // << preloadThresholdN_ << "," << preloadWindowSec_ << ","
             << (preloadFlag ? 1 : 0)       // extra: preload success flag
             // << ","<< fx_min 
+            << currentTrialDir_ << ","  // extra: trial direction
             << "\n";                    // extra: fx_min
     }
 }

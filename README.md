@@ -1,6 +1,6 @@
 # M2 Human–Robot Interaction Experiment Framework
 
-Author: Tiancheng (Gavin) Yang  Yixiang Lin
+Author: Yixiang Lin, Tiancheng (Gavin) Yang  
 Affiliation: The University of Melbourne  
 License: MIT
 
@@ -100,15 +100,5 @@ Tip: Session IDs are included in logs; anonymize before sharing.
 - Logs can contain subject/session identifiers and sensor traces.
 - Anonymize/redact IDs and comply with local ethics/data policies before external sharing.
 
----
-
-## License
-MIT License — see `LICENSE`. © 2025 Tiancheng Yang, The University of Melbourne.
 
 ---
-
-## Contact
-For issues or questions, include:
-- Score mode, target successes, max trials
-- Preload settings (`S_PLT`, `S_PLW`)
-- Relevant log snippets from `logs/`
