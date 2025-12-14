@@ -29,7 +29,7 @@ namespace CORC.Demo
         public int trialsPerGroup = 10;           
         public int numGroups = 10;                
         public float preTrialCountdown = 3f;      
-        public float restBetweenTrials = 3f;      
+        public float restBetweenTrials = 2f;      
         public float settleAfterRsta = 2f;        
         public Button autoStartBtn;               
         public Button autoStopBtn;                
@@ -51,12 +51,13 @@ namespace CORC.Demo
         private bool isResting = false;
         
         private bool suppressRestOnce = false;
-        
+
         private Coroutine restCountdownCo = null;
 
-        [Header("Visual Effects")]
-        public ParticleSystem windEffectLeft;
-        public ParticleSystem windEffectUp;
+        // [Header("Visual Effects")]
+        // public ParticleSystem windEffectLeft;
+        // public ParticleSystem windEffectUp;
+        
         [Header("Per-Trial Metrics (TMP)")]
         public TMP_Text trialEffortTxt;   
         public TMP_Text trialDistTxt;     
@@ -88,7 +89,8 @@ namespace CORC.Demo
         public Slider probLeftSlider;
         public TMP_Text probLeftLabel;
         public Button applyProbBtn;
-
+        public TMP_InputField BlockID;
+        public TMP_Text Block_Label;
 
         [Header("Manual Force Command")]
         public TMP_InputField leftForceInput;
@@ -110,10 +112,18 @@ namespace CORC.Demo
         // public float maxHomeWait = 5f;  // max wait time (s) for home check
         private bool readyAtHome = false;
 
+        private double currentPLeft;
+
+        // private bool showProbNow = true;
+        // private void UpdateProbUI(double p)
+        // {
+        //     // if (probLeftLabel) probLeftLabel.text = $"pLeft: {p:F2}";
+        //     if (probLeftLabelMonitor) probLeftLabelMonitor.text = $"{p * 100f:F0}%";
+        // }
 
         private static bool TryParse(string s, out double v, double fallback = 0) { if (double.TryParse(s, out v)) return true; v = fallback; return false; }
-        private static double ParseFieldD(string msg, string key, double def = 0.0) { int i = msg.IndexOf(key + "="); if (i < 0) return def; i += key.Length + 1; int j = msg.IndexOf(' ', i); string sub = (j >= 0) ? msg.Substring(i, j - i) : msg.Substring(i); if (double.TryParse(sub, out var v)) return v; return def; }
-        private static string ParseFieldS(string msg, string key, string def = "") { int i = msg.IndexOf(key + "="); if (i < 0) return def; i += key.Length + 1; int j = msg.IndexOf(' ', i); string sub = (j >= 0) ? msg.Substring(i, j - i) : msg.Substring(i); return sub; }
+        // private static double ParseFieldD(string msg, string key, double def = 0.0) { int i = msg.IndexOf(key + "="); if (i < 0) return def; i += key.Length + 1; int j = msg.IndexOf(' ', i); string sub = (j >= 0) ? msg.Substring(i, j - i) : msg.Substring(i); if (double.TryParse(sub, out var v)) return v; return def; }
+        // private static string ParseFieldS(string msg, string key, string def = "") { int i = msg.IndexOf(key + "="); if (i < 0) return def; i += key.Length + 1; int j = msg.IndexOf(' ', i); string sub = (j >= 0) ? msg.Substring(i, j - i) : msg.Substring(i); return sub; }
         private bool isCountingDown = false;
         private bool autoRunning = false;         
         private bool stopAutoRequested = false;   
@@ -348,24 +358,29 @@ namespace CORC.Demo
 
                 for (int t = 1; t <= trialsPerGroup && !stopAutoRequested; t++)
                 {
-                    float safetyTimeout = 60f;
+                    float safetyTimeout = 10f;
                     float waited = 0f;
 
-                    if (restBetweenTrials > 0) yield return new WaitForSeconds(restBetweenTrials);
-                    
                     // if (restBetweenTrials > 0 && waited < safetyTimeout && !suppressRestOnce)
                     // {
 
                     //     waited += Time.deltaTime;
                     // }
+                    proxy.SendCmd("Q_PB");
+                    // Debug.LogWarning("Sent: Q_PB");
 
                     if (readyAtHome)
                     {
-                        Debug.LogWarning("Ready at home A.");
+                        // Debug.LogWarning("Ready at home A.");
+                        // if (probLeftLabelMonitor) probLeftLabelMonitor.text = "Prob_Ready";
+
+                        // if (probLeftLabelMonitor) probLeftLabelMonitor.text = $"{currentPLeft * 100f:F0}%";
+                        if (restBetweenTrials > 0) yield return new WaitForSeconds(restBetweenTrials);
                         yield return StartCoroutine(CountdownAndStartTrial(Mathf.RoundToInt(preTrialCountdown)));
                     }
-                    
+                    readyAtHome = false;
                     lastTrialEnded = false;
+                   
                     // while (!lastTrialEnded && !stopAutoRequested && waited < safetyTimeout)
                     // {
                     //     yield return null;
@@ -375,24 +390,27 @@ namespace CORC.Demo
                     if (restBetweenTrials > 0)
                         yield return new WaitForSeconds(restBetweenTrials);
 
-                    waited = 0f;    
-                    readyAtHome = false;
+
                     proxy.SendCmd("RSTA");
+
+                    if (lastTrialEnded) Debug.LogWarning("Trial ended.");
+                    // if (readyAtHome) Debug.LogWarning("Ready at home A.");
+
+                    ResetEndMarkersForNewRun();
+                    if (probLeftLabelMonitor) probLeftLabelMonitor.text = "P"; 
+                    waited = 0f; 
                     while (!lastTrialEnded && !stopAutoRequested && !readyAtHome && waited < safetyTimeout)
+
                     {
                         yield return null;
                         waited += Time.deltaTime;
                         // if (statusTxt) statusTxt.text = "Not yet at home A...";
                         // Debug.LogWarning("Not yet at home A...");
                     }
-
-                    if (lastTrialEnded) Debug.LogWarning("Trial ended.");
-                    // if (readyAtHome) Debug.LogWarning("Ready at home A.");
-
-                    ResetEndMarkersForNewRun();
+                    
                     if (settleAfterRsta > 0)
                         yield return new WaitForSeconds(settleAfterRsta);
-                        
+
                     // // 1) Reset to A and wait for settle
                     // yield return new WaitForSeconds(1f);
                     // readyAtHome = false;
@@ -519,7 +537,7 @@ namespace CORC.Demo
                 {
                     double val = Math.Max(1, (int)Math.Round(targ));
                     proxy.SendCmd("S_TS", new double[] { val });
-                    
+
                     Debug.Log($"[UI] Sent 'S_TS' with value: {val}");
                 }
             }
@@ -537,18 +555,42 @@ namespace CORC.Demo
             if (statusTxt) statusTxt.text = "Parameters sent. Ready to start experiment.";
         }
 
+        // public void OnApplyProb()
+        // {
+        //     if (proxy == null || !proxy.IsReady) {
+        //         Debug.LogWarning("[UI] Proxy not ready; skip S_PB");
+        //         return;
+        //     }
+        //     double p = probLeftSlider ? probLeftSlider.value : 0.5;
+        //     int BlockID_value = BlockID ? int.Parse(BlockID.text) : 1;
+        //     // proxy.SendCmd("S_PB", new double[] { Mathf.Clamp01((float)p) });
+        //     proxy.SendCmd("S_PB", new [] { p, (int)BlockID_value });
+        //     Debug.Log($"[UI] Sent 'S_PB' with value: {p:F3}, RoundID: {BlockID_value}");
+        //     if (probLeftLabel) probLeftLabel.text = $"pLeft: {p:F2}";
+        //     if (probLeftLabelMonitor) probLeftLabelMonitor.text = $"{(p * 100f):F0}%";
+        //     if (Block_Label) Block_Label.text = $"Block ID: {BlockID_value}";
+        // }
         public void OnApplyProb()
         {
             if (proxy == null || !proxy.IsReady) {
                 Debug.LogWarning("[UI] Proxy not ready; skip S_PB");
                 return;
             }
-            double p = probLeftSlider ? probLeftSlider.value : 0.5;
-            proxy.SendCmd("S_PB", new double[] { Mathf.Clamp01((float)p) });
-            Debug.Log($"[UI] Sent 'S_PB' with value: {p:F3}");
-            if (probLeftLabel) probLeftLabel.text = $"pLeft: {p:F2}";
-            if (probLeftLabelMonitor) probLeftLabelMonitor.text = $"{(p * 100f):F0}%";
+
+            double p = probLeftSlider != null ? Mathf.Clamp01(probLeftSlider.value) : 0.5f;
+
+            int blockId = 1;
+            if (BlockID != null && int.TryParse(BlockID.text, out var parsed))
+                blockId = parsed;
+
+            proxy.SendCmd("S_PB", new[] { p, (double)blockId });
+            Debug.Log($"[UI] Sent 'S_PB' with value: {p:F3}, BlockID: {blockId}");
+
+            currentPLeft = p;
+            if (probLeftLabelMonitor) probLeftLabelMonitor.text = "Prob";
+            if (Block_Label) Block_Label.text = $"Block ID: {blockId}";
         }
+
 
         public void OnBeepAfterDelayClick()
         {
@@ -635,7 +677,9 @@ namespace CORC.Demo
             if (applyScoreBtn) applyScoreBtn.onClick.AddListener(OnApplyScore);
             if (applyProbBtn) applyProbBtn.onClick.AddListener(OnApplyProb);
             if (countdownText) { countdownText.text = string.Empty; countdownText.gameObject.SetActive(false); }
-            if (probLeftLabel && probLeftSlider) probLeftLabel.text = $"pLeft: {probLeftSlider.value:F2}";
+            // if (probLeftLabel && probLeftSlider) probLeftLabel.text = $"pLeft: {probLeftSlider.value:F2}";
+            // if (probLeftLabel) probLeftLabel.text = $"Prob Side";
+            if (probLeftLabelMonitor) probLeftLabelMonitor.text = "Prob";
             if (trialEffortTxt) trialEffortTxt.text = string.Empty;
             if (trialDistTxt) trialDistTxt.text = string.Empty;
             if (autoStartBtn) autoStartBtn.onClick.AddListener(OnAutoStartClicked);
@@ -667,6 +711,8 @@ namespace CORC.Demo
 
             if (applyHoldKDBtn) applyHoldKDBtn.onClick.AddListener(OnApplyHoldKDCommand);
 
+            if (probLeftLabelMonitor) probLeftLabelMonitor.text = "P";
+
         }
 
         void Update()
@@ -687,8 +733,8 @@ namespace CORC.Demo
             if (velTxt) velTxt.text = $"Velocity: [{dX[0]:F3}, {dX[1]:F3}]";
             if (frcTxt) frcTxt.text = $"Force: [{F[0]:F3}, {F[1]:F3}]";
 
-            if (probLeftLabel && probLeftSlider)
-                probLeftLabel.text = $"pLeft: {probLeftSlider.value:F2}";
+            // if (probLeftLabel && probLeftSlider)
+            //     probLeftLabel.text = $"pLeft: {probLeftSlider.value:F2}";
             var cmds = proxy.DrainCmds();
 
             foreach (var c in cmds)
@@ -698,14 +744,16 @@ namespace CORC.Demo
                 var p = c.parameters ?? Array.Empty<double>();
                 Debug.Log($"[UI Received] {cmd} ({p.Length} params)");
 
-
                 if (cmd == "TRBG")
                 {
                     // params: t, dirCode, pLeft, mode, cur, max
+                    // double pLeft = (p.Length > 2) ? (double)p[2] : 0;
                     int mode = (p.Length > 3) ? (int)p[3] : 0;
+                    // currentPLeft = Mathf.Clamp01((float)pLeft);
                     if (statusTxt) { statusTxt.color = Color.white; statusTxt.text = "Trial in progress..."; }
-                    // Optional: drive wind effects based on dirCode, P[1] is direction code -1/0/1
+
                 }
+
                 else if (cmd == "TREN")
                 {
                     // params: t, dur, reached, dist, effort, trialScore, mode, cur, max, v1_suc, v1_tar, v2_sco, dirCode
@@ -757,7 +805,9 @@ namespace CORC.Demo
                             trialDurTxt.text = "Time-to-reach: — (timeout)";
                     }
 
-                    lastTrialEnded = true;
+                    // showProbNow = false;
+                    // if (probLeftLabelMonitor) probLeftLabelMonitor.text = "Prob";
+                    // lastTrialEnded = true;
                 }
                 else if (cmd == "SESS")
                 {
@@ -840,11 +890,22 @@ namespace CORC.Demo
                         DrawEndMarker(endX, endY);
                     }
                 }
-                
+
                 else if (cmd == "AT_A")
                 {
                     readyAtHome = true;               // Signal received, At A
-                    // if (statusTxt) statusTxt.text = "At A, ready.";
+                }
+                    
+                else if (cmd == "R_PB")
+                {
+                    // Debug.LogWarning("[UI] Received R_PB");
+                    if (p.Length >= 1)
+                    {
+                        double pLeft = p[0];
+                        currentPLeft = Mathf.Clamp01((float)pLeft);
+                    }
+
+                    if (probLeftLabelMonitor) probLeftLabelMonitor.text = $"{currentPLeft * 100f:F0}%";
                 }
 
             }

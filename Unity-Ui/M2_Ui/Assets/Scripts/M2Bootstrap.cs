@@ -20,7 +20,7 @@ namespace CORC.Demo
         [Header("Logging (optional)")]
         public bool enableCsvLogging = false;
 
-        [Tooltip("如不填则默认 persistentDataPath/m2_log.csv")]
+        [Tooltip("Default: persistentDataPath/m2_log.csv")]
         public string csvPathOverride = "";
 
         [Header("Refs")]
