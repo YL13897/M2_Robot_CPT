@@ -131,7 +131,7 @@ public:
     std::vector<double> upPerturbForce2;
     std::vector<double> leftPerturbForce;
     std::vector<double> leftPerturbForce2;
-    size_t perturbIndex = 0;
+    // size_t perturbIndex = 0;
     bool injectingUp = false;
     bool injectingLeft = false;
 
@@ -164,12 +164,17 @@ public:
     // VM2 C{0.45, 0.302};
     // VM2 A{0.45, 0.002};
     // VM2 C{0.45, 0.222};
-    VM2 A{0.32, 0.002};
-    VM2 C{0.32, 0.222};
-    // VM2 A{0.32, 0.050};
-    // VM2 C{0.32, 0.250};
+    // VM2 A{0.32, 0.002};
+    // VM2 C{0.32, 0.222};
+    VM2 A{0.32, 0.050};
+    VM2 C{0.32, 0.300};
 
 
+    const int seed = 1111111;
+    // const int seed = 1456070;
+    // const int seed = 1661471;
+
+    
     // double epsA = 0.05;
     // double epsC = 0.05;
     double epsC = 0.08;  //default 0.05
@@ -182,7 +187,7 @@ public:
     
     // double k = 150;
     // double d = 6;
-    double k = 200;
+    double k = 300;
     double d = 15;
 
     double robotForceMagUp  = 17.5;
@@ -192,10 +197,10 @@ public:
     double trialMaxTime      = 0.5; // maximum trial time (s)
     double  trialExtendTime = 0.2; // extra time after timeout to reach C
 
-    const double x_min = 0.05;   // left boundary (m)
-    const double x_max = 0.55;   // left boundary (m)
-    const double k_wall = 1800.0; // wall stiffness N/m
-    const double d_wall = 50.0;  // wall damping N·s/m
+    const double x_min = 0.15;   // left boundary (m)
+    const double x_max = 0.45;   // left boundary (m)
+    const double k_wall = 800.0; // wall stiffness N/m
+    const double d_wall = 40.0;  // wall damping N·s/m
     const double y_max = 0.40;   // upper boundary (m)
 
     VM2    internalForce     = VM2::Zero();
@@ -208,6 +213,7 @@ public:
     double rampDown     = 0.2;
 
     double probLeft = 0.5;
+    int BlockID = 1;
 
     bool enablePIDToA = false;
     double KpToA = 5.0;
@@ -250,9 +256,18 @@ private:
     void openCSV();
     // Deterministic schedule for LEFT/UP within a 10-trial block: -1=LEFT, +1=UP
     std::vector<int> trialSchedule_;
+    std::vector<double> trialProb_; // 每个 trial 对应的概率值
+    double currentTrialProb_ = 0.0;   // 当前试次概率
+    int currentTrialDir_  = 0;     // 当前试次方向：-1=LEFT，+1=UP
+
+    bool randomizeOrBlock = true;
 
     size_t trialIdx_ = 0;
     void buildDeterministicSchedule();
+    void buildDeterministicSchedule_random();
+    void dumpScheduleCSV_(const std::vector<int>& dir, const std::vector<double>& prob);
+    std::vector<int> fullDir_;
+    std::vector<double> fullProb_;
 
     // MERGED: Re-introducing enum for internal state management
     enum Phase {
